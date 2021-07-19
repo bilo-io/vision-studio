@@ -1,25 +1,52 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import Login from './pages/Login'
+import Products from './pages/Products'
+import Explore from './pages/Explore'
+import ExploreDetails from './pages/ExploreDetails'
+import Error from './pages/Error'
+import News from './pages/News'
+import Stats from './pages/Stats'
 
-function App () {
+import './App.scss'
+import Navbar from './components/Navbar'
+import AppMenu from 'components/AppMenu'
+
+// import logo from './assets/vision-logo.svg'
+
+const App = () => {
+  const [isAppMenuOpen, setAppMenuOpen] = useState<boolean>(false)
+  const toggleAppMenu = () => {
+    setAppMenuOpen(!isAppMenuOpen)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="flex-row">
+
+        <Navbar type='desktop' onToggle={toggleAppMenu} />
+        <Navbar type='mobile' onToggle={toggleAppMenu} />
+
+        <AppMenu isOpen={isAppMenuOpen} isDark onToggle={toggleAppMenu} />
+
+        <div className="page">
+          <Switch>
+            <Route
+              exact
+              path={'/'}
+              render={() => <Redirect to={'/stats'} />}
+            />
+
+            <Route path="/login" component={Login} />
+            <Route path="/products" component={Products} />
+            <Route exact path="/explore" component={Explore} />
+            <Route path="/explore/:id" component={ExploreDetails} />
+            <Route path="/stats" component={Stats} />
+            <Route path="/news" component={News} />
+            <Route path="*" component={Error} />
+          </Switch>
+        </div>
+      </div>
+    </Router>
   )
 }
 
