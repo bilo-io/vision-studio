@@ -508,7 +508,12 @@ function Stats () {
         </Async>
       </Accordion>
 
-      <Accordion title='Data Table' isOpenDefault>
+      <Accordion title={
+        <div className="flex-row space-between">
+          <div><FAIcon name="table" /></div>
+          <div style={{ marginLeft: '1rem' }}>Prices</div>
+        </div>
+      } isOpenDefault>
         <Table
           columns={columns}
           data={rows}
