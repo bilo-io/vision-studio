@@ -11,6 +11,7 @@ import coins, { keys } from 'assets/crypto'
 // import { colors } from 'components/Charts/utils/colors'
 import Header from 'components/Table/Header'
 import PriceChange from 'components/PriceChange'
+import useWindowSize from 'hooks/use-window-size'
 
 function Stats () {
   // #region STATE
@@ -18,6 +19,9 @@ function Stats () {
   const location = useLocation()
   const [error, setError] = useState<any>(null)
   const [activeKeys, setActiveKeys] = useState<string[]>(['DOGE', 'TRX'])
+
+  const windowSize = useWindowSize()
+  const isMobile = windowSize?.width && windowSize?.width < 480
 
   const [series, setSeries] = useState<any>({
     prices: {},
@@ -431,13 +435,17 @@ function Stats () {
 
   return (
     <div>
-      <div className="bg-blur floating-top padded card">
-        <div style={{ marginBottom: '1rem', marginTop: '0.5rem' }}>Select coins</div>
-        <div className="flex-row auto-scroll-x no-scrollbar">
+      <div className={`bg-blur floating-top card ${isMobile ? 'fixed' : ''}`}>
+        <div style={{ marginBottom: '1rem', padding: '1rem', marginTop: '0.5rem' }}>Select coins</div>
+        <div className="flex-row auto-scroll-x no-scrollbar" style={{ paddingBottom: '0.5rem' }}>
           {
             keys.map((key) => (
               <div key={key} style={{ marginRight: '1rem' }}>
-                <div style={{ opacity: activeKeys.includes(key) ? 1 : 0.35, cursor: 'pointer' }} onClick={toggleCoin(key)}>
+                <div style={{
+                  padding: '0 .5rem 0 .5rem',
+                  opacity: activeKeys.includes(key) ? 1 : 0.35,
+                  cursor: 'pointer'
+                }} onClick={toggleCoin(key)}>
                   {/* @ts-ignore */}
                   <img src={coins[key].icon} alt={key} style={{ width: '2rem', height: '1uto' }}/>
                   <div style={{ fontSize: '0.5rem', textAlign: 'center' }}>{key}</div>

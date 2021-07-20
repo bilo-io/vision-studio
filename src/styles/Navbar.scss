@@ -9,12 +9,11 @@ $breakpoint-mobile: 480px;
   @include hideAbove($breakpoint-mobile);
 
   @extend .flex-row;
+  @extend .bg-blur;
 
   justify-content: space-between;
   position: fixed;
   z-index: 10;
-  background-color: #0008;
-  backdrop-filter: blur(5px);
   color: red;
   width: 100vw;
   height: 3rem;
@@ -23,11 +22,11 @@ $breakpoint-mobile: 480px;
   box-shadow: 0 3px 10px rgba(black, 0.5);
 
   .main-tab {
-    // background-color: $col-hydra-blue;
+    // background-color: $col-vision-blue;
     // background-color: #00adee88;
     background-color: transparent;
     cursor: pointer;
-    color: $col-hydra-blue;
+    color: $col-vision-blue;
     border-radius: 50%;
     width: 3rem;
     height: 3rem;

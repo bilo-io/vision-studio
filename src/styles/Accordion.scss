@@ -67,11 +67,16 @@ $transition-duration: 2s;
     opacity: 1;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
+    background-color: #DDEEFF14;
+
+    border-radius: 12px;
+    margin: 1rem;
     height: auto;
+
     max-height: calc(100% - 3rem);
     overflow: hidden;
     overflow-y: auto;
-    margin: auto;
+    // margin: auto;
     // border-top: 1px solid #ddd;
     // border-bottom: 1px solid #ddd;
   }

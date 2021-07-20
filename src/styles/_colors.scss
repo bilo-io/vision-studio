@@ -1,11 +1,11 @@
-$col-hydra-black: #202020;
-$col-hydra-dark: #303030;
-$col-hydra-blue: #00adee;
-$col-hydra-cyan: #0091ad;
-$col-hydra-sky: #3ac9e6;
+$col-vision-black: #111111;
+$col-vision-dark: #303030;
+$col-vision-blue: #00adee;
+$col-vision-cyan: #0091ad;
+$col-vision-sky: #3ac9e6;
 $col-angelic-purple: #8e0ea4;
 
-$col-active: $col-hydra-blue;
+$col-active: $col-vision-blue;
 $col-primary: $col-active;
 $col-secondary: #aaa;
 $col-success: #3adb76;
@@ -17,5 +17,5 @@ $col-text: #888;
 $col-white: #fff;
 
 .gradient-background {
-  background: linear-gradient(to bottom, $col-hydra-blue, $col-angelic-purple);
+  background: linear-gradient(to bottom, $col-vision-blue, $col-angelic-purple);
 }

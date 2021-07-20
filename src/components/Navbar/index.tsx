@@ -10,7 +10,9 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
   const history = useHistory()
   const goTo = (path: string) => history?.push(path)
   const [activePath, setActivePath] = useState<any>(null)
+
   const windowSize = useWindowSize()
+  const isMobile = windowSize?.width && windowSize?.width < 480
 
   useEffect(() => {
     history?.listen?.(() => setActivePath(history?.location?.pathname))
@@ -20,7 +22,6 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
   const itemsMobile = stocksNav?.mobile
   const itemsDesktop = stocksNav?.all
 
-  const isMobile = windowSize?.width && windowSize?.width < 480
   const renderItems = () => (isMobile ? itemsMobile : itemsDesktop || []).map((item, i) => {
     // const isActive = window.location.pathname.includes(item.path)
     const isActive = activePath?.includes(item.path)
