@@ -17,7 +17,7 @@ function Stats () {
   // eslint-disable-next-line no-unused-vars
   const location = useLocation()
   const [error, setError] = useState<any>(null)
-  const [activeKeys, setActiveKeys] = useState<string[]>(['USDC', 'DOGE'])
+  const [activeKeys, setActiveKeys] = useState<string[]>(['DOGE', 'TRX'])
 
   const [series, setSeries] = useState<any>({
     prices: {},

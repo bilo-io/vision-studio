@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import FAIcon from 'react-fontawesome'
-import appLogo from 'assets/vision-logo.svg'
+import appLogo from 'assets/vision-logo.png'
 import { useHistory } from 'react-router'
 import useWindowSize from 'hooks/use-window-size'
 
@@ -14,7 +14,48 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
     history?.listen?.(() => setActivePath(history?.location?.pathname))
   })
 
-  const items = [
+  const itemsMobile = [
+    {
+      name: 'Menu',
+      path: '/menu',
+      icon: 'bars',
+      onClick: () => onToggle()
+    },
+    {
+      name: 'Explore',
+      path: '/explore',
+      icon: 'search',
+      onClick: () => goTo('/explore')
+    },
+    {
+      main: true,
+      name: 'Vision',
+      path: '/vision',
+      icon: '',
+      onClick: () => goTo('/vision')
+    },
+    {
+      name: 'Stats',
+      path: '/stats',
+      icon: 'chart-pie',
+      onClick: () => goTo('/stats')
+    },
+    {
+      name: 'Products',
+      path: '/products',
+      icon: 'coins',
+      onClick: () => goTo('/products')
+    }
+  ]
+
+  const itemsDesktop = [
+    {
+      main: true,
+      name: 'Vision',
+      path: '/vision',
+      icon: '',
+      onClick: () => goTo('/vision')
+    },
     {
       name: 'Profile',
       path: '/profile',
@@ -28,28 +69,21 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
       onClick: () => goTo('/explore')
     },
     {
-      main: true,
-      name: 'Products',
-      path: '/products',
-      icon: '',
-      onClick: () => goTo('/products')
-    },
-    {
       name: 'Stats',
       path: '/stats',
       icon: 'chart-pie',
       onClick: () => goTo('/stats')
     },
     {
-      name: 'News',
-      path: '/news',
-      icon: 'globe',
-      onClick: () => goTo('/news')
+      name: 'Products',
+      path: '/products',
+      icon: 'coins',
+      onClick: () => goTo('/products')
     }
   ]
 
   const isMobile = windowSize?.width && windowSize?.width < 480
-  const renderItems = () => (items || []).map((item, i) => {
+  const renderItems = () => (isMobile ? itemsMobile : itemsDesktop || []).map((item, i) => {
     // const isActive = window.location.pathname.includes(item.path)
     const isActive = activePath?.includes(item.path)
     return (
@@ -57,12 +91,20 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
         key={i}
         onClick={() => item.onClick()}
         className={ item.main ? 'main-tab' : 'normal-tab'}
+        // className={ item.main ? 'normal-tab' : 'normal-tab'}
       >
         <div className="flex-row">
           {
             item.main
               ? (
-                <img src={ appLogo } style={{ width: '3.2rem', height: 'auto', margin: 'auto', marginTop: isMobile ? '-0.15rem' : '0.3' }} alt="logo" />
+                <img src={ appLogo } style={{ width: '2.2rem', height: 'auto', margin: 'auto', marginLeft: isMobile ? '.5rem' : '.5rem', marginTop: isMobile ? '.5rem' : '0.3rem' }} alt="logo" />
+                // <img src={ appLogo } style={{
+                //   width: '2.2rem',
+                //   height: 'auto',
+                //   margin: 'auto',
+                //   marginLeft: isMobile ? '-.5rem' : '.5rem',
+                //   marginTop: isMobile ? '-0.25rem' : '0.3rem'
+                // }} alt="logo" />
               )
               : (
 
@@ -81,7 +123,7 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
         isMobile
           ? renderItems()
           : (
-            <div style={{ height: 'fit-content', display: 'flex', flexDirection: 'column', marginTop: 'auto', marginBottom: 'auto', width: '100%' }}>
+            <div style={{ height: 'fit-content', display: 'flex', flexDirection: 'column', marginTop: '1rem', marginBottom: 'auto', width: '100%' }}>
               {renderItems()}
             </div>
           )
