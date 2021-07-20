@@ -4,6 +4,8 @@ import appLogo from 'assets/vision-logo.png'
 import { useHistory } from 'react-router'
 import useWindowSize from 'hooks/use-window-size'
 
+import { createNav as createStocksNav } from 'app/stocks/router'
+
 export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }) => {
   const history = useHistory()
   const goTo = (path: string) => history?.push(path)
@@ -14,73 +16,9 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
     history?.listen?.(() => setActivePath(history?.location?.pathname))
   })
 
-  const itemsMobile = [
-    {
-      name: 'Menu',
-      path: '/menu',
-      icon: 'bars',
-      onClick: () => onToggle()
-    },
-    {
-      name: 'Explore',
-      path: '/explore',
-      icon: 'search',
-      onClick: () => goTo('/explore')
-    },
-    {
-      main: true,
-      name: 'Vision',
-      path: '/vision',
-      icon: '',
-      onClick: () => goTo('/vision')
-    },
-    {
-      name: 'Stats',
-      path: '/stats',
-      icon: 'chart-pie',
-      onClick: () => goTo('/stats')
-    },
-    {
-      name: 'Products',
-      path: '/products',
-      icon: 'coins',
-      onClick: () => goTo('/products')
-    }
-  ]
-
-  const itemsDesktop = [
-    {
-      main: true,
-      name: 'Vision',
-      path: '/vision',
-      icon: '',
-      onClick: () => goTo('/vision')
-    },
-    {
-      name: 'Profile',
-      path: '/profile',
-      icon: 'user',
-      onClick: () => onToggle()
-    },
-    {
-      name: 'Explore',
-      path: '/explore',
-      icon: 'search',
-      onClick: () => goTo('/explore')
-    },
-    {
-      name: 'Stats',
-      path: '/stats',
-      icon: 'chart-pie',
-      onClick: () => goTo('/stats')
-    },
-    {
-      name: 'Products',
-      path: '/products',
-      icon: 'coins',
-      onClick: () => goTo('/products')
-    }
-  ]
+  const stocksNav = createStocksNav?.({ goTo, onToggle })
+  const itemsMobile = stocksNav?.mobile
+  const itemsDesktop = stocksNav?.all
 
   const isMobile = windowSize?.width && windowSize?.width < 480
   const renderItems = () => (isMobile ? itemsMobile : itemsDesktop || []).map((item, i) => {

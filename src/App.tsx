@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Login from './pages/Login'
-import Products from './pages/Products'
-import Explore from './pages/Explore'
-import ExploreDetails from './pages/ExploreDetails'
-import Error from './pages/Error'
-import News from './pages/News'
-import Stats from './pages/Stats'
 
 import './App.scss'
+import Error from './pages/Error'
 import Navbar from './components/Navbar'
 import AppMenu from 'components/AppMenu'
+import StocksRouter from 'app/stocks/router'
 
 // import logo from './assets/vision-logo.svg'
 
@@ -33,15 +29,11 @@ const App = () => {
             <Route
               exact
               path={'/'}
-              render={() => <Redirect to={'/stats'} />}
+              render={() => <Redirect to={'/app/stocks/stats'} />}
             />
 
-            <Route path="/login" component={Login} />
-            <Route path="/products" component={Products} />
-            <Route exact path="/explore" component={Explore} />
-            <Route path="/explore/:id" component={ExploreDetails} />
-            <Route path="/stats" component={Stats} />
-            <Route path="/news" component={News} />
+            <Route path="/auth/login" component={Login} />
+            <Route path="/app/stocks" render={() => <StocksRouter />} />
             <Route path="*" component={Error} />
           </Switch>
         </div>
