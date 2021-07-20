@@ -437,8 +437,8 @@ function Stats () {
   return (
     <div>
       <div className={`bg-blur floating-top card ${isMobile ? 'fixed' : ''}`}>
-        <div style={{ marginBottom: '1rem', padding: '1rem', marginTop: '0.5rem' }}>Select coins</div>
-        <div className="flex-row auto-scroll-x no-scrollbar" style={{ paddingBottom: '0.5rem' }}>
+        {/* <div style={{ marginBottom: '1rem', padding: '1rem', marginTop: '0.5rem' }}>Select coins</div> */}
+        <div className="flex-row auto-scroll-x no-scrollbar" style={{ paddingBottom: '1rem', marginTop: '1rem' }}>
           {
             keys.map((key) => (
               <div key={key} style={{ marginRight: '1rem' }}>
