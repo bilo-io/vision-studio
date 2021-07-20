@@ -2,6 +2,7 @@
 /* eslint-disable react/display-name */
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
+import FAIcon from 'react-fontawesome'
 import { LineChart } from 'components/Charts/LineChart'
 import { fetchChartData, fetchCoins } from 'services/coingecko'
 import Async from 'components/Async'
@@ -458,7 +459,11 @@ function Stats () {
 
       <div style={{ marginTop: '8rem' }}/>
 
-      <Accordion title={'Chart: Price'} isOpenDefault>
+      <Accordion title={
+        <div className="flex-row space-between">
+          <FAIcon name="chart-line" />
+          <div style={{ marginLeft: '1rem' }}>Price</div>
+        </div>} isOpenDefault>
         <Async loading>
           <LineChart
             data={[]}
@@ -470,7 +475,12 @@ function Stats () {
         </Async>
       </Accordion>
 
-      <Accordion title={'Chart: Total Volume'} isOpenDefault={false}>
+      <Accordion title={
+        <div className="flex-row space-between">
+          <FAIcon name="chart-line" />
+          <div style={{ marginLeft: '1rem' }}>Total Volume</div>
+        </div>
+      } isOpenDefault={false}>
         <Async loading>
           <LineChart
             data={[]}
@@ -482,7 +492,11 @@ function Stats () {
         </Async>
       </Accordion>
 
-      <Accordion title={'Chart: Market Cap'} isOpenDefault={false}>
+      <Accordion title={
+        <div className="flex-row space-between">
+          <div><FAIcon name="chart-line" /></div>
+          <div style={{ marginLeft: '1rem' }}>Market cap</div>
+        </div>} isOpenDefault={false}>
         <Async loading>
           <LineChart
             data={[]}

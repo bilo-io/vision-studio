@@ -16,7 +16,26 @@ Highcharts.setOptions(Highcharts.theme)
 
 const staticOptions = {
   title: {
-    text: 'LineChart'
+    text: '',
+    style: {
+      color: '#FFF',
+      font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+    }
+  },
+  subtitle: {
+    style: {
+      color: '#DDD',
+      font: 'bold 12px "Trebuchet MS", Verdana, sans-serif'
+    }
+  },
+  legend: {
+    itemStyle: {
+      font: '9pt Trebuchet MS, Verdana, sans-serif',
+      color: 'black'
+    },
+    itemHoverStyle: {
+      color: 'gray'
+    }
   },
   chart: {
     renderTo: 'container',
@@ -88,7 +107,8 @@ export const LineChart = ({
       //     ...series,
       // }],
       title: {
-        text: title
+        ...staticOptions.title
+        // text: title
       }
     })
   }, [data, series])
