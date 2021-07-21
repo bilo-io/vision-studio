@@ -1,7 +1,14 @@
 import React from 'react'
 
 export const CoinCard = ({ item, currency, onClick }: { item: any, currency: any, onClick?: Function }) => {
-  return <div key={item?.id} className="coin-card" onClick={() => onClick?.(item)}>
+  const value = item?.market_data?.price_change_percentage_7d
+  const color = value > 0 ? 'colors positive' : value < 0 ? 'colors negative' : 'colors neutral'
+  console.log({ value })
+
+  return <div
+    key={item?.id}
+    className={`coin-card ${color}`}
+    onClick={() => onClick?.(item)}>
     <div className="flex-row space-between">
       <div className="flex-row">
         <img src={item?.image?.large} alt={`${item?.id}`} style={{ height: '2rem', padding: '0.5rem' }}/>

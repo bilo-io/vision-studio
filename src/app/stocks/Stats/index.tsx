@@ -434,6 +434,9 @@ function Stats () {
     ], [Object.keys(state?.info), state?.info])
   // #endregion
 
+  // #region Components
+  // #endregion
+
   return (
     <div>
       <div className={`bg-blur floating-top card ${isMobile ? 'fixed' : ''}`}>

@@ -5,6 +5,8 @@ import { useHistory } from 'react-router'
 import { fetchCoins } from 'services/coingecko'
 import { CoinCard } from 'components/Cards/CoinCard'
 import { currency } from 'utils/locale'
+import DEV from 'components/DEV'
+import _ from 'lodash'
 
 function Explore () {
   const history = useHistory()
@@ -59,12 +61,32 @@ function Explore () {
         <div style={{ marginTop: '6rem' }} />
         {
           filteredCoins.map((coin) => (
-            <CoinCard
-              key={coin.id}
-              item={coin}
-              currency={currency}
-              onClick={(coin: any) => history.push(`/explore/${coin?.id}`)}
-            />
+            <>
+              <CoinCard
+                key={coin.id}
+                item={coin}
+                currency={currency}
+                onClick={(coin: any) => history.push(`/explore/${coin?.id}`)}
+              />
+
+              <DEV
+                success={_.pick(coin, [
+                  'id',
+                  'name',
+                  'symbol',
+                  'market_data.market_cap_rank',
+                  'market_data.price_change_24h',
+                  'market_data.price_change_percentage_24h',
+                  'market_data.price_change_percentage_7d',
+                  'market_data.price_change_percentage_14d',
+                  'market_data.price_change_percentage_30d',
+                  'market_data.price_change_percentage_60d',
+                  'market_data.price_change_percentage_200d',
+                  'market_data.price_change_percentage_1y',
+                  'market_data.market_cap_change_24h',
+                  'market_data.market_cap_change_percentage_24h'])
+                } />
+            </>
           ))
         }
       </Async>

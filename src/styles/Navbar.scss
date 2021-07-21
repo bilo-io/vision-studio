@@ -103,10 +103,15 @@ $breakpoint-mobile: 480px;
       margin-top: 1.3rem;
       margin-left: 1rem;
       margin-right: 1.1rem;
+
+      &:hover {
+        // background-color: rgba($col-active, 0.05);
+        color: $col-active;
+      }
     }
 
     &:hover {
-      background-color: rgba($col-active, 0.05);
+      // background-color: rgba($col-active, 0.05);
       color: $col-active;
     }
 
@@ -116,6 +121,11 @@ $breakpoint-mobile: 480px;
       margin-top: 0.75rem;
       width: 2rem;
       height: calc(0.6 * #{$navbar-size});
+
+      &:hover {
+        // background-color: rgba($col-active, 0.05);
+        color: $col-active;
+      }
     }
 
     &.active {

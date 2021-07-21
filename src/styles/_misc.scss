@@ -155,6 +155,18 @@ $fade-duration: 0.3s;
   &.white {
     @include setColors($col-white);
   }
+
+  &.positive {
+    color: lime;
+  }
+
+  &.negative {
+    color: red;
+  }
+
+  &.neutral {
+    color: inherit;
+  }
 }
 
 .button {
