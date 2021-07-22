@@ -3,7 +3,7 @@ import React from 'react'
 function Slideshows () {
   return (
     <div>
-      Slideshows
+      <h1>Slideshows</h1>
     </div>
   )
 }

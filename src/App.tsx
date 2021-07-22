@@ -6,7 +6,12 @@ import './App.scss'
 import Error from './pages/Error'
 import Navbar from './components/Navbar'
 import AppMenu from 'components/AppMenu'
-import StocksRouter from 'app/stocks/router'
+// #region Routers
+import StocksRouter from 'app/stocks'
+import SlidesRouter from 'app/slides'
+import SessionsRouter from 'app/sessions'
+import StartupsRouter from 'app/startups'
+// #endregion
 
 // import logo from './assets/vision-logo.svg'
 
@@ -29,11 +34,15 @@ const App = () => {
             <Route
               exact
               path={'/'}
-              render={() => <Redirect to={'/app/stocks/stats'} />}
+              render={() => <Redirect to={'/stocks/stats'} />}
             />
 
-            <Route path="/auth/login" component={Login} />
-            <Route path="/app/stocks" render={() => <StocksRouter />} />
+            <Route path="/stocks" render={() => <StocksRouter />} />
+            <Route path="/startups" render={() => <StartupsRouter />} />
+            <Route path="/sessions" render={() => <SessionsRouter />} />
+            <Route path="/slides" render={() => <SlidesRouter />} />
+            <Route path="/auth/login" render={() => <Login />} />
+
             <Route path="*" component={Error} />
           </Switch>
         </div>

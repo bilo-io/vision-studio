@@ -435,6 +435,10 @@ function Stats () {
   // #endregion
 
   // #region Components
+  // fetch crypto data
+  // use a web service
+  // const fetchData = async () => {
+  // }
   // #endregion
 
   return (
@@ -451,7 +455,7 @@ function Stats () {
                   cursor: 'pointer'
                 }} onClick={toggleCoin(key)}>
                   {/* @ts-ignore */}
-                  <img src={coins[key].icon} alt={key} style={{ width: '2rem', height: '1uto' }}/>
+                  <img src={coins[key].icon} alt={key} style={{ width: '2rem', height: '1uto' }} />
                   <div style={{ fontSize: '0.5rem', textAlign: 'center' }}>{key}</div>
                 </div>
               </div>
@@ -460,7 +464,7 @@ function Stats () {
         </div>
       </div>
 
-      <div style={{ marginTop: '8rem' }}/>
+      <div style={{ marginTop: '8rem' }} />
 
       <Accordion title={
         <div className="flex-row space-between">
@@ -488,7 +492,7 @@ function Stats () {
           <LineChart
             data={[]}
             period={state?.period}
-            series={ series?.totalVolume }
+            series={series?.totalVolume}
             title={`Total Volume: ${activeKeys.toString()}`}
             onChangeRange={handleFetchChartData}
           />
@@ -504,7 +508,7 @@ function Stats () {
           <LineChart
             data={[]}
             period={state?.period}
-            series={ series?.marketCap }
+            series={series?.marketCap}
             title={`Market Cap: ${activeKeys.toString()}`}
             onChangeRange={handleFetchChartData}
           />
@@ -524,7 +528,7 @@ function Stats () {
       </Accordion>
 
       <div>
-        { error && JSON.stringify(error) }
+        {error && JSON.stringify(error)}
       </div>
     </div>
   )

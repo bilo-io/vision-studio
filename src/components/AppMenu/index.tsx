@@ -15,7 +15,10 @@ function AppMenu (
     onToggle: Function;
     }) {
   const history = useHistory()
-  const goTo = (path: string) => () => history.push(path)
+  const goTo = (path: string) => () => {
+    history.push(path)
+    onToggle()
+  }
   const noop = () => {}
 
   const dividerStyle = {
@@ -47,7 +50,34 @@ function AppMenu (
             Account
         </div>
 
-        <div className='divider horizontal' style={ dividerStyle } />
+        <div className='divider horizontal' style={dividerStyle} />
+
+        {[
+          {
+            name: 'Slides',
+            path: '/slides/slideshows'
+          },
+          {
+            name: 'Sessions',
+            path: '/sessions/new'
+          },
+          {
+            name: 'Stocks',
+            path: '/stocks'
+          },
+          {
+            name: 'Startups',
+            path: '/startups/docs'
+          }
+        ].map((item) => (
+          <>
+            <div key={item?.path} className='link' onClick={goTo(item?.path)}>
+              {item?.name}
+            </div>
+            <div className='divider horizontal' style={dividerStyle} />
+          </>
+        ))
+        }
 
         <div className='link' onClick={ noop }>
           <FAIcon name='info-circle' />&nbsp;&nbsp;
