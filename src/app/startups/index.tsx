@@ -43,7 +43,7 @@ export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Functi
     {
       name: 'Docs',
       path: `${scopeRoot}/docs`,
-      icon: 'document',
+      icon: 'book',
       onClick: () => goTo(`${scopeRoot}/docs`)
     },
     {
