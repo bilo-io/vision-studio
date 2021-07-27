@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import Call from './Call'
 import New from './New'
 
-const scopeRoot = '/slides'
+const scopeRoot = '/sessions'
 
 function SessionsRouter () {
   return (
@@ -51,7 +51,7 @@ export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Functi
       name: 'New',
       path: `${scopeRoot}/new`,
       icon: 'plus',
-      onClick: () => onToggle()
+      onClick: () => goTo(`${scopeRoot}/new`)
     },
     {
       name: 'Current',

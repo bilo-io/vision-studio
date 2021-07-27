@@ -6,7 +6,7 @@ import Docs from './Docs'
 import Overview from './Overview'
 import Settings from './Settings'
 
-const scopeRoot = '/stocks'
+const scopeRoot = '/startups'
 
 function StocksRouter () {
   return (

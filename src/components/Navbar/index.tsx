@@ -83,7 +83,7 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
         className={ item.main ? 'main-tab' : 'normal-tab'}
         // className={ item.main ? 'normal-tab' : 'normal-tab'}
       >
-        <div className="flex-row">
+        <div className={isMobile ? 'flex-col' : 'flex-row'}>
           {
             item.main
               ? (
@@ -92,8 +92,8 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
                   width: '2.2rem',
                   height: 'auto',
                   margin: 'auto',
-                  marginLeft: isMobile ? '-.5rem' : '.5rem',
-                  marginTop: isMobile ? '-0.25rem' : '0.3rem'
+                  marginLeft: isMobile ? '0.5rem' : '.5rem',
+                  marginTop: isMobile ? '0.25rem' : '0.3rem'
                 }} alt="logo" />
               )
               : (
