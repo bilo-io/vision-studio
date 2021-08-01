@@ -1,7 +1,7 @@
 import { getHeadlines, categories, countries } from '../news'
 // @ts-ignore
 // eslint-disable-next-line no-undef
-// jest.mock('axios')
+jest.mock('axios')
 
 describe('API.News', () => {
   test('getHeadlines(country, query)', () => {
