@@ -1,2 +1,0 @@
-# vision-studio
-React webapp
