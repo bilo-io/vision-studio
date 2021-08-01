@@ -1,6 +1,5 @@
 import React from 'react'
 import { Tabs } from '.'
-import { noop } from 'utils/misc'
 
 export default {
   title: 'Core/Tabs',
