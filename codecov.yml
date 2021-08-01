@@ -1,0 +1,13 @@
+ignore:
+  - "src/App.tsx"
+  - "src/index.tsx"
+  - "src/serviceWorker.ts"
+  - "src/assets/**/*"
+  - "src/components/**/*"
+  - "src/features/**/*"
+  - "src/hooks/**/*.ts"
+  - "src/pages/**/*"
+  - "src/store/**/*"
+  - "src/styles/**/*"
+  - "test_*.rb"       # wildcards accepted
+  - "**/*.py"         # glob accepted
