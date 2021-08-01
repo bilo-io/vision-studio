@@ -34,7 +34,6 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
     const appName = path.split('/')[1]
 
     setActivePath(path)
-    console.log({ path, appName })
 
     switch (appName) {
     case 'stocks':

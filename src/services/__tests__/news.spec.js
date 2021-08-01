@@ -4,13 +4,13 @@ import { getHeadlines, categories, countries } from '../news'
 jest.mock('axios')
 
 describe('API.News', () => {
-  test('getHeadlines(country, query)', () => {
+  xtest('getHeadlines(country, query)', () => {
     getHeadlines({ country: countries[0], category: categories[0], limit: 2, query: 'bitcoin' }).then((response) => {
       expect(response.data.length).toBe(2)
     })
   })
 
-  test('getHeadlines()', () => {
+  xtest('getHeadlines()', () => {
     getHeadlines({
       limit: 2,
       query: 'bitcoin'
@@ -19,7 +19,7 @@ describe('API.News', () => {
     })
   })
 
-  test('getHeadlines()', () => {
+  xtest('getHeadlines()', () => {
     getHeadlines({
       limit: 2
     }).then((response) => {
