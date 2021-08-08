@@ -49,7 +49,7 @@ const BulkTradeUI = () => {
 }
 
 const Products = () => {
-  const showHoldings = false
+  const showHoldings = true
   const [advert, setAdvert] = useState<any>(adverts[Math.floor(Math.random() * adverts.length)])
 
   useEffect(() => {
