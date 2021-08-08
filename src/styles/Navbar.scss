@@ -10,18 +10,13 @@ $breakpoint-mobile: 480px;
 
   @extend .flex-row;
   @extend .bg-blur;
+  
 
   justify-content: space-between;
   position: fixed;
   z-index: 10;
   color: red;
   width: calc(100vw);
-
-  padding: {
-    // left: .5rem;
-    // right: .5rem;
-    top: .5rem;
-  }
 
   height: 3rem;
   bottom: 0;
@@ -35,10 +30,10 @@ $breakpoint-mobile: 480px;
     cursor: pointer;
     color: $col-vision-blue;
     border-radius: 50%;
-    width: 3rem;
+    // width: 3rem;
     height: 3rem;
     margin-top: -0.75rem;
-    padding: 0.5rem;
+    // padding: 0.5rem;
 
     .label {
       display: none;
@@ -46,13 +41,14 @@ $breakpoint-mobile: 480px;
   }
 
   .normal-tab {
-    margin-top: 0.25rem;
+    // margin-top: 0.25rem;
     cursor: pointer;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding: 0.5rem;
-    width: 3rem;
+    // margin-left: 1rem;
+    // margin-right: 1rem;
+    // padding: 0.5rem;
+    width: 5rem;
     height: 3rem;
+
 
     .label {
       // display: none;
