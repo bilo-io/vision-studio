@@ -9,8 +9,20 @@ const staticOptions = {
   },
   chart: {
     renderTo: 'container',
-    type: 'spline',
-    backgroundColor: 'transparent'
+    type: 'candlestick',
+    backgroundColor: 'transparent',
+    gridLineWidth: 0
+    // colorAxis: [{
+    //   gridLineColor: 'transparent'
+    // }]
+  },
+  colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',
+    '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
+  colorCount: 2,
+  lineColor: '#ff0000',
+  plotOptions: {
+    candlestick: {
+    }
   }
 }
 

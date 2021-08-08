@@ -5,8 +5,8 @@ import { withCommas } from 'utils/format-number'
 import PieChart from 'components/Charts/PieChart'
 import Advert from 'components/Cards/Advert'
 import ActionSuggestions from 'components/Cards/ActionSuggestions'
-import Download from 'components/Download'
 import useWindowSize from 'hooks/use-window-size'
+import ProductCard from './ProductCard'
 
 const adverts = [
   {
@@ -41,26 +41,7 @@ const BulkTradeUI = () => {
     <div className={isMobile ? 'flex-col' : 'flex-row flex-wrap'}>
       {
         products.map((product: any, i: number) => (
-          <div key={i} className={`product-card ${isMobile ? 'mobile' : 'desktop'}`}>
-            {/* </div> style={{ background: `linear-gradient(to left, ${product?.color} 10%, #202020 100%)`}}> */}
-            <div className="flex-row">
-              <img src={product.icon} alt={product.code} style={{ width: '2rem', height: '2rem' }}/>
-              <div style={{ lineHeight: '2rem' }} className="flex-row">
-                <div style={{ width: '1rem' }} />
-                <div>
-                  {product.name}
-                </div>
-                <div style={{ width: '1rem' }} />
-
-                <Download preview hasIcon src={product?.whitepaper}>
-                    Whitepaper
-                </Download>
-              </div>
-            </div>
-            <div className="overflow-hidden">
-              <p>{product?.summary}</p>
-            </div>
-          </div>
+          <ProductCard key={i} product={product}/>
         ))
       }
     </div>
