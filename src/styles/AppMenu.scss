@@ -21,12 +21,14 @@
 
   &.dark {
     color: rgba(white, 0.5);
-    background: #111;
+    // background: #111;
+    background: $bg-gradient-dark;
   }
 
   &.light {
     color: rgba(black, 0.2);
-    background: #fefefe;
+    // background: #fefefe;
+    background: $bg-gradient-light;
   }
 
   &.hidden {

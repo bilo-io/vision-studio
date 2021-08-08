@@ -5,7 +5,8 @@
   padding: $padding;
   margin: $padding;
   border-radius: 8px;
-  background: linear-gradient(to left, $col-vision-dark, $col-vision-black);
+  // background: linear-gradient(to left, $col-vision-dark, $col-vision-black);
+  background: linear-gradient(to right, $col-card-gradient-start, $col-card-gradient-end);
 
   img {
     height: 3rem;
@@ -51,7 +52,7 @@
   margin: $padding;
   border-radius: 8px;
   min-height: 6rem;
-  background-color: #333;
+  background: $bg-gradient-card;
 }
 
 .portfolio-holdings {

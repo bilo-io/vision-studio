@@ -5,6 +5,16 @@ $col-vision-cyan: #0091ad;
 $col-vision-sky: #3ac9e6;
 $col-angelic-purple: #8e0ea4;
 
+$col-bg-gradient-start: #2F395C;
+$col-bg-gradient-end: #212A47;
+$col-card-gradient-start: #3D4C79;
+$col-card-gradient-end: #2F395C;
+
+$bg-gradient-card: linear-gradient(to bottom right, $col-card-gradient-start, $col-card-gradient-end);
+
+$bg-gradient-dark: linear-gradient(to bottom right, $col-bg-gradient-start, $col-bg-gradient-end);
+$bg-gradient-light: linear-gradient(to bottom right, #fff, $col-bg-gradient-start);
+
 $col-active: $col-vision-blue;
 $col-primary: $col-active;
 $col-secondary: #aaa;

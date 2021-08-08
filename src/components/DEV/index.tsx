@@ -21,7 +21,7 @@ function DEV ({ children, success, error, DEBUG }: { children?: any, success?: a
       {children}
 
       {
-        IS_DEV && (
+        IS_DEV && false && (
           <>
             {
               success && <div style={{ ...codeContainerStyle, ...colSuccess }}>

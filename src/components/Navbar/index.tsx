@@ -82,7 +82,7 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
         className={ item.main ? 'main-tab' : 'normal-tab'}
         // className={ item.main ? 'normal-tab' : 'normal-tab'}
       >
-        <div className={isMobile ? 'flex-col' : 'flex-row'}>
+        <div className={`${isMobile ? 'flex-col' : 'flex-row padded'}`}>
           {
             item.main
               ? (
@@ -97,7 +97,9 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
               )
               : (
 
-                <FAIcon name={item.icon} style={{ color }} />
+                <div style={{ width: 'fit-content', margin: 'auto' }}>
+                  <FAIcon name={item.icon} style={{ color }} />
+                </div>
               )
           }
           <div style={{ color }} className="label">{item.name}</div>

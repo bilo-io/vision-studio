@@ -20,7 +20,8 @@
 }
 
 body {
-  background-color: $col-vision-black;
+  // background-color: $col-vision-black;
+  background: linear-gradient(to bottom right, $col-bg-gradient-start, $col-bg-gradient-end);
   color: #eee;
   font-family:
     -apple-system,
@@ -41,7 +42,8 @@ body {
   width: 100vw;
   height: calc(100vh - 4rem);
   overflow-y: auto;
-  background-color: $col-vision-black;
+  // background-color: $col-vision-black;
+  background-color: transparent;
   color: #eee;
   padding-bottom: 4rem;
 }
