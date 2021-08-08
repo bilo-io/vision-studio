@@ -52,13 +52,15 @@
   border-radius: 8px;
   min-height: 6rem;
   background: $bg-gradient-card;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &.mobile {
     width: calc(100% - 4 * #{$padding});
   }
 
   &.desktop {
-    width: 22rem;
+    width: 18rem;
     padding: 1rem;
     height: 16rem;
   }

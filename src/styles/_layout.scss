@@ -39,6 +39,11 @@
   }
 }
 
+.overflow-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .auto-scroll-y {
   overflow: hidden;
 

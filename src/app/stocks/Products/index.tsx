@@ -57,7 +57,7 @@ const BulkTradeUI = () => {
                 </Download>
               </div>
             </div>
-            <div>
+            <div className="overflow-hidden">
               <p>{product?.summary}</p>
             </div>
           </div>
