@@ -1,4 +1,6 @@
 ignore:
+  - "src/app/**/*.tsx"
+  - "src/app/**/*.ts"
   - "src/App.tsx"
   - "src/index.tsx"
   - "src/serviceWorker.ts"

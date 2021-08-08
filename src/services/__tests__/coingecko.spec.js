@@ -6,7 +6,7 @@ import { fetchCoins, fetchChartData, fetchMarkets } from '../coingecko'
 describe('API.Coingecko', () => {
   test('fetchCoins()', () => {
     fetchCoins().then((response) => {
-      expect(response.data.length).toBe(0)
+      expect(response.data.length).toBe(100)
     })
   })
 
