@@ -62,7 +62,7 @@
   &.desktop {
     width: 18rem;
     padding: 1rem;
-    height: 16rem;
+    min-height: 6rem;
   }
 }
 
@@ -74,11 +74,15 @@
   top: 0;
   left: 0;
   z-index: 5;
-  width: calc(100vw - 2 * #{$padding});
+  width: calc(100% - 2 * #{$padding});
   height: 12rem;
   padding: $padding;
   background: #1118;
   backdrop-filter: blur(7px);
   color: white;
   overflow: hidden;
+
+  &.mobile {
+    position: fixed;
+  }
 }

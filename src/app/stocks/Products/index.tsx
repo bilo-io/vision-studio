@@ -51,6 +51,8 @@ const BulkTradeUI = () => {
 const Products = () => {
   const showHoldings = true
   const [advert, setAdvert] = useState<any>(adverts[Math.floor(Math.random() * adverts.length)])
+  const windowSize = useWindowSize()
+  const isMobile = windowSize?.width && windowSize?.width < 480
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -94,7 +96,8 @@ const Products = () => {
   }
 
   const ProductsSummary = ({ data }: { data: any }) => (
-    <div className="portfolio-holdings">
+    <div className={`portfolio-holdings ${isMobile ? 'mobile' : ''}`
+    }>
       <div className="text-center"
         style={{
           fontSize: '1.5rem',
