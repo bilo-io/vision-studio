@@ -9,5 +9,9 @@ export default {
   website: 'https://neo.org/',
   youtube: 'https://www.youtube.com/watch?v=0auaegni1kU',
   color: '#58BF00',
-  icon
+  icon,
+  summary: `
+    NEO is a next generation smart economy platform (formerly Antshares) and China's first open source blockchain that was founded in 2014, is often known as the “Ethereum of China”.
+    NEO uses a smart economy approach to implement its distributed network concept. Its main objective is to digitize assets using the decentralized network of blockchain technology and digital identity.
+  `
 }

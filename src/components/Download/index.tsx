@@ -1,12 +1,15 @@
 import React from 'react'
 import FAIcon from 'react-fontawesome'
 
-const Download = ({ src, children, hasIcon }: { src: any; children: any, hasIcon?: boolean }) => {
+const Download = ({ src, children, hasIcon, preview }: { src: any; children: any, hasIcon?: boolean, preview?: boolean }) => {
   return (
-    <a href={src} download>
-      {hasIcon && <FAIcon name='download-alt' />}
-      {children}
-    </a>
+    <div>
+
+      <a href={src} download={preview === false} target="_blank" rel="noreferrer">
+        {hasIcon && <FAIcon name='download' />}
+        {children}
+      </a>
+    </div>
   )
 }
 

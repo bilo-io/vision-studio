@@ -11,6 +11,7 @@ import ETH from './ETH'
 import FIL from './FIL'
 import IOST from './IOST'
 import LN from './LN'
+import LTC from './LTC'
 import LSK from './LSK'
 import MATIC from './MATIC'
 import MKR from './MKR'
@@ -37,6 +38,7 @@ const coins = {
   DOGE,
   NEO,
   LN,
+  LTC,
   TRX,
   USDC,
   USDT,

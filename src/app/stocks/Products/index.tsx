@@ -5,6 +5,7 @@ import { withCommas } from 'utils/format-number'
 import PieChart from 'components/Charts/PieChart'
 import Advert from 'components/Cards/Advert'
 import ActionSuggestions from 'components/Cards/ActionSuggestions'
+import Download from 'components/Download'
 
 const adverts = [
   {
@@ -40,10 +41,20 @@ const BulkTradeUI = () => {
             {/* </div> style={{ background: `linear-gradient(to left, ${product?.color} 10%, #202020 100%)`}}> */}
             <div className="flex-row">
               <img src={product.icon} alt={product.code} style={{ width: '2rem', height: '2rem' }}/>
-              <div style={{ lineHeight: '2rem' }}>{product.name}</div>
-              {/* <Download hasIcon src={product?.}>
-                                Whitepaper
-                            </Download> */}
+              <div style={{ lineHeight: '2rem' }} className="flex-row">
+                <div style={{ width: '1rem' }} />
+                <div>
+                  {product.name}
+                </div>
+                <div style={{ width: '1rem' }} />
+
+                <Download preview hasIcon src={product?.whitepaper}>
+                    Whitepaper
+                </Download>
+              </div>
+            </div>
+            <div>
+              <p>{product?.summary}</p>
             </div>
           </div>
         ))
