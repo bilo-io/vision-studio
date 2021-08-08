@@ -31,7 +31,7 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
 
   const updateNavFromPath = () => {
     const path = history?.location?.pathname
-    const appName = path.split('/')[1]
+    const appName = path?.split('/')[1]
 
     setActivePath(path)
 
@@ -82,7 +82,7 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
         className={ item.main ? 'main-tab' : 'normal-tab'}
         // className={ item.main ? 'normal-tab' : 'normal-tab'}
       >
-        <div className={`${isMobile ? 'flex-col' : 'flex-row padded'}`}>
+        <div className={`${isMobile ? 'flex-col padded' : 'flex-row'}`}>
           {
             item.main
               ? (

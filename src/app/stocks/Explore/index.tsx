@@ -58,7 +58,7 @@ function Explore () {
           />
         </div>
 
-        <div style={{ marginTop: '6rem' }} />
+        <div style={{ marginTop: '4rem' }} className="padded" />
         {
           filteredCoins.map((coin) => (
             <>
@@ -66,7 +66,7 @@ function Explore () {
                 key={coin.id}
                 item={coin}
                 currency={currency}
-                onClick={(coin: any) => history.push(`/explore/${coin?.id}`)}
+                onClick={(coin: any) => history.push(`/stocks/explore/${coin?.id}`)}
               />
 
               <DEV

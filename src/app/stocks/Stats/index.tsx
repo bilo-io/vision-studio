@@ -1,14 +1,15 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /* eslint-disable react/display-name */
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router'
+import { useLocation, useParams } from 'react-router'
 import FAIcon from 'react-fontawesome'
 import { LineChart } from 'components/Charts/LineChart'
 import { fetchChartData, fetchCoins } from 'services/coingecko'
 import Async from 'components/Async'
 import Accordion from 'components/Accordion'
 import Table from 'components/Table'
-import coins, { keys } from 'assets/crypto'
+import coins, { keys, getCodeForId } from 'assets/crypto'
 // import { colors } from 'components/Charts/utils/colors'
 import Header from 'components/Table/Header'
 import PriceChange from 'components/PriceChange'
@@ -18,6 +19,7 @@ function Stats () {
   // #region STATE
   // eslint-disable-next-line no-unused-vars
   const location = useLocation()
+  const { id } = useParams()
   const [error, setError] = useState<any>(null)
   const [activeKeys, setActiveKeys] = useState<string[]>(['DOGE', 'TRX'])
 
@@ -86,7 +88,7 @@ function Stats () {
       .catch(handleError)
   }
 
-  const fetchChartDataRoutine = (currency = 'usd', period = { label: 'W', days: 7 }, coins = ['BTC']) => {
+  const fetchChartDataRoutine = (currency = 'usd', period = { label: 'W', days: 7 }, coins = [getCodeForId(id)]) => {
     const { charts } = state
     setState((prevState: any) => ({
       ...prevState,
@@ -169,21 +171,24 @@ function Stats () {
     }
   }
 
-  const generateSeries = (data: any, key: string, i: number) => ({
-    data,
-    name: key,
-    type: 'area',
-    // @ts-ignore
-    color: coins?.[key]?.color,
-    fillColor: {
-      linearGradient: [0, 0, 0, 300],
-      stops: [
-        // @ts-ignore
-        [0, coins?.[key]?.color],
-        [1, 'rgba(0,0,0,0)']
-      ]
+  const generateSeries = (data: any, key: string, i: number) => {
+    console.log(`${key}: generateSeries`)
+    return {
+      data,
+      name: key,
+      type: 'area',
+      // @ts-ignore
+      color: coins?.[key]?.color,
+      fillColor: {
+        linearGradient: [0, 0, 0, 300],
+        stops: [
+          // @ts-ignore
+          [0, coins?.[key]?.color],
+          [1, 'rgba(0,0,0,0)']
+        ]
+      }
     }
-  })
+  }
   const toggleCoin = (key: string) => () => toggleKey(key)
   // #endregion
 

@@ -64,4 +64,12 @@ export const exludedCoins = {
 
 export const keys = Object.keys(coins)
 
+export const getIdForCode = (code: string) => {
+  return coins?.[code]?.id
+}
+
+export const getCodeForId = (id: string) => {
+  return keys.filter((code) => id === coins?.[code]?.id)?.[0]
+}
+
 export default coins

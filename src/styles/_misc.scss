@@ -233,14 +233,18 @@ input {
   border: 1px solid #ddd;
   // background-color: transparent;
   padding: 0.5rem;
-  border-radius: 6px;
-  color: #666 !important;
+  border-radius: 2rem;
+  color: $col-white !important;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  height: 1.5rem;
   outline: none;
-  border-color: rgba(#999, 0.5);
+  border: 4px solid transparent;
   text-indent: 0.5rem;
+  background-color: rgba($col-card-gradient-start, 0.5);
 
   &:focus {
-    border: 2px solid $col-active;
+    border: 4px solid $col-active;
   }
 
   &.full-width {

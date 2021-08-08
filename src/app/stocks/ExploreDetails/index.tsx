@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { LineChart } from 'components/Charts/LineChart'
@@ -7,11 +8,12 @@ import FAIcon from 'react-fontawesome'
 import Async from 'components/Async'
 import Accordion from 'components/Accordion'
 import HTML from 'components/HTML'
+import coins, { getCodeForId, getIdForCode, keys } from 'assets/crypto'
 
 function ExploreDetails ({ storybook }: { storybook: any }) {
   // const history = useHistory();
   // @ts-ignore
-  let { id } = useParams?.()
+  let { id } = useParams()
   if (!id) { id = storybook.id }
 
   const [loading, setLoading] = useState<boolean>(true)
@@ -47,6 +49,24 @@ function ExploreDetails ({ storybook }: { storybook: any }) {
       .finally(() => {
         setLoading(false)
       })
+  }
+  const generateSeries = (data: any, key: string, i: number) => {
+    console.log(`${getIdForCode(key)}: generateSeries`)
+    return {
+      data,
+      name: key,
+      type: 'area',
+      // @ts-ignore
+      color: coins?.[key]?.color,
+      fillColor: {
+        linearGradient: [0, 0, 0, 300],
+        stops: [
+          // @ts-ignore
+          [0, coins?.[key]?.color],
+          [1, 'rgba(0,0,0,0)']
+        ]
+      }
+    }
   }
   // #endregion
 
@@ -94,7 +114,7 @@ function ExploreDetails ({ storybook }: { storybook: any }) {
           <LineChart
             title=""
             data={state?.chart}
-            series={[{ data: state?.chart || [] }]}
+            series={[generateSeries(state?.chart || [], getCodeForId(id), 0)]}
             period={state?.period}
             onChangeRange={ (period: any) =>
               fetchChart({ id, currency: state?.currency, days: period?.days })

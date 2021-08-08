@@ -18,7 +18,7 @@ function StocksRouter () {
         render={() => <Redirect to={`${scopeRoot}/stats`} />}
       />
       <Route path={`${scopeRoot}/products`} component={Products} />
-      <Route path={`${scopeRoot}/explore`} component={Explore} />
+      <Route exact path={`${scopeRoot}/explore`} component={Explore} />
       <Route path={`${scopeRoot}/explore/:id`} component={ExploreDetails} />
       <Route path={`${scopeRoot}/stats`} component={Stats} />
       <Route path={`${scopeRoot}/news`} component={News} />

@@ -2,6 +2,14 @@ import React from 'react'
 import clsx from 'clsx'
 import { useTable, useExpanded } from 'react-table'
 
+interface TableStyles {
+  th?: any;
+  td?: any;
+  tr?: any;
+  table?: any;
+  thead?: any;
+}
+
 export const AdvancedTable = ({
   data,
   columns,
@@ -9,7 +17,8 @@ export const AdvancedTable = ({
   onClickRow,
   renderRowSubComponent,
   noDataMessage,
-  serverErrorMessage
+  serverErrorMessage,
+  styles
 }: {
     data: any[];
     columns: any[];
@@ -19,6 +28,7 @@ export const AdvancedTable = ({
     renderRowSubComponent?: Function | null;
     noDataMessage?: string;
     serverErrorMessage?: any;
+    styles?: TableStyles;
 }) => {
   const {
     getTableProps,
@@ -42,27 +52,32 @@ export const AdvancedTable = ({
 
   return (
     <div className="w-full relative auto-scroll-x no-scrollbar">
-      <div>
+      <div className="overflow-x-auto h-full">
         <table
           {...getTableProps()}
-          className="w-full table-fixed border-separate"
+          // className={`w-full table-fixed border-separate ${styles?.table}`}
+          className={clsx(`w-full border-separate table-fixed  ${styles?.table}`, {
+            'pb-20': padded
+          })}
           style={{
             width: '100%',
-            // borderSpacing: '0px 4px',
-            tableLayout: 'fixed',
-            borderCollapse: 'separate'
+            borderSpacing: '0px 4px'
           }}
         >
-          <thead className="rounded-lg">
+          <thead className={`rounded-lg ${styles?.thead}`}>
             {headerGroups.map((headerGroup, h) => (
               <tr {...headerGroup.getHeaderGroupProps()}
-                key={h}>
+                key={h}
+                className={ `${styles?.tr}`}
+              >
                 {headerGroup.headers.map((column, i) => (
                   <th
                     {...column.getHeaderProps()}
                     key={i}
                     style={{
-                      textAlign: 'left'
+                      textAlign: 'center',
+                      width: '100%',
+                      paddingLeft: '1rem'
                     }}
                     className={clsx(
                       '',
@@ -79,19 +94,7 @@ export const AdvancedTable = ({
               </tr>
             ))}
           </thead>
-        </table>
-      </div>
 
-      <div className="overflow-x-auto h-full">
-        <table
-          className={clsx('w-full border-separate table-fixed', {
-            'pb-20': padded
-          })}
-          style={{
-            width: '100%',
-            borderSpacing: '0px 4px'
-          }}
-        >
           <tbody {...getTableBodyProps()}>
             {rows.length <= 0 && (
               <tr className="mt-4 w-full text-center">
