@@ -8,6 +8,9 @@ const staticOptions = {
     text: 'CandleStickChart'
   },
   chart: {
+    renderTo: 'container',
+    type: 'spline',
+    backgroundColor: 'transparent'
   }
 }
 

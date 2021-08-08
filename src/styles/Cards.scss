@@ -47,12 +47,21 @@
 .product-card {
   $padding: 0.5rem;
 
-  width: calc(100% - 4 * #{$padding});
   padding: $padding;
   margin: $padding;
   border-radius: 8px;
   min-height: 6rem;
   background: $bg-gradient-card;
+
+  &.mobile {
+    width: calc(100% - 4 * #{$padding});
+  }
+
+  &.desktop {
+    width: 22rem;
+    padding: 1rem;
+    height: 16rem;
+  }
 }
 
 .portfolio-holdings {

@@ -6,6 +6,7 @@ import PieChart from 'components/Charts/PieChart'
 import Advert from 'components/Cards/Advert'
 import ActionSuggestions from 'components/Cards/ActionSuggestions'
 import Download from 'components/Download'
+import useWindowSize from 'hooks/use-window-size'
 
 const adverts = [
   {
@@ -31,13 +32,16 @@ const adverts = [
 ]
 
 const BulkTradeUI = () => {
+  const windowSize = useWindowSize()
+  const isMobile = windowSize?.width && windowSize?.width < 480
+
   // @ts-ignore
   const products = Object.keys(cryptoData).map(code => ({ code, ...cryptoData[code] }))
   return (
-    <div>
+    <div className={isMobile ? 'flex-col' : 'flex-row flex-wrap'}>
       {
         products.map((product: any, i: number) => (
-          <div key={i} className="product-card">
+          <div key={i} className={`product-card ${isMobile ? 'mobile' : 'desktop'}`}>
             {/* </div> style={{ background: `linear-gradient(to left, ${product?.color} 10%, #202020 100%)`}}> */}
             <div className="flex-row">
               <img src={product.icon} alt={product.code} style={{ width: '2rem', height: '2rem' }}/>
