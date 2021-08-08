@@ -15,7 +15,6 @@ import LTC from './LTC'
 import LSK from './LSK'
 import MATIC from './MATIC'
 import MKR from './MKR'
-import MONERO from './MONERO'
 import NEO from './NEO'
 import ONT from './ONT'
 import QTUM from './QTUM'
@@ -47,7 +46,6 @@ const coins = {
   VET,
   XMR,
   THETA,
-  MONERO,
   MKR,
   MATIC,
   FIL,

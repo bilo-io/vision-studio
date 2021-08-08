@@ -124,7 +124,9 @@ const Products = () => {
 
       <ActionSuggestions userState={userState} />
 
-      <BulkTradeUI />
+      <div style={{ width: 'fit-content', margin: 'auto' }}>
+        <BulkTradeUI />
+      </div>
     </>
   )
 }
