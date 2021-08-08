@@ -8,7 +8,7 @@ export default {
   symbol: '₮',
   website: 'https://basicattentiontoken.org/',
   whitepaper: null,
-  whitepaperUrl: '',
+  whitepaperUrl: 'https://basicattentiontoken.org/static-assets/documents/BasicAttentionTokenWhitePaper-4.pdf',
   youtube: 'https://www.youtube.com/watch?v=yKAJDZ92PeU',
   summary: 'A very common question when it comes to Basic Attention Token (BAT) is: “Why would Brave Browser need a token (BAT) for this?”. And the answer lies within Brave’s unusual, yet respectful approach to digital advertising. Brave’s advertisements are privacy centric (does not track the user), and are opt-in only (you only see it if you choose to). ',
   color: '#FF5000',

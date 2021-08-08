@@ -27,6 +27,7 @@ export function Line () {
 }
 
 export function Pie () {
+  // eslint-disable-next-line no-unused-vars
   const [pieData, setData] = useState<any[]>(
     [
       {
@@ -49,16 +50,16 @@ export function Pie () {
       }
     ]
   )
-  useEffect(() => {
-    axios.get('https://demo-live-data.highcharts.com/aapl-ohlc.json')
-      .then(response => {
-        setData(response.data)
-      })
-  }, [])
+  // useEffect(() => {
+  //   axios.get('https://demo-live-data.highcharts.com/aapl-ohlc.json')
+  //     .then(response => {
+  //       setData(response.data)
+  //     })
+  // }, [])
   return (
     <>
       <div>
-        <PieChart data={pieData} title="PieChart Story" isLoading={ false } selector="value"/>
+        <PieChart data={pieData} title="PieChart Story" isLoading={ false } selector="amount"/>
       </div>
     </>
   )

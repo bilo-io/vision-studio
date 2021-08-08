@@ -13,6 +13,13 @@
   display: none;
 }
 
+.pointer {
+  cursor: pointer;
+  &:hover {
+    color: $col-active;
+  }
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -37,6 +44,11 @@
   &:hover {
     overflow-x: auto;
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .auto-scroll-y {

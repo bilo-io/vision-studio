@@ -26,7 +26,7 @@ describe('API.Coingecko', () => {
 
   test('fetchMarkets(\'usd\')', () => {
     fetchMarkets({ currencyCode: 'usd' }).then((response) => {
-      expect(response.data.length).toBe(0)
+      expect(response.data.length).toBe(100)
     })
   })
 })

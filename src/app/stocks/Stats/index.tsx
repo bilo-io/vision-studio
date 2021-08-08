@@ -21,7 +21,7 @@ function Stats () {
   const location = useLocation()
   const { id } = useParams()
   const [error, setError] = useState<any>(null)
-  const [activeKeys, setActiveKeys] = useState<string[]>(['DOGE', 'TRX'])
+  const [activeKeys, setActiveKeys] = useState<string[]>(['NEO', 'LN', 'LTC', 'TRX', 'FTT', 'MATIC'])
 
   const windowSize = useWindowSize()
   const isMobile = windowSize?.width && windowSize?.width < 480
@@ -172,7 +172,6 @@ function Stats () {
   }
 
   const generateSeries = (data: any, key: string, i: number) => {
-    console.log(`${key}: generateSeries`)
     return {
       data,
       name: key,
@@ -492,7 +491,7 @@ function Stats () {
           <FAIcon name="chart-line" />
           <div style={{ marginLeft: '1rem' }}>Total Volume</div>
         </div>
-      } isOpenDefault={false}>
+      } isOpenDefault>
         <Async loading>
           <LineChart
             data={[]}
@@ -508,7 +507,7 @@ function Stats () {
         <div className="flex-row space-between">
           <div><FAIcon name="chart-line" /></div>
           <div style={{ marginLeft: '1rem' }}>Market cap</div>
-        </div>} isOpenDefault={false}>
+        </div>} isOpenDefault>
         <Async loading>
           <LineChart
             data={[]}
@@ -532,9 +531,9 @@ function Stats () {
         />
       </Accordion>
 
-      <div>
+      {/* <div>
         {error && JSON.stringify(error)}
-      </div>
+      </div> */}
     </div>
   )
 }

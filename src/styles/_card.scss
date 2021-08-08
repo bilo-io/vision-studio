@@ -45,7 +45,7 @@ $stack-shadow: 0 -2px 10px 1px rgba(50, 50, 50, 0.5);
     }
 
     box-shadow: $stack-shadow;
-    background-color: #fff;
+    background-color: inherit;
   }
 
   .stack {

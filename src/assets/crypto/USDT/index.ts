@@ -7,6 +7,7 @@ export default {
   id: 'tether',
   name: 'Tether',
   code: 'USDT',
+  compound: 'CUSDT',
   symbol: '₮',
   website: '',
   youtube: '',
