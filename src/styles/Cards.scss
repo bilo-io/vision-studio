@@ -50,7 +50,7 @@
   padding: $padding;
   margin: $padding;
   border-radius: 8px;
-  min-height: 6rem;
+  min-height: 4rem;
   background: $bg-gradient-card;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -61,8 +61,49 @@
 
   &.desktop {
     width: 18rem;
-    padding: 1rem;
-    min-height: 6rem;
+    // min-height: 6rem;
+
+    padding: {
+      left: 1rem;
+      right: 1rem;
+      top: .5rem;
+      bottom: .5rem;
+    }
+  }
+
+  .trade-types {
+    @extend .flex-row;
+    @extend .space-between;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: #00adee55;
+
+    .item {
+      // background-color: #00adee55;
+      border-radius: 3rem;
+      line-height: 3rem;
+
+      padding: {
+        left: 1rem;
+        right: 1rem
+      }
+
+      ;
+
+      // color: $col-active;
+      &.active {
+        background-color: $col-active;
+        color: white;
+      }
+    }
+  }
+
+  .trade-input {
+    width: calc(100% - 2rem);
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 3rem;
+    margin-top: 0.5rem;
   }
 }
 

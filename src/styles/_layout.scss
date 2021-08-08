@@ -13,6 +13,13 @@
   display: none;
 }
 
+.pointer {
+  cursor: pointer;
+  &:hover {
+    color: $col-active;
+  }
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
