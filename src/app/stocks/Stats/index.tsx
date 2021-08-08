@@ -21,7 +21,7 @@ function Stats () {
   const location = useLocation()
   const { id } = useParams()
   const [error, setError] = useState<any>(null)
-  const [activeKeys, setActiveKeys] = useState<string[]>(['NEO', 'LN', 'LTC', 'TRX', 'FIL', 'MATIC'])
+  const [activeKeys, setActiveKeys] = useState<string[]>(['NEO', 'LN', 'LTC', 'TRX', 'FTT', 'MATIC'])
 
   const windowSize = useWindowSize()
   const isMobile = windowSize?.width && windowSize?.width < 480
@@ -172,7 +172,6 @@ function Stats () {
   }
 
   const generateSeries = (data: any, key: string, i: number) => {
-    console.log(`${key}: generateSeries`)
     return {
       data,
       name: key,

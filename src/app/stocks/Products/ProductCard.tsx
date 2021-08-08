@@ -1,11 +1,14 @@
+/* eslint-disable no-debugger */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import FAIcon from 'react-fontawesome'
 import Download from 'components/Download'
 import LineChart from 'components/Charts/LineChart'
-import { fetchChartData } from 'services/coingecko'
+import { fetchChartData, fetchCoins } from 'services/coingecko'
 // import { currency, language } from 'utils/locale'
 import coins, { getCodeForId, getIdForCode } from 'assets/crypto'
 import Async from 'components/Async'
+import { withCommas } from 'utils/format-number'
 
 type TabType = 'info' | 'chart' | 'trade' | null | undefined
 type TradeType = 'buy' | 'sell' | null | undefined
@@ -15,6 +18,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
   const [tradeType, setTradeType] = useState<TradeType>(defaultTradeType)
   const [loading, setLoading] = useState<boolean>(true)
   const [, setError] = useState<any>()
+  const [coinData, setCoinData] = useState<any>(null)
   const [state, setState] = useState<any>({
     currency: 'usd',
     period: {
@@ -27,6 +31,24 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
   // #region FUNCTIONS
   const setOrDeactivateTab = (value: TabType) => {
     setTab(tab === value ? null : value)
+
+    // debugger
+    if (value === 'trade' && coinData === null) {
+      console.log('here')
+      fetchCoins(product?.id)
+        // @ts-ignore
+        .then((response: any) => {
+          setCoinData(response?.data)
+          // console.log(here)
+          console.log(response?.data?.market_data, response?.data?.market_data?.current_price?.usd)
+        })
+        .catch(error => {
+          setError(error)
+        })
+        .finally(() => {
+          setLoading(false)
+        })
+    }
   }
 
   const fetchChart = (period: any) => {
@@ -51,7 +73,6 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
       })
   }
   const generateSeries = (data: any, key: string, i: number) => {
-    console.log(`${getIdForCode(key)}: generateSeries`)
     return {
       data,
       name: key,
@@ -72,8 +93,10 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
 
   // #region LIFECYCLE
   useEffect(() => {
-    fetchChart(state?.period)
-  }, [state?.period])
+    if (tab === 'chart') {
+      fetchChart(state?.period)
+    }
+  }, [state?.period, tab])
   // #endregion
   return (
     <div>
@@ -83,13 +106,13 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
           <img src={product?.icon} alt={product?.code} style={{ width: '1.5rem', height: '1.5rem' }}/>
           <div style={{ lineHeight: '1.5rem' }} className="flex-row space-between full-width">
             <div className="flex-row">
-              <div style={{ marginRight: '1rem' }} />
+              <div style={{ marginRight: '.5rem' }} />
               <div>
                 {product.name}
               </div>
             </div>
 
-            <Download preview hasIcon iconRight src={product?.whitepaper}>
+            <Download preview hasIcon iconRight src={product?.whitepaper || product?.whitepaperUrl}>
             Paper
             </Download>
           </div>
@@ -112,8 +135,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
           !!tab && (
             <>
               <br />
-              <div className='divider horizontal' />
-              <br />
+              <div className='divider horizontal' style={{ marginBottom: '.5rem' }}/>
             </>
           )}
         {/* ACTIVE TAB */}
@@ -142,16 +164,23 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
         {
           tab === 'trade' && (
             <div style={{ paddingBottom: '.5rem' }}>
+              <div style={{
+                opacity: 0.5,
+                marginLeft: '.5rem',
+                margin: 'auto',
+                width: 'fit-content',
+                marginBottom: '.5rem'
+              }}>( 1 {product?.code} ≈ ${ withCommas(coinData?.market_data?.current_price?.usd || 0)})</div>
               {
                 <div className="trade-types">
                   <div
                     onClick={() => setTradeType('buy')}
-                    className={`item ${tradeType === 'buy' ? 'active' : ''}`}>
+                    className={`pointer item ${tradeType === 'buy' ? 'active' : ''}`}>
                       Buy
                   </div>
                   <div
                     onClick={() => setTradeType('sell')}
-                    className={`item ${tradeType === 'sell' ? 'active' : ''}`}>
+                    className={`pointer item ${tradeType === 'sell' ? 'active' : ''}`}>
                       Sell
                   </div>
                 </div>
@@ -159,10 +188,13 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
               {
                 tradeType !== null && (
                   <>
-                    <div className="text-center" style={{ marginTop: '.5rem' }}>
+                    <div className="text-center" style={{ marginTop: '.5rem', marginBottom: '.25rem' }}>
                       {tradeType === 'buy' ? 'using' : 'for'}
                     </div>
-                    <input className="trade-input" type="number" placeholder="0.00"/>
+                    <div className="trade-types flex-row space-between">
+                      <div className="item active pointer" style={{ marginRight: '.5rem' }}>USD</div>
+                      <input className="trade-input" type="number" placeholder="0.00" />
+                    </div>
                   </>
                 )
               }

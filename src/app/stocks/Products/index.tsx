@@ -42,7 +42,7 @@ const BulkTradeUI = () => {
       {
         products.map((product: any, i: number) => (
           <>
-            <ProductCard key={i} product={product} defaultTab='chart' />
+            <ProductCard key={i} product={product} defaultTab={null} />
             {isMobile && i < products?.length - 1 && (
               <div className="padded">
                 <div className="divider horizontal" />

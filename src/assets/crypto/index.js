@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
 import ADA from './ADA'
 import BAT from './BAT'
@@ -8,7 +9,9 @@ import DAI from './DAI'
 import DOGE from './DOGE'
 import ETC from './ETC'
 import ETH from './ETH'
+import EOS from './EOS'
 import FIL from './FIL'
+import FTT from './FTT'
 import IOST from './IOST'
 import LN from './LN'
 import LTC from './LTC'
@@ -31,25 +34,27 @@ import ZEC from './ZEC'
 const coins = {
   BTC,
   ETH,
-  ADA,
-  BAT,
-  BNB,
-  DOGE,
-  NEO,
-  LN,
-  LTC,
-  TRX,
-  USDC,
-  USDT,
-  XLM,
-  XRP,
-  VET,
-  XMR,
-  THETA,
-  MKR,
-  MATIC,
-  FIL,
-  DAI
+  FTT,
+  // ADA,
+  // BAT,
+  // BNB,
+  DOGE
+  // NEO,
+  // EOS,
+  // LN,
+  // LTC,
+  // TRX,
+  // USDC,
+  // USDT,
+  // XLM,
+  // XRP,
+  // VET,
+  // XMR,
+  // THETA,
+  // MKR,
+  // MATIC,
+  // FIL,
+  // DAI
 }
 
 export const exludedCoins = {
