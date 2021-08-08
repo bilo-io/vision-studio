@@ -56,7 +56,8 @@ const BulkTradeUI = () => {
 }
 
 const Products = () => {
-  const showHoldings = false
+  const showHoldings = true
+  const showGraph = false
   const [advert, setAdvert] = useState<any>(adverts[Math.floor(Math.random() * adverts.length)])
   const windowSize = useWindowSize()
   const isMobile = windowSize?.width && windowSize?.width < 480
@@ -102,7 +103,7 @@ const Products = () => {
     ]
   }
 
-  const ProductsSummary = ({ data }: { data: any }) => (
+  const ProductsSummary = ({ data, showGraph }: { data: any, showGraph?: boolean }) => (
     <div className={`portfolio-holdings ${isMobile ? 'mobile' : ''}`
     }>
       <div className="text-center"
@@ -112,20 +113,23 @@ const Products = () => {
         }}>
         {currency?.symbol}{withCommas(data?.totalAmount)}
       </div>
-      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', margin: 'auto', marginTop: '-6rem' }}>
-        <PieChart selector={'amount'} data={portfolio.breakdown} isLoading={false} title=""/>
-      </div>
+      {
+        showGraph && (
+          <div style={{ position: 'relative', overflow: 'hidden', width: '100%', margin: 'auto', marginTop: '-6rem' }}>
+            <PieChart selector={'amount'} data={portfolio.breakdown} isLoading={false} title="" />
+          </div>
+        )}
     </div>
   )
   return (
     <>
 
-      {showHoldings && userState.hasHoldings && <ProductsSummary data={portfolio} />}
+      {showHoldings && userState.hasHoldings && <ProductsSummary data={portfolio} showGraph={showGraph} />}
 
       {
         userState.hasHoldings
           ? (
-            showHoldings && <div style={{ paddingTop: '14rem' }} />
+            showHoldings && <div style={{ paddingTop: showGraph ? '14rem' : '8rem' }} />
           )
           : (
             <Advert item={advert} />

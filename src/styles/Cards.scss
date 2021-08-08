@@ -116,10 +116,13 @@
   left: 0;
   z-index: 5;
   width: calc(100% - 2 * #{$padding});
-  height: 12rem;
+  min-height: 4rem;
+  max-height: 12rem;
   padding: $padding;
-  background: #1118;
-  backdrop-filter: blur(7px);
+  // background: rgba($col-card-gradient-start, 0.5);
+  // background: rgba(transparent, 0.5);
+  background: transparent;
+  backdrop-filter: blur(9px);
   color: white;
   overflow: hidden;
 
