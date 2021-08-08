@@ -1,5 +1,5 @@
 import React from 'react'
-import appIcon from 'assets/img/hydra-icon.png'
+import appIcon from 'assets/vision-logo.png'
 
 export function Login () {
   const authProviders = [
