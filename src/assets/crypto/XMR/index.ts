@@ -2,7 +2,7 @@
 import icon from './XMR-icon.svg'
 
 export default {
-  id: 'xmr',
+  id: 'monero',
   name: 'Monero',
   code: 'XMR',
   symbol: 'XMR',

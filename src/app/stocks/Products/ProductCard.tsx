@@ -1,22 +1,87 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FAIcon from 'react-fontawesome'
 import Download from 'components/Download'
+import LineChart from 'components/Charts/LineChart'
+import { fetchChartData } from 'services/coingecko'
+// import { currency, language } from 'utils/locale'
+import coins, { getCodeForId, getIdForCode } from 'assets/crypto'
+import Async from 'components/Async'
 
-const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { product: any; isMobile?: boolean, defaultTradeType?: boolean, defaultTab?: boolean }) => {
-  const [tab, setTab] = useState<string | null>(defaultTab)
-  const [tradeType, setTradeType] = useState<'buy' | 'sell' | null>(defaultTradeType)
+type TabType = 'info' | 'chart' | 'trade' | null | undefined
+type TradeType = 'buy' | 'sell' | null | undefined
 
-  const setOrDeactivateTab = (value: string) => {
+const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { product: any; isMobile?: boolean, defaultTradeType?: TradeType, defaultTab?: TabType }) => {
+  const [tab, setTab] = useState<TabType>(defaultTab)
+  const [tradeType, setTradeType] = useState<TradeType>(defaultTradeType)
+  const [loading, setLoading] = useState<boolean>(true)
+  const [, setError] = useState<any>()
+  const [state, setState] = useState<any>({
+    currency: 'usd',
+    period: {
+      days: 7,
+      label: 'W'
+    },
+    chart: []
+  })
+
+  // #region FUNCTIONS
+  const setOrDeactivateTab = (value: TabType) => {
     setTab(tab === value ? null : value)
   }
 
+  const fetchChart = (period: any) => {
+    // setLoading(true);
+    setState((prevState: any) => ({
+      ...prevState,
+      period
+    }))
+
+    fetchChartData({ id: product?.id, currency: state?.currency, days: period?.days })
+      .then((response) => {
+        setState((prevState: any) => ({
+          ...prevState,
+          chart: response.data?.prices
+        }))
+      })
+      .catch(error => {
+        setError(error)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+  const generateSeries = (data: any, key: string, i: number) => {
+    console.log(`${getIdForCode(key)}: generateSeries`)
+    return {
+      data,
+      name: key,
+      type: 'area',
+      // @ts-ignore
+      color: coins?.[key]?.color,
+      fillColor: {
+        linearGradient: [0, 0, 0, 300],
+        stops: [
+          // @ts-ignore
+          [0, coins?.[key]?.color],
+          [1, 'rgba(0,0,0,0)']
+        ]
+      }
+    }
+  }
+  // #endregion
+
+  // #region LIFECYCLE
+  useEffect(() => {
+    fetchChart(state?.period)
+  }, [state?.period])
+  // #endregion
   return (
     <div>
       <div className={`product-card ${isMobile ? 'mobile' : 'desktop'}`} style={{ opacity: tab === null ? 0.7 : 1 }}>
         {/* </div> style={{ background: `linear-gradient(to left, ${product?.color} 10%, #202020 100%)`}}> */}
         <div className="flex-row">
           <img src={product?.icon} alt={product?.code} style={{ width: '1.5rem', height: '1.5rem' }}/>
-          <div style={{ lineHeight: '2rem' }} className="flex-row space-between full-width">
+          <div style={{ lineHeight: '1.5rem' }} className="flex-row space-between full-width">
             <div className="flex-row">
               <div style={{ marginRight: '1rem' }} />
               <div>
@@ -61,7 +126,17 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
         {
           tab === 'chart' && (
             <div>
-            Chart
+              <Async isLoading={loading}>
+                <LineChart
+                  title=""
+                  data={state?.chart}
+                  series={[generateSeries(state?.chart || [], getCodeForId(product?.id), 0)]}
+                  period={state?.period}
+                  onChangeRange={ (period: any) =>
+                    fetchChart({ id: product?.id, currency: state?.currency, days: period?.days })
+                  }
+                />
+              </Async>
             </div>
           )}
         {

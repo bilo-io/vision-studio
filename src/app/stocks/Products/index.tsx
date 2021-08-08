@@ -41,7 +41,14 @@ const BulkTradeUI = () => {
     <div className={isMobile ? 'flex-col' : 'flex-row flex-wrap'}>
       {
         products.map((product: any, i: number) => (
-          <ProductCard key={i} product={product}/>
+          <>
+            <ProductCard key={i} product={product} defaultTab='chart' />
+            {isMobile && i < products?.length - 1 && (
+              <div className="padded">
+                <div className="divider horizontal" />
+              </div>
+            )}
+          </>
         ))
       }
     </div>
@@ -49,7 +56,7 @@ const BulkTradeUI = () => {
 }
 
 const Products = () => {
-  const showHoldings = true
+  const showHoldings = false
   const [advert, setAdvert] = useState<any>(adverts[Math.floor(Math.random() * adverts.length)])
   const windowSize = useWindowSize()
   const isMobile = windowSize?.width && windowSize?.width < 480
