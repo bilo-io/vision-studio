@@ -105,6 +105,7 @@ function Stats () {
             ...prevState,
             info: {
               ...prevState.info,
+              // @ts-ignore
               [coin]: response
             }
           }))
@@ -114,6 +115,7 @@ function Stats () {
           setState({
             charts: {
               ...state.charts,
+              // @ts-ignore
               [coin]: response
             }
           })

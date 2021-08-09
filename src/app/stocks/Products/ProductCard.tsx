@@ -143,9 +143,8 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab, onOpen }
           <img src={product?.icon} alt={product?.code} style={{ width: '1.5rem', height: '1.5rem' }}/>
           <div style={{ lineHeight: '1.5rem' }} className="flex-row space-between full-width">
             <div className="flex-row">
-              <div style={{ marginRight: '.5rem' }} />
-              <div>
-                {product.name}
+              <div style={{ marginLeft: '.5rem', color: product?.color, fontWeight: 'bold' }}>
+                {product?.name}
               </div>
             </div>
             <div>
@@ -169,7 +168,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab, onOpen }
           tab === 'chart' && (
             <div className="flex-row space-between" style={{ marginBottom: '.5rem' }}>
               {
-                timeData.map((item) => (
+                timeData?.map((item) => (
                   <div key={item?.name} className="flex-col">
                     <div style={{ textAlign: 'center', fontWeight: 'bold', margin: '.5rem 0 .5rem 0', fontSize: '.75rem' }}>{item?.name}</div>
                     <PriceChange isStacked percentage={item?.percentage} size='sm'/>
@@ -236,6 +235,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab, onOpen }
                 <LineChart
                   title=""
                   data={state?.chart}
+                  // @ts-ignore
                   series={[generateSeries(state?.chart || [], getCodeForId(product?.id), 0)]}
                   period={state?.period}
                   onChangeRange={ (period: any) =>

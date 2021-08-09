@@ -15,6 +15,8 @@ function ProductDetails ({ storybook }: { storybook: any }) {
   // @ts-ignore
   let { id } = useParams()
   if (!id) { id = storybook.id }
+  // @ts-ignore
+  const currentCoin = coins?.[id]
 
   const [loading, setLoading] = useState<boolean>(true)
   const [, setError] = useState<any>()
@@ -108,7 +110,7 @@ function ProductDetails ({ storybook }: { storybook: any }) {
             alt={id}
             style={{ width: '2rem', margin: '0.5rem' }}
           />
-          <div style={{ lineHeight: '3rem' }}>{coinData?.name}</div>
+          <div style={{ lineHeight: '3rem', fontWeight: 'bold', color: currentCoin?.color }}>{currentCoin?.name}</div>
         </div>
         <div style={{ lineHeight: '3rem', marginRight: '1rem' }}>{ currency?.symbol}{coinData?.market_data?.current_price[currency?.code]}</div>
       </div>

@@ -10,7 +10,7 @@ describe('Crypto', () => {
     // expect(getIdForCode('ETC')).toBe('ethereum')
   })
 
-  xtest('getCodeForId(bitcoin): BTC', () => {
+  test('getCodeForId(bitcoin): BTC', () => {
     expect(getCodeForId('bitcoin')).toBe('BTC')
     // expect(getIdForCode('ethereum')).toBe('ETC')
   })

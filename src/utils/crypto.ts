@@ -1,4 +1,4 @@
-import { coins } from '../assets/crypto'
+import { coins, keys } from '../assets/crypto'
 export * from '../assets/crypto'
 
 export const getIdForCode = (code: string) => {
@@ -10,7 +10,7 @@ export const getIdForCode = (code: string) => {
 
 export const getCodeForId = (id: string) => {
   // @ts-ignore
-  const result = coins?.[id]?.id
+  const result = keys.find((key) => coins?.[key]?.id === id)
   console.log('getCodeForId', { input: id, output: result })
   return result
 }

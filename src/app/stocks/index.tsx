@@ -5,6 +5,7 @@ import Products from './Products'
 import ProductDetails from './Products/ProductDetails'
 import News from './News'
 import Stats from './Stats'
+import Explore from './Explore'
 
 const scopeRoot = '/stocks'
 
@@ -16,6 +17,7 @@ function StocksRouter () {
         path={'/'}
         render={() => <Redirect to={`${scopeRoot}/stats`} />}
       />
+      <Route exact path={`${scopeRoot}/explore`} component={Explore} />
       <Route exact path={`${scopeRoot}/products`} component={Products} />
       <Route path={`${scopeRoot}/products/:id`} component={ProductDetails} />
       <Route path={`${scopeRoot}/stats`} component={Stats} />
