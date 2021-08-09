@@ -225,7 +225,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
         {/* ACTIVE TAB */}
         {
           tab === 'info' && (
-            <div className="overflow-hidden">
+            <div className="overflow-hidden justify">
               <p>{product?.summary}</p>
             </div>
           )}
