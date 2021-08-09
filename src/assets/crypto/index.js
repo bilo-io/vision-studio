@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
 import ADA from './ADA'
@@ -31,7 +32,7 @@ import XMR from './XMR'
 import XRP from './XRP'
 import ZEC from './ZEC'
 
-const coins = {
+export const coins = {
   BTC,
   ETH,
   FTT,
@@ -57,7 +58,7 @@ const coins = {
   DAI
 }
 
-export const exludedCoins = {
+export const excludedCoins = {
   ETC,
   IOST,
   LSK,
@@ -69,12 +70,8 @@ export const exludedCoins = {
 
 export const keys = Object.keys(coins)
 
-export const getIdForCode = (code: string) => {
-  return coins?.[code]?.id
+export default {
+  coins,
+  excludedCoins,
+  keys
 }
-
-export const getCodeForId = (id: string) => {
-  return keys.filter((code) => id === coins?.[code]?.id)?.[0]
-}
-
-export default coins

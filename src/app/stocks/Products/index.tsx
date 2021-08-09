@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import cryptoData from 'assets/crypto'
+import { useHistory } from 'react-router'
+import { coins } from 'utils/crypto'
 import { currency } from 'utils/locale'
 import { withCommas } from 'utils/format-number'
 import PieChart from 'components/Charts/PieChart'
@@ -32,17 +33,18 @@ const adverts = [
 ]
 
 const BulkTradeUI = () => {
+  const history = useHistory()
   const windowSize = useWindowSize()
   const isMobile = windowSize?.width && windowSize?.width < 480
 
   // @ts-ignore
-  const products = Object.keys(cryptoData).map(code => ({ code, ...cryptoData[code] }))
+  const products = Object.keys(coins).map(code => ({ code, ...coins[code] }))
   return (
     <div className={isMobile ? 'flex-col' : 'flex-row flex-wrap'}>
       {
         products.map((product: any, i: number) => (
           <>
-            <ProductCard key={i} product={product} defaultTab={null} />
+            <ProductCard key={i} product={product} defaultTab={null} onOpen={(product: any) => history.push(`/stocks/products/${product?.code}`)} />
             {isMobile && i < products?.length - 1 && (
               <div className="padded">
                 <div className="divider horizontal" />

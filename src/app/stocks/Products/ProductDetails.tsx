@@ -8,9 +8,9 @@ import FAIcon from 'react-fontawesome'
 import Async from 'components/Async'
 import Accordion from 'components/Accordion'
 import HTML from 'components/HTML'
-import coins, { getCodeForId, getIdForCode, keys } from 'assets/crypto'
+import { coins, keys, getCodeForId, getIdForCode } from 'utils/crypto'
 
-function ExploreDetails ({ storybook }: { storybook: any }) {
+function ProductDetails ({ storybook }: { storybook: any }) {
   // const history = useHistory();
   // @ts-ignore
   let { id } = useParams()
@@ -36,7 +36,7 @@ function ExploreDetails ({ storybook }: { storybook: any }) {
       period
     }))
 
-    fetchChartData({ id, currency: state?.currency, days: period?.days })
+    fetchChartData({ id: getIdForCode(id), currency: state?.currency, days: period?.days })
       .then((response) => {
         setState((prevState: any) => ({
           ...prevState,
@@ -51,7 +51,7 @@ function ExploreDetails ({ storybook }: { storybook: any }) {
       })
   }
   const generateSeries = (data: any, key: string, i: number) => {
-    console.log(`${getIdForCode(key)}: generateSeries`)
+    console.log(`${key}: generateSeries for ${getIdForCode(key)}`)
     return {
       data,
       name: key,
@@ -101,7 +101,13 @@ function ExploreDetails ({ storybook }: { storybook: any }) {
           zIndex: 10
         }}>
         <div className="flex-row">
-          <img src={coinData?.image?.thumb} alt={id} style={{ width: '2rem', margin: '0.5rem' }} />
+
+          <img
+            // @ts-ignore
+            src={coins?.[id]?.icon}
+            alt={id}
+            style={{ width: '2rem', margin: '0.5rem' }}
+          />
           <div style={{ lineHeight: '3rem' }}>{coinData?.name}</div>
         </div>
         <div style={{ lineHeight: '3rem', marginRight: '1rem' }}>{ currency?.symbol}{coinData?.market_data?.current_price[currency?.code]}</div>
@@ -114,16 +120,16 @@ function ExploreDetails ({ storybook }: { storybook: any }) {
           <LineChart
             title=""
             data={state?.chart}
-            series={[generateSeries(state?.chart || [], getCodeForId(id), 0)]}
+            series={[generateSeries(state?.chart || [], id, 0)]}
             period={state?.period}
             onChangeRange={ (period: any) =>
-              fetchChart({ id, currency: state?.currency, days: period?.days })
+              fetchChart({ id: getIdForCode(id), currency: state?.currency, days: period?.days })
             }
           />
         </Async>
       </Accordion>
 
-      <Accordion title={'Market data'} />
+      {/* <Accordion title={'Market data'} /> */}
 
       <Accordion title={'Info'}>
         <HTML content={coinData?.description[language?.code]} />
@@ -145,4 +151,4 @@ function ExploreDetails ({ storybook }: { storybook: any }) {
   )
 }
 
-export default ExploreDetails
+export default ProductDetails

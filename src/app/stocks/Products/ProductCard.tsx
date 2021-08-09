@@ -6,7 +6,7 @@ import Download from 'components/Download'
 import LineChart from 'components/Charts/LineChart'
 import { fetchChartData, fetchCoins } from 'services/coingecko'
 // import { currency, language } from 'utils/locale'
-import coins, { getCodeForId, getIdForCode } from 'assets/crypto'
+import { coins, getCodeForId, getIdForCode } from 'utils/crypto'
 import Async from 'components/Async'
 import { withCommas } from 'utils/format-number'
 import PriceChange from 'components/PriceChange'
@@ -14,13 +14,13 @@ import PriceChange from 'components/PriceChange'
 type TabType = 'info' | 'chart' | 'trade' | null | undefined
 type TradeType = 'buy' | 'sell' | null | undefined
 
-const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { product: any; isMobile?: boolean, defaultTradeType?: TradeType, defaultTab?: TabType }) => {
+const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab, onOpen }: { product: any; isMobile?: boolean, defaultTradeType?: TradeType, defaultTab?: TabType, onOpen?: Function }) => {
   const [tab, setTab] = useState<TabType>(defaultTab)
   const [tradeType, setTradeType] = useState<TradeType>(defaultTradeType)
   const [loading, setLoading] = useState<boolean>(true)
   const [, setError] = useState<any>()
   const [coinData, setCoinData] = useState<any>(null)
-  const [timeData, setTimedata] = useState<any[]>([])
+  const [timeData, setTimeData] = useState<any[]>([])
   const [state, setState] = useState<any>({
     currency: 'usd',
     period: {
@@ -120,7 +120,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
         ]
         console.log(timeframeEntries)
         setCoinData(response?.data)
-        setTimedata(timeframeEntries)
+        setTimeData(timeframeEntries)
       })
       .catch(error => {
         setError(error)
@@ -139,7 +139,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab }: { prod
     <div>
       <div className={`product-card ${isMobile ? 'mobile' : 'desktop'}`} style={{ opacity: tab === null ? 0.7 : 1 }}>
         {/* </div> style={{ background: `linear-gradient(to left, ${product?.color} 10%, #202020 100%)`}}> */}
-        <div className="flex-row" style={{ marginBottom: '.75rem', marginTop: '.25rem' }}>
+        <div className="flex-row pointer" style={{ marginBottom: '.75rem', marginTop: '.25rem' }} onClick={() => onOpen?.(product)}>
           <img src={product?.icon} alt={product?.code} style={{ width: '1.5rem', height: '1.5rem' }}/>
           <div style={{ lineHeight: '1.5rem' }} className="flex-row space-between full-width">
             <div className="flex-row">
