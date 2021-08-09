@@ -56,11 +56,11 @@
   text-overflow: ellipsis;
 
   &.mobile {
-    width: calc(100% - 4 * #{$padding});
+    width: calc(100% - 2 * #{$padding});
   }
 
   &.desktop {
-    width: 18rem;
+    width: 20rem;
     // min-height: 6rem;
 
     padding: {
