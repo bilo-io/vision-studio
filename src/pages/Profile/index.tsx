@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
-import { db } from 'utils/firebase'
 import { collection, getDocs } from 'firebase/firestore'
+// source
+import { db } from 'utils/firebase'
 import Accordion from 'components/Accordion'
 import Async from 'components/Async'
 
@@ -14,10 +15,8 @@ function Profile () {
     const snapshot = await getDocs(collection(db(), 'profiles'))
     snapshot.forEach((profile: any) => {
       console.log(profile.id, profile.data())
-      // setData(profile?.data())
     })
     setData(snapshot.docs?.[0]?.data?.())
-    // const data = []
     return data
   }
   // #endregion
@@ -42,10 +41,13 @@ function Profile () {
         </div>
 
         <h4>{data?.email}</h4>
+
         <br />
 
         <div>Apps</div>
+
         <br />
+
         <div className="flex-row">
           {data?.apps?.map((app: string) => (
             <div style={{ marginRight: '1rem' }} key={app}>{app}</div>
@@ -66,7 +68,9 @@ function Profile () {
       <Accordion title={'Crypto wallets'} isOpenDefault>
         <Async isLoading={loading}>
           {data?.wallets && Object.keys(data?.wallets).map((key: string) => (
-            <div key={key}>{data?.wallets?.[key]?.alias}</div>
+            <div key={key}>
+              {data?.wallets?.[key]?.alias}
+            </div>
           ))}
         </Async>
       </Accordion>

@@ -1,11 +1,52 @@
-import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
-
+/* eslint-disable no-unused-vars */
 import firebaseConfig from './firebase.config'
+
+import { initializeApp } from 'firebase/app'
+// AUTH
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+
+import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore'
 
 export const app = initializeApp(firebaseConfig)
 
 export const db = () => getFirestore()
+export const auth = () => getAuth()
+
+export const get = async (query: string) => {
+  const snapshot = await getDocs(collection(db(), query))
+}
+
+export const set = async (query, data) => {
+  const snapshot = await addDoc(collection(db(), query, data))
+}
+
+export const loginWith = (OAUTHProvider, successCallback, errorCallback) => {
+  let provider
+  switch (OAUTHProvider) {
+  case 'google':
+    provider = new GoogleAuthProvider()
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
+    signInWithPopup(auth(), provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result)
+        const token = credential.accessToken
+        const user = result.user
+
+        // console.log('firebase.login.SUCCESS', { user, credential, token })
+        successCallback({ user, credential, token })
+      })
+      .catch((error) => {
+        const credential = GoogleAuthProvider.credentialFromError(error)
+        const errorCode = error.code
+        const errorMessage = error.message
+        const email = error.email
+
+        // console.log('firebase.login.ERROR', { error, credential })
+        errorCallback({ error, credential })
+      })
+    // consider language for auth
+  }
+}
 
 // import * as firebase from 'firebase/app'
 // import 'firebase/auth'

@@ -1,10 +1,14 @@
 import React from 'react'
 import appIcon from 'assets/vision-logo.png'
+import { loginWith } from 'utils/firebase'
+import { useHistory } from 'react-router'
 
 export function Login () {
+  const history = useHistory()
   const authProviders = [
     {
       name: 'Google',
+      key: 'google',
       background: '#D74638',
       color: '#fff',
       img: 'https://www.designbust.com/download/1016/png/google_logo_png_transparent512.png'
@@ -12,11 +16,21 @@ export function Login () {
     },
     {
       name: 'Facebook',
+      key: 'facebook',
       background: '#3A4F93',
       color: '#fff',
       img: 'https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512'
     }
   ]
+
+  const login = (provider: any) => {
+    loginWith(provider, (data: any) => {
+      console.log('Login success', data)
+      history.push('/stocks/')
+    }, (error: any) => {
+      console.log('Login error', error)
+    })
+  }
 
   return (
     <div className="flex-col" style={{ maxWidth: '20em', margin: 'auto' }}>
@@ -38,7 +52,7 @@ export function Login () {
         {
           authProviders.map((provider, i) => (
             <div key={i}
-              onClick={() => console.log('Login with ', provider.name)}
+              onClick={() => login(provider.key)}
               style={{
                 backgroundColor: provider.background,
                 color: provider.color,
