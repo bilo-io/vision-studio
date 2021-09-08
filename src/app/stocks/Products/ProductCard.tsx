@@ -118,7 +118,7 @@ const ProductCard = ({ product, isMobile, defaultTradeType, defaultTab, onOpen }
             value: data?.price_change_percentage_1y_in_currency
           }
         ]
-        console.log(timeframeEntries)
+
         setCoinData(response?.data)
         setTimeData(timeframeEntries)
       })

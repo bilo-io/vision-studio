@@ -17,12 +17,12 @@ function Explore () {
   return (
     <div>
       <Accordion title={'Coins'} isOpenDefault>
-        <Async isLoading={loading}>=
+        <Async isLoading={loading}>
 
         </Async>
       </Accordion>
       <Accordion title={'What are crypto currencies'} isOpenDefault>
-        <Async isLoading={loading}>=
+        <Async isLoading={loading}>
 
         </Async>
       </Accordion>

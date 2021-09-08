@@ -11,6 +11,7 @@ import StocksRouter from 'app/stocks'
 import SlidesRouter from 'app/slides'
 import SessionsRouter from 'app/sessions'
 import StartupsRouter from 'app/startups'
+import Profile from 'pages/Profile'
 // #endregion
 
 // import logo from './assets/vision-logo.svg'
@@ -41,7 +42,10 @@ const App = () => {
             <Route path="/startups" render={() => <StartupsRouter />} />
             <Route path="/sessions" render={() => <SessionsRouter />} />
             <Route path="/slides" render={() => <SlidesRouter />} />
+
+            {/* AUTH */}
             <Route path="/auth/login" render={() => <Login />} />
+            <Route path="/app/profile" render={() => <Profile /> } />
 
             <Route path="*" component={Error} />
           </Switch>
