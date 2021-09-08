@@ -45,7 +45,7 @@ function AppMenu (
             Home
         </div>
         <div className='divider horizontal' style={dividerStyle} />
-        <div className='link' onClick={ goTo('/app/identity/profile')}>
+        <div className='link' onClick={ goTo('/app/profile')}>
           <FAIcon name='user' />&nbsp;&nbsp;
             Account
         </div>

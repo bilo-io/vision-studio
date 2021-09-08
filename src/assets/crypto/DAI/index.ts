@@ -6,7 +6,7 @@ export default {
   name: 'DAI',
   code: 'DAI',
   symbol: 'DAI',
-  compound: 'cDAI',
+  compound: 'CDAI',
   tags: ['stablecoin', 'maker'],
   website: 'https://chain.link/',
   whitepaper: null,

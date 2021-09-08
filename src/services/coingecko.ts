@@ -11,7 +11,7 @@ export const fetchCoins = async (id?: string) => {
   })
 }
 
-export const fetchChartData = async ({ id, currency, days }: { id: string, currency: string, days: any }) => {
+export const fetchChartData = async ({ id, currency, days }: { id: string | undefined, currency: string, days: any }) => {
   const url = `${baseUrl}/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`
 
   return await axios({

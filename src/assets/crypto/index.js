@@ -1,3 +1,5 @@
+/* eslint-disable no-debugger */
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
 import ADA from './ADA'
 import BAT from './BAT'
@@ -8,14 +10,15 @@ import DAI from './DAI'
 import DOGE from './DOGE'
 import ETC from './ETC'
 import ETH from './ETH'
+import EOS from './EOS'
 import FIL from './FIL'
+import FTT from './FTT'
 import IOST from './IOST'
 import LN from './LN'
 import LTC from './LTC'
 import LSK from './LSK'
 import MATIC from './MATIC'
 import MKR from './MKR'
-import MONERO from './MONERO'
 import NEO from './NEO'
 import ONT from './ONT'
 import QTUM from './QTUM'
@@ -29,14 +32,16 @@ import XMR from './XMR'
 import XRP from './XRP'
 import ZEC from './ZEC'
 
-const coins = {
+export const coins = {
   BTC,
   ETH,
+  FTT,
   ADA,
   BAT,
   BNB,
   DOGE,
   NEO,
+  EOS,
   LN,
   LTC,
   TRX,
@@ -47,14 +52,13 @@ const coins = {
   VET,
   XMR,
   THETA,
-  MONERO,
   MKR,
   MATIC,
   FIL,
   DAI
 }
 
-export const exludedCoins = {
+export const excludedCoins = {
   ETC,
   IOST,
   LSK,
@@ -66,12 +70,8 @@ export const exludedCoins = {
 
 export const keys = Object.keys(coins)
 
-export const getIdForCode = (code: string) => {
-  return coins?.[code]?.id
+export default {
+  coins,
+  excludedCoins,
+  keys
 }
-
-export const getCodeForId = (id: string) => {
-  return keys.filter((code) => id === coins?.[code]?.id)?.[0]
-}
-
-export default coins

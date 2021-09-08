@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import cryptoData from 'assets/crypto'
+import { useHistory } from 'react-router'
+import { coins } from 'utils/crypto'
 import { currency } from 'utils/locale'
 import { withCommas } from 'utils/format-number'
 import PieChart from 'components/Charts/PieChart'
 import Advert from 'components/Cards/Advert'
 import ActionSuggestions from 'components/Cards/ActionSuggestions'
-import Download from 'components/Download'
+import useWindowSize from 'hooks/use-window-size'
+import ProductCard from './ProductCard'
 
 const adverts = [
   {
@@ -31,32 +33,24 @@ const adverts = [
 ]
 
 const BulkTradeUI = () => {
+  const history = useHistory()
+  const windowSize = useWindowSize()
+  const isMobile = windowSize?.width && windowSize?.width < 480
+
   // @ts-ignore
-  const products = Object.keys(cryptoData).map(code => ({ code, ...cryptoData[code] }))
+  const products = Object.keys(coins).map(code => ({ code, ...coins[code] }))
   return (
-    <div>
+    <div className={isMobile ? 'flex-col' : 'flex-row flex-wrap'}>
       {
         products.map((product: any, i: number) => (
-          <div key={i} className="product-card">
-            {/* </div> style={{ background: `linear-gradient(to left, ${product?.color} 10%, #202020 100%)`}}> */}
-            <div className="flex-row">
-              <img src={product.icon} alt={product.code} style={{ width: '2rem', height: '2rem' }}/>
-              <div style={{ lineHeight: '2rem' }} className="flex-row">
-                <div style={{ width: '1rem' }} />
-                <div>
-                  {product.name}
-                </div>
-                <div style={{ width: '1rem' }} />
-
-                <Download preview hasIcon src={product?.whitepaper}>
-                    Whitepaper
-                </Download>
+          <>
+            <ProductCard key={i} product={product} defaultTab={null} onOpen={(product: any) => history.push(`/stocks/products/${product?.code}`)} />
+            {isMobile && i < products?.length - 1 && (
+              <div className="padded">
+                <div className="divider horizontal" />
               </div>
-            </div>
-            <div>
-              <p>{product?.summary}</p>
-            </div>
-          </div>
+            )}
+          </>
         ))
       }
     </div>
@@ -64,8 +58,11 @@ const BulkTradeUI = () => {
 }
 
 const Products = () => {
-  const showHoldings = false
+  const showHoldings = true
+  const showGraph = false
   const [advert, setAdvert] = useState<any>(adverts[Math.floor(Math.random() * adverts.length)])
+  const windowSize = useWindowSize()
+  const isMobile = windowSize?.width && windowSize?.width < 480
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -108,8 +105,9 @@ const Products = () => {
     ]
   }
 
-  const ProductsSummary = ({ data }: { data: any }) => (
-    <div className="portfolio-holdings">
+  const ProductsSummary = ({ data, showGraph }: { data: any, showGraph?: boolean }) => (
+    <div className={`portfolio-holdings ${isMobile ? 'mobile' : ''}`
+    }>
       <div className="text-center"
         style={{
           fontSize: '1.5rem',
@@ -117,20 +115,23 @@ const Products = () => {
         }}>
         {currency?.symbol}{withCommas(data?.totalAmount)}
       </div>
-      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', margin: 'auto', marginTop: '-6rem' }}>
-        <PieChart selector={'amount'} data={portfolio.breakdown} isLoading={false} title=""/>
-      </div>
+      {
+        showGraph && (
+          <div style={{ position: 'relative', overflow: 'hidden', width: '100%', margin: 'auto', marginTop: '-6rem' }}>
+            <PieChart selector={'amount'} data={portfolio.breakdown} isLoading={false} title="" />
+          </div>
+        )}
     </div>
   )
   return (
     <>
 
-      {showHoldings && userState.hasHoldings && <ProductsSummary data={portfolio} />}
+      {showHoldings && userState.hasHoldings && <ProductsSummary data={portfolio} showGraph={showGraph} />}
 
       {
         userState.hasHoldings
           ? (
-            showHoldings && <div style={{ paddingTop: '14rem' }} />
+            showHoldings && <div style={{ paddingTop: showGraph ? '14rem' : '8rem' }} />
           )
           : (
             <Advert item={advert} />
@@ -139,7 +140,9 @@ const Products = () => {
 
       <ActionSuggestions userState={userState} />
 
-      <BulkTradeUI />
+      <div style={{ width: 'fit-content', margin: 'auto' }}>
+        <BulkTradeUI />
+      </div>
     </>
   )
 }

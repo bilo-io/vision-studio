@@ -47,12 +47,64 @@
 .product-card {
   $padding: 0.5rem;
 
-  width: calc(100% - 4 * #{$padding});
   padding: $padding;
   margin: $padding;
   border-radius: 8px;
-  min-height: 6rem;
+  min-height: 4rem;
   background: $bg-gradient-card;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.mobile {
+    width: calc(100% - 2 * #{$padding});
+  }
+
+  &.desktop {
+    width: 20rem;
+    // min-height: 6rem;
+
+    padding: {
+      left: 1rem;
+      right: 1rem;
+      top: .5rem;
+      bottom: .5rem;
+    }
+  }
+
+  .trade-types {
+    @extend .flex-row;
+    @extend .space-between;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: #00adee55;
+
+    .item {
+      // background-color: #00adee55;
+      border-radius: 3rem;
+      line-height: 3rem;
+
+      padding: {
+        left: 1rem;
+        right: 1rem
+      }
+
+      // color: $col-active;
+      &.active {
+        background-color: $col-active;
+        color: white;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .trade-input {
+    width: calc(100% - 2rem);
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 3rem;
+    margin-top: 0rem;
+    // background-color: rgba($col-active, 0.3);
+  }
 }
 
 .portfolio-holdings {
@@ -63,11 +115,18 @@
   top: 0;
   left: 0;
   z-index: 5;
-  width: calc(100vw - 2 * #{$padding});
-  height: 12rem;
+  width: calc(100% - 2 * #{$padding});
+  min-height: 4rem;
+  max-height: 12rem;
   padding: $padding;
-  background: #1118;
-  backdrop-filter: blur(7px);
+  // background: rgba($col-card-gradient-start, 0.5);
+  // background: rgba(transparent, 0.5);
+  background: transparent;
+  backdrop-filter: blur(9px);
   color: white;
   overflow: hidden;
+
+  &.mobile {
+    position: fixed;
+  }
 }

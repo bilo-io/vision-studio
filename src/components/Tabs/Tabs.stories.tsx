@@ -9,18 +9,19 @@ export default {
 export function TabsStories () {
   return (
     <div>
-      <Tabs defaultTab="tab-1" keys={['tab-1', 'tab-2', 'tab-3']}
-        tab-1= {
+      <Tabs defaultTab="first" keys={['first', 'second', 'third']}
+        // @ts-ignore
+        first= {
           <div >
                         Tab 1 Content
           </div>
         }
-        tab-2= {
+        second= {
           <div >
                         Tab 2 Content
           </div>
         }
-        tab-3= {
+        third= {
           <div >
                         Tab 3 Content
           </div>

@@ -9,7 +9,7 @@ import { fetchChartData, fetchCoins } from 'services/coingecko'
 import Async from 'components/Async'
 import Accordion from 'components/Accordion'
 import Table from 'components/Table'
-import coins, { keys, getCodeForId } from 'assets/crypto'
+import { coins, keys, getCodeForId } from 'utils/crypto'
 // import { colors } from 'components/Charts/utils/colors'
 import Header from 'components/Table/Header'
 import PriceChange from 'components/PriceChange'
@@ -19,9 +19,10 @@ function Stats () {
   // #region STATE
   // eslint-disable-next-line no-unused-vars
   const location = useLocation()
+  // @ts-ignore
   const { id } = useParams()
   const [error, setError] = useState<any>(null)
-  const [activeKeys, setActiveKeys] = useState<string[]>(['DOGE', 'TRX'])
+  const [activeKeys, setActiveKeys] = useState<string[]>(['NEO', 'LN', 'LTC', 'TRX', 'FTT', 'MATIC'])
 
   const windowSize = useWindowSize()
   const isMobile = windowSize?.width && windowSize?.width < 480
@@ -104,6 +105,7 @@ function Stats () {
             ...prevState,
             info: {
               ...prevState.info,
+              // @ts-ignore
               [coin]: response
             }
           }))
@@ -113,6 +115,7 @@ function Stats () {
           setState({
             charts: {
               ...state.charts,
+              // @ts-ignore
               [coin]: response
             }
           })
@@ -172,7 +175,6 @@ function Stats () {
   }
 
   const generateSeries = (data: any, key: string, i: number) => {
-    console.log(`${key}: generateSeries`)
     return {
       data,
       name: key,
@@ -492,7 +494,7 @@ function Stats () {
           <FAIcon name="chart-line" />
           <div style={{ marginLeft: '1rem' }}>Total Volume</div>
         </div>
-      } isOpenDefault={false}>
+      } isOpenDefault>
         <Async loading>
           <LineChart
             data={[]}
@@ -508,7 +510,7 @@ function Stats () {
         <div className="flex-row space-between">
           <div><FAIcon name="chart-line" /></div>
           <div style={{ marginLeft: '1rem' }}>Market cap</div>
-        </div>} isOpenDefault={false}>
+        </div>} isOpenDefault>
         <Async loading>
           <LineChart
             data={[]}
@@ -532,9 +534,9 @@ function Stats () {
         />
       </Accordion>
 
-      <div>
+      {/* <div>
         {error && JSON.stringify(error)}
-      </div>
+      </div> */}
     </div>
   )
 }

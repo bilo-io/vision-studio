@@ -2,10 +2,10 @@ import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
 import Products from './Products'
-import Explore from './Explore'
-import ExploreDetails from './ExploreDetails'
+import ProductDetails from './Products/ProductDetails'
 import News from './News'
 import Stats from './Stats'
+import Explore from './Explore'
 
 const scopeRoot = '/stocks'
 
@@ -14,12 +14,12 @@ function StocksRouter () {
     <>
       <Route
         exact
-        path={'/'}
+        path={`${scopeRoot}`}
         render={() => <Redirect to={`${scopeRoot}/stats`} />}
       />
-      <Route path={`${scopeRoot}/products`} component={Products} />
       <Route exact path={`${scopeRoot}/explore`} component={Explore} />
-      <Route path={`${scopeRoot}/explore/:id`} component={ExploreDetails} />
+      <Route exact path={`${scopeRoot}/products`} component={Products} />
+      <Route path={`${scopeRoot}/products/:id`} component={ProductDetails} />
       <Route path={`${scopeRoot}/stats`} component={Stats} />
       <Route path={`${scopeRoot}/news`} component={News} />
     </>

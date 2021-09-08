@@ -7,6 +7,7 @@ export default {
   code: 'NEO',
   symbol: 'NEO',
   website: 'https://neo.org/',
+  whitepaperUrl: 'https://docs.google.com/viewerng/viewer?url=http://cryptoverze.s3.us-east-2.amazonaws.com/wp-content/uploads/2018/12/10011556/NEO-Whitepaper1.pdf&hl=en',
   youtube: 'https://www.youtube.com/watch?v=0auaegni1kU',
   color: '#58BF00',
   icon,
