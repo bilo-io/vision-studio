@@ -86,7 +86,7 @@ function AppMenu (
 
         <div className='divider horizontal' style={dividerStyle} />
 
-        <div className='link' onClick={ noop }>
+        <div className='link' onClick={ goTo('/auth/login') }>
           <FAIcon name='door-open' />&nbsp;&nbsp;
             Log Out
         </div>

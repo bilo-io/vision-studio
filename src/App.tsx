@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import Login from './pages/Login'
 
 import './App.scss'
 import Error from './pages/Error'
 import NavbarContainer from 'components/Navbar/container'
 import AppMenu from 'components/AppMenu'
 // #region Routers
+import Login from './pages/Login'
 import StocksRouter from 'app/stocks'
 import SlidesRouter from 'app/slides'
 import SessionsRouter from 'app/sessions'
@@ -16,11 +16,13 @@ import Profile from 'pages/Profile'
 // #endregion
 
 import { store } from './store'
+import AppInfo from 'components/AppInfo'
 // import logo from './assets/vision-logo.svg'
 
 const App = () => {
   // #region STATE
   const [isAppMenuOpen, setAppMenuOpen] = useState<boolean>(false)
+  const [isAuthenticated, setAuthenticated] = useState<boolean>(false)
   // #endregion
 
   // #region FUNCTIONS
@@ -34,6 +36,7 @@ const App = () => {
       <Router>
         <div className="flex-row">
 
+          <AppInfo setAuthenticated={setAuthenticated} />
           <NavbarContainer onToggle={toggleAppMenu} />
 
           <AppMenu isOpen={isAppMenuOpen} isDark onToggle={toggleAppMenu} />
@@ -46,15 +49,19 @@ const App = () => {
                 render={() => <Redirect to={'/stocks/stats'} />}
               />
 
-              <Route path="/stocks" render={() => <StocksRouter />} />
-              <Route path="/startups" render={() => <StartupsRouter />} />
-              <Route path="/sessions" render={() => <SessionsRouter />} />
-              <Route path="/slides" render={() => <SlidesRouter />} />
+              {
+                isAuthenticated && <>
+                  <Route path="/stocks" render={() => <StocksRouter />} />
+                  <Route path="/startups" render={() => <StartupsRouter />} />
+                  <Route path="/sessions" render={() => <SessionsRouter />} />
+                  <Route path="/slides" render={() => <SlidesRouter />} />
+
+                  <Route path="/app/profile" render={() => <Profile /> } />
+                </>
+              }
 
               {/* AUTH */}
               <Route path="/auth/login" render={() => <Login />} />
-              <Route path="/app/profile" render={() => <Profile /> } />
-
               <Route path="*" component={Error} />
             </Switch>
           </div>

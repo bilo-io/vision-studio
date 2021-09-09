@@ -1,10 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import appIcon from 'assets/vision-logo.png'
 import { loginWith } from 'utils/firebase'
 import { useHistory } from 'react-router'
-
+import { setUser, setAuthStatus, setAuthError } from '../../store/slices/auth/auth-slice'
 export function Login () {
   const history = useHistory()
+  const dispatch = useDispatch()
+
   const authProviders = [
     {
       name: 'Google',
@@ -26,9 +29,15 @@ export function Login () {
   const login = (provider: any) => {
     loginWith(provider, (data: any) => {
       console.log('Login success', data)
+      dispatch(setUser(data.user))
+      dispatch(setAuthStatus(true))
+      dispatch(setAuthError(null))
       history.push('/stocks/')
     }, (error: any) => {
       console.log('Login error', error)
+      dispatch(setUser(null))
+      dispatch(setAuthStatus(false))
+      dispatch(setAuthError(error))
     })
   }
 
