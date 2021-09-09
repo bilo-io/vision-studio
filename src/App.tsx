@@ -51,14 +51,14 @@ const App = () => {
 
               {
                 isAuthenticated && <>
+                  <Route path="/app/profile" render={() => <Profile />} />
+                  {/* Apps */}
                   <Route path="/stocks" render={() => <StocksRouter />} />
                   <Route path="/startups" render={() => <StartupsRouter />} />
                   <Route path="/sessions" render={() => <SessionsRouter />} />
-                  <Route path="/slides" render={() => <SlidesRouter />} />
-
-                  <Route path="/app/profile" render={() => <Profile /> } />
                 </>
               }
+              <Route path="/slides" render={() => <SlidesRouter />} />
 
               {/* AUTH */}
               <Route path="/auth/login" render={() => <Login />} />
