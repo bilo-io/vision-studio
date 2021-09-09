@@ -28,13 +28,11 @@ export function Login () {
 
   const login = (provider: any) => {
     loginWith(provider, (data: any) => {
-      console.log('Login success', data)
       dispatch(setUser(data.user))
       dispatch(setAuthStatus(true))
       dispatch(setAuthError(null))
       history.push('/stocks/')
     }, (error: any) => {
-      console.log('Login error', error)
       dispatch(setUser(null))
       dispatch(setAuthStatus(false))
       dispatch(setAuthError(error))
@@ -65,15 +63,15 @@ export function Login () {
               style={{
                 backgroundColor: provider.background,
                 color: provider.color,
-                borderRadius: '6rem',
+                borderRadius: '4rem',
                 minWidth: '16em',
                 maxWidth: '20rem',
                 margin: 'auto',
-                marginBottom: '1rem',
+                marginBottom: '2rem',
                 cursor: 'pointer'
               }} className="flex-row">
-              <img src={provider.img} style={{ width: '2rem', height: '2rem', margin: '1rem' }} alt={provider.name} />
-              <div style={{ lineHeight: '4rem', color: provider.color }}>Sign in with {provider.name}</div>
+              <img src={provider.img} style={{ width: '2rem', height: '2rem', margin: '0.5rem' }} alt={provider.name} />
+              <div style={{ lineHeight: '3rem', color: provider.color }}>Sign in with {provider.name}</div>
             </div>
           ))
         }

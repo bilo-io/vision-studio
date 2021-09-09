@@ -66,9 +66,9 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
     })
   }, [])
 
-  useEffect(() => {
-    console.log(itemsMobile)
-  }, [itemsMobile])
+  // useEffect(() => {
+  //   console.log(itemsMobile)
+  // }, [itemsMobile])
 
   const renderItems = () => (isMobile ? itemsMobile : itemsDesktop || []).map((item, i) => {
     // const isActive = window.location.pathname.includes(item.path)

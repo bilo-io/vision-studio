@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type AuthState = {
-    isLoggedIn: boolean;
+    isAuthenticated: boolean;
     user: any;
     error: any;
 }
 
 const initialState: AuthState = {
-  isLoggedIn: false,
+  isAuthenticated: false,
   user: null,
   error: null
 }
@@ -20,7 +20,7 @@ const AuthSlice = createSlice({
       state.user = action.payload
     },
     setAuthStatus: (state, action: PayloadAction<boolean>) => {
-      state.isLoggedIn = action.payload
+      state.isAuthenticated = action.payload
     },
     setAuthError: (state, action: PayloadAction<any | null>) => {
       state.error = action.payload
