@@ -13,6 +13,11 @@ describe('URL Tests', () => {
       })
     })
 
+    // eslint-disable-next-line quotes
+    test(`fromUrlParams('') => empty string`, () => {
+      expect(fromUrlParams('')).toStrictEqual({})
+    })
+
     test('toUrlParams', () => {
       expect(toUrlParams({
         hello: 'world',
