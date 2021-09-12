@@ -8,9 +8,9 @@ export const Progress = ({ ratio, color, items, ...rest }) => {
   // debugger
   const downloadRatio = items
     ? items.length === 0
-      ? 0
+        ? 0
       // eslint-disable-next-line no-return-assign
-      : items.map(item => item.ratio).reduce((prev, curr) => curr += prev) / items.length
+        : items.map(item => item.ratio).reduce((prev, curr) => curr += prev) / items.length
     : ratio
 
   const backgroundBarStyle = {
@@ -23,30 +23,33 @@ export const Progress = ({ ratio, color, items, ...rest }) => {
     overflow: 'hidden'
   }
 
-  return <div style={{ ...rest.style }}>
-    <div style={ backgroundBarStyle }>
-      <div style={{ width: downloadRatio * 100 + '%', height: '100%', borderRadius: '0.25rem', backgroundColor: color }} />
-    </div>
-    <br />
-    {/* //TODO This doesn't make fully sense */}
-    { items?.length > 1 && (items || []).map((item, i) => <div key={ i } style={{ marginLeft: '10%', fontSize: '0.7rem', overflow: 'hidden', textOverflow: 'ellipsis', marginBottom: '0.25rem' }}
-      className={ 'flex-row' }
-    >
-      <Circular
-        diameter={32}
-        progress={item.ratio}
-        color={'#00adee'}
-      />
-      <div>
-        { item.name }
+  return (
+    <div style={{ ...rest.style }}>
+      <div style={backgroundBarStyle}>
+        <div style={{ width: downloadRatio * 100 + '%', height: '100%', borderRadius: '0.25rem', backgroundColor: color }} />
       </div>
-      {/*
+      <br />
+      {/* //TODO This doesn't make fully sense */}
+      {items?.length > 1 && (items || []).map((item, i) => <div
+        key={i} style={{ marginLeft: '10%', fontSize: '0.7rem', overflow: 'hidden', textOverflow: 'ellipsis', marginBottom: '0.25rem' }}
+        className='flex-row'
+                                                           >
+        <Circular
+          diameter={32}
+          progress={item.ratio}
+          color='#00adee'
+        />
+        <div>
+          {item.name}
+        </div>
+        {/*
       <div style={{ ...backgroundBarStyle, width: '90%', height: '4px' }}>
           <div style={{ width: item.ratio * 100 + `%`, height: '100%', borderRadius: '2px', backgroundColor: color, opacity: 0.8 }} />
       </div>
       */}
-    </div>)}
-  </div>
+                                                           </div>)}
+    </div>
+  )
 }
 
 Progress.propTypes = {
