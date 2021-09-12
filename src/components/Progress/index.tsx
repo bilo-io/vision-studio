@@ -4,13 +4,17 @@ import Circular from './circular'
 
 export * from './circular'
 
-export const Progress = ({ ratio, color, items, ...rest }) => {
+export const Progress = ({
+  ratio, color, items, ...rest
+}: {
+  ratio: number, color: string, items: any[]
+}) => {
   // debugger
   const downloadRatio = items
     ? items.length === 0
-        ? 0
+      ? 0
       // eslint-disable-next-line no-return-assign
-        : items.map(item => item.ratio).reduce((prev, curr) => curr += prev) / items.length
+      : items.map(item => item.ratio).reduce((prev, curr) => curr += prev) / items.length
     : ratio
 
   const backgroundBarStyle = {
@@ -24,7 +28,8 @@ export const Progress = ({ ratio, color, items, ...rest }) => {
   }
 
   return (
-    <div style={{ ...rest.style }}>
+    // @ts-ignore
+    <div style={{ ...rest?.style }}>
       <div style={backgroundBarStyle}>
         <div style={{ width: downloadRatio * 100 + '%', height: '100%', borderRadius: '0.25rem', backgroundColor: color }} />
       </div>
@@ -33,7 +38,7 @@ export const Progress = ({ ratio, color, items, ...rest }) => {
       {items?.length > 1 && (items || []).map((item, i) => <div
         key={i} style={{ marginLeft: '10%', fontSize: '0.7rem', overflow: 'hidden', textOverflow: 'ellipsis', marginBottom: '0.25rem' }}
         className='flex-row'
-                                                           >
+      >
         <Circular
           diameter={32}
           progress={item.ratio}
@@ -47,7 +52,7 @@ export const Progress = ({ ratio, color, items, ...rest }) => {
           <div style={{ width: item.ratio * 100 + `%`, height: '100%', borderRadius: '2px', backgroundColor: color, opacity: 0.8 }} />
       </div>
       */}
-                                                           </div>)}
+      </div>)}
     </div>
   )
 }

@@ -20,3 +20,5 @@ export * from './Tabs'
 export * from './Toaster'
 export * from './ToggleIcons'
 export * from './Tree'
+
+export * from './Widgets/soundcloud'
