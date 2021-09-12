@@ -2,7 +2,7 @@ import { keys, getIdForCode, getCodeForId } from '../crypto'
 
 describe('Crypto', () => {
   test('Has coins (23)', () => {
-    expect(keys?.length).toBe(23)
+    expect(keys?.length).toBe(26)
   })
 
   test('getIdForCode(BTC): bitcoin', () => {
