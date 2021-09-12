@@ -11,7 +11,7 @@ import ErrorBoundary from '../ErrorBoundary'
 // #region Assets & Data
 // #endregion
 
-const Async = ({ onMount, margin, isLoading, children, loader }: any) => {
+export const Async = ({ onMount, margin, isLoading, children, loader }: any) => {
   useEffect(() => {
     onMount()
   }, [])

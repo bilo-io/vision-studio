@@ -10,7 +10,7 @@ interface TableStyles {
   thead?: any;
 }
 
-export const AdvancedTable = ({
+export const Table = ({
   data,
   columns,
   padded,
@@ -167,4 +167,4 @@ export const AdvancedTable = ({
   )
 }
 
-export default AdvancedTable
+export default Table

@@ -13,5 +13,6 @@ ignore:
   - "src/pages/**/*"
   - "src/store/**/*"
   - "src/styles/**/*"
+  - "src/utils/firebase.js"
   - "test_*.rb"       # wildcards accepted
   - "**/*.py"         # glob accepted

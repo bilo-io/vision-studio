@@ -1,9 +1,10 @@
 import React from 'react'
 
-export function Card ({ children }: { children: any }) {
+export function Card ({ children, className }: { children: any, className?: string }) {
   return (
-    <div className='card'>
-      Card
+    <div className={`card ${className}`}>
+      proto-Card
+      {children}
     </div>
   )
 }
