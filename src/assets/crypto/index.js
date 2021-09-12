@@ -6,6 +6,7 @@ import BAT from './BAT'
 import BNB from './BNB'
 import BTC from './BTC'
 import BTG from './BTG'
+import DOT from './DOT'
 import DAI from './DAI'
 import DOGE from './DOGE'
 import ETC from './ETC'
@@ -22,8 +23,10 @@ import MKR from './MKR'
 import NEO from './NEO'
 import ONT from './ONT'
 import QTUM from './QTUM'
+import SOL from './SOL'
 import THETA from './THETA'
 import TRX from './TRX'
+import UNI from './UNI'
 import USDC from './USDC'
 import USDT from './USDT'
 import VET from './VET'
@@ -37,18 +40,21 @@ export const coins = {
   ETH,
   FTT,
   ADA,
-  BAT,
+  UNI,
+  DOT,
+  SOL,
   BNB,
+  XRP,
+  XLM,
+  USDC,
+  USDT,
   DOGE,
+  BAT,
   NEO,
   EOS,
   LN,
   LTC,
   TRX,
-  USDC,
-  USDT,
-  XLM,
-  XRP,
   VET,
   XMR,
   THETA,

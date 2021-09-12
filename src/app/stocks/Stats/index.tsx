@@ -22,7 +22,7 @@ function Stats () {
   // @ts-ignore
   const { id } = useParams()
   const [error, setError] = useState<any>(null)
-  const [activeKeys, setActiveKeys] = useState<string[]>(['NEO', 'LN', 'LTC', 'TRX', 'FTT', 'MATIC'])
+  const [activeKeys, setActiveKeys] = useState<string[]>(['ADA', 'UNI', 'DOT', 'SOL', 'BNB', 'XRP', 'XLM'])
 
   const windowSize = useWindowSize()
   const isMobile = windowSize?.width && windowSize?.width < 480

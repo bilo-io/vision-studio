@@ -1,3 +1,5 @@
+import icon from './UNI-icon.svg'
+
 export default {
   id: 'uniswap',
   name: 'Uniswap',
@@ -6,5 +8,7 @@ export default {
   website: '',
   whitepaperUrl: 'https://uniswap.org/whitepaper.pdf',
   youtube: '',
+  icon,
+  summary: '',
   color: '#ff007a'
 }
