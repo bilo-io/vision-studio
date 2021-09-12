@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import { TabsComponent } from './TabsComponent'
 
-export const Tabs = ({ keys, defaultTab }) => {
-  const [activeTab, setActiveTab] = useState(undefined)
-  const [activeTabIndex, setActiveTabIndex] = useState(undefined)
+export const Tabs = ({ keys, defaultTab, ...rest }) => {
+  const [activeTab, setActiveTab] = useState(defaultTab)
+  const [activeTabIndex, setActiveTabIndex] = useState(keys.findIndex(tab => tab === defaultTab))
 
   useEffect(() => {
     setActiveTab(defaultTab)
@@ -16,11 +16,12 @@ export const Tabs = ({ keys, defaultTab }) => {
       <TabsComponent
         items={keys}
         activeIndex={activeTabIndex}
-        onClickItem={(item, i) =>
-          this.setState({ activeTab: item, activeTabIndex: i })
-        }
+        onClickItem={(item, i) => {
+          setActiveTab(item)
+          setActiveTabIndex(i)
+        }}
       />
-      <div>{activeTab && this.props[activeTab]}</div>
+      <div>{activeTab && rest[activeTab]}</div>
     </div>
   )
 }

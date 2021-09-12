@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import FAIcon from 'react-fontawesome'
 import PropTypes from 'prop-types'
 
-const Accordion = ({
+export const Accordion = ({
   children,
   title,
   onClose,
