@@ -22,5 +22,19 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'jest/expect-expect': 'off'
-  }
+  },
+  overrides: [
+    {
+      files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
+      rules: {
+        'no-console': 'off'
+      }
+    },
+    {
+      files: ['**/*.stories.*'],
+      rules: {
+        'import/no-anonymous-default-export': 'off'
+      }
+    }
+  ]
 }
