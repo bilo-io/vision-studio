@@ -12,16 +12,16 @@ import FAIcon from 'react-fontawesome'
 // #endregion
 
 export class FAB extends Component {
-    render () {
-        return (
-            <div className='fab'>
-                <div className='fab-blur' />
-                <div className='fab-button'>
-                    <FAIcon name='eye' />
-                </div>
-            </div>
-        )
-    }
+  render () {
+    return (
+      <div className='fab'>
+        <div className='fab-blur' />
+        <div className='fab-button'>
+          <FAIcon name='eye' />
+        </div>
+      </div>
+    )
+  }
 }
 
 export default FAB

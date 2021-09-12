@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 export const Circular = ({
   diameter,
@@ -8,6 +7,13 @@ export const Circular = ({
   style,
   strokeWidth,
   ...rest
+}: {
+  progress: number,
+  diameter: number,
+  color?: string,
+  style?: any,
+  strokeWidth?: number,
+
 }) => {
   const circumference = Math.PI * diameter
   return <div { ...rest } style={{
@@ -38,12 +44,10 @@ export const Circular = ({
   </div>
 }
 
-Circular.propTypes = {
-  diameter: PropTypes.oneOfTypes([PropTypes.string, PropTypes.number]),
-  progress: PropTypes.oneOfTypes([PropTypes.string, PropTypes.number]),
-  color: PropTypes.string,
-  style: PropTypes.object,
-  strokeWidth: PropTypes.oneOfTypes([PropTypes.string, PropTypes.number])
+Circular.defaultProps = {
+  color: '#00adee',
+  strokeWidth: 4,
+  diameter: 24
 }
 
 export default Circular

@@ -5,10 +5,12 @@ import { ActionSuggestions } from './ActionSuggestions'
 import { CoinCard } from './CoinCard'
 import { CardStack } from 'components/Cards'
 import { noop } from 'utils/misc'
+import { withProvider } from '../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Cards',
-  components: [AssetCard, CardStack]
+  components: [AssetCard, CardStack],
+  decorators: [withProvider]
 }
 
 export function CardsStories () {

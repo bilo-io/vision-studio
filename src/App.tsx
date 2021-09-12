@@ -34,7 +34,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div className="flex-row">
+        <div className="app-body flex-row">
 
           <AppInfo setAuthenticated={setAuthenticated} />
           <NavbarContainer onToggle={toggleAppMenu} />

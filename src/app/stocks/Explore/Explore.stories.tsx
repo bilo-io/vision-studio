@@ -1,11 +1,11 @@
 import React from 'react'
 import Explore from '.'
-import { withProvider } from '../../../../.storybook/utils/provider'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
   title: 'Features/Explore',
   component: Explore,
-  decorators: [withProvider]
+  decorators: [withAppBody, withProvider]
 }
 
 export const ExploreStories = () => {

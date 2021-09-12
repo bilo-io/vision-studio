@@ -29,20 +29,20 @@ export const MasterGrid = ({
   onDeleteItem,
   onClearItem
 }: {
-  DEBUG: boolean,
-  onChangeLayout: Function,
-  isExportable: boolean,
-  isDroppable: boolean,
-  items: any[]
-  data: any
-  activeTileIndex: number
-  onDropItem: Function
-  onAddItem: Function
-  onEditItem: Function
-  onClickItem: Function
-  onChangeItem: Function
-  onDeleteItem: Function
-  onClearItem: Function
+  DEBUG?: boolean,
+  isExportable?: boolean,
+  isDroppable?: boolean,
+  items?: any[]
+  data?: any
+  activeTileIndex?: number
+  onChangeLayout?: Function,
+  onDropItem?: Function
+  onAddItem?: Function
+  onEditItem?: Function
+  onClickItem?: Function
+  onChangeItem?: Function
+  onDeleteItem?: Function
+  onClearItem?: Function
 }) => {
   const [state, setState] = useState<any>({
     dataSources: [],

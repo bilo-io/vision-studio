@@ -20,8 +20,13 @@
 }
 
 body {
-  // background-color: $col-vision-black;
+  // background: linear-gradient(to bottom right, $col-bg-gradient-start, $col-bg-gradient-end);
+}
+
+.app-body {
+  background: linear-gradient(to bottom right, $col-bg-gradient-start, $col-bg-gradient-end);
   color: #eee;
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -33,10 +38,6 @@ body {
     'Fira Sans',
     'Droid Sans';
   // 'Helvetica Neue';
-}
-
-.app-body {
-  background: linear-gradient(to bottom right, $col-bg-gradient-start, $col-bg-gradient-end);
 }
 
 .page {

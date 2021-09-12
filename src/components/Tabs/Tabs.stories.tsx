@@ -1,11 +1,11 @@
 import React from 'react'
 import { Tabs } from '.'
-import { withProvider } from '../../../.storybook/utils/provider'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Tabs',
   component: Tabs,
-  decorators: [withProvider]
+  decorators: [withAppBody, withProvider]
 }
 
 export function TabsStories () {

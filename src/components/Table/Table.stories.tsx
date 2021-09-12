@@ -1,11 +1,11 @@
 import React from 'react'
 import Table from '.'
-import { withProvider } from '../../../.storybook/utils/provider'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Table',
   component: Table,
-  decorators: [withProvider]
+  decorators: [withAppBody, withProvider]
 }
 
 export function TableStories () {

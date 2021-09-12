@@ -1,10 +1,10 @@
 import React from 'react'
 import Login from '.'
-import { withProvider } from '../../../.storybook/utils/provider'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 export default {
   title: 'Features/Auth',
   component: Login,
-  decorators: [withProvider]
+  decorators: [withAppBody, withProvider]
 }
 
 export const LoginStories = () => {

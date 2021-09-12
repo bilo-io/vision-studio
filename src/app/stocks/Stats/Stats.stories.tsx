@@ -1,12 +1,11 @@
 import React from 'react'
 import Stats from '.'
-import { MemoryRouter } from 'react-router'
-import { withProvider } from '../../../../.storybook/utils/provider'
+import { withAppBody, withMemoryRouter, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
   title: 'Features/Stats',
   component: Stats,
-  decorators: [withProvider, (Story: any) => (<MemoryRouter><Story/></MemoryRouter>)]
+  decorators: [withAppBody, withProvider, withMemoryRouter]
 }
 
 export const StatsStories = () => {

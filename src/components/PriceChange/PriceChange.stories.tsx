@@ -1,9 +1,11 @@
 import React from 'react'
 import PriceChange from 'components/PriceChange'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/PriceChange',
-  component: PriceChange
+  component: PriceChange,
+  decorators: [withAppBody, withProvider]
 }
 
 export const PriceChangeStory = () => {

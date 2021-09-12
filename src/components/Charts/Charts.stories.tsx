@@ -3,6 +3,7 @@ import LineChart from './LineChart'
 import PieChart from './PieChart'
 import CandleStickChart from './CandleStickChart'
 import axios from 'axios'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Charts',
@@ -11,7 +12,8 @@ export default {
     LineChart,
     PieChart,
     CandleStickChart
-  ]
+  ],
+  decorators: [withAppBody, withProvider]
 }
 
 export function Line () {

@@ -1,9 +1,11 @@
 import React from 'react'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 import MasterGrid from './master'
 
 export default {
   title: 'Core/Grid',
-  component: MasterGrid
+  component: MasterGrid,
+  decorators: [withAppBody, withProvider]
 }
 
 export function GridStories () {

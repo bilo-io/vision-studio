@@ -1,11 +1,11 @@
 import React from 'react'
-import { withProvider } from '../../../../.storybook/utils/provider'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 import News from '.'
 
 export default {
   title: 'Features/News',
   component: News,
-  decorators: [withProvider]
+  decorators: [withAppBody, withProvider]
 }
 
 export const NewsStories = () => {

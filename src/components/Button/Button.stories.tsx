@@ -1,9 +1,11 @@
 import React from 'react'
 import Button from 'components/Button'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Button',
-  component: Button
+  component: Button,
+  decorators: [withAppBody, withProvider]
 }
 
 export const ButtonStory = () => {

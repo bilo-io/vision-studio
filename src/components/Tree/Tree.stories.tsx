@@ -1,9 +1,11 @@
 import React from 'react'
 import { Tree } from '.'
+import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Tree',
-  component: Tree
+  component: Tree,
+  decorators: [withAppBody, withProvider]
 }
 
 export function TreeStories () {
