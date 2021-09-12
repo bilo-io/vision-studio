@@ -90,8 +90,8 @@ export const WidgetWeather = ({ data, isEditable, onNext, duration, format }: an
       <span className='weather-icon'>{}</span>
     </div>
     <div className='wind'>
-      <span className='arrow'></span>
-      <span className='speed'></span>
+      <span className='arrow' />
+      <span className='speed' />
     </div>
     <div className='forecast flex-column'>
       {

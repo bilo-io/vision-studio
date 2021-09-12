@@ -15,7 +15,7 @@ export function AppLayoutStories () {
   return (
     <div>
       <Layout
-        isLeftDark={true}
+        isLeftDark
         isRightDark={false}
         leftDiv={<div>Left Div</div>}
         rightDiv={<div>

@@ -7,7 +7,7 @@ import { currency, language } from 'utils/locale'
 import FAIcon from 'react-fontawesome'
 import Async from 'components/Async'
 import Accordion from 'components/Accordion'
-import HTML from 'components/HTML'
+import Html from 'components/HTML'
 import { coins, keys, getCodeForId, getIdForCode } from 'utils/crypto'
 
 function ProductDetails ({ storybook }: { storybook: any }) {
@@ -134,7 +134,7 @@ function ProductDetails ({ storybook }: { storybook: any }) {
       {/* <Accordion title={'Market data'} /> */}
 
       <Accordion title={'Info'}>
-        <HTML content={coinData?.description[language?.code]} />
+        <Html content={coinData?.description[language?.code]} />
       </Accordion>
 
       <Accordion title={'Rating'}>

@@ -18,12 +18,12 @@ function Explore () {
     <div>
       <Accordion title={'Coins'} isOpenDefault>
         <Async isLoading={loading}>
-
+          Coins
         </Async>
       </Accordion>
       <Accordion title={'What are crypto currencies'} isOpenDefault>
         <Async isLoading={loading}>
-
+          What
         </Async>
       </Accordion>
     </div>

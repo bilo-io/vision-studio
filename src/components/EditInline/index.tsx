@@ -7,7 +7,7 @@ export const EditInline = ({
 }: any) => {
   return <div className='edit-inline'>
     <div className='title' contentEditable
-      suppressContentEditableWarning={true}
+      suppressContentEditableWarning
       onInput={ onChange }
       onBlur={ onChange }
       onChange={ onChange }

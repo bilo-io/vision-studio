@@ -270,7 +270,7 @@ export default Slideshows
 //           {
 //             isSelected
 //               ? <div className='auto-scroll-y' style={{ position: 'relative', height: 'calc(100vh - 3rem)' }}>
-//                 <Accordion title='Summary' isOpenDefault={ true }>
+//                 <Accordion title='Summary'>
 //                   <div className='padded'>
 //                     <div>Slides: { slidesCount }</div>
 //                     <br />
@@ -286,7 +286,7 @@ export default Slideshows
 //                   </div>
 //                 </Accordion>
 //                 <div className='divider horizontal' />
-//                 <Accordion title='Share' isOpenDefault={ true }>
+//                 <Accordion title='Share'>
 //                   <div className='padded flex-row'>
 //                     {
 //                       [

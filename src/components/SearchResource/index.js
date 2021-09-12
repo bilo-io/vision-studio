@@ -12,7 +12,7 @@ export const SearchResource = ({ onChange, forwardRef }) => <div style={{ positi
       type='text'
       id='search-resource'
       className='explorer-input'
-      autoFocus={ true }
+      autoFocus
       placeholder='search...'
       // value={value}
       onChange={ e => onChange(e.target.value)}
