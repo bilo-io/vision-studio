@@ -1,4 +1,4 @@
-import { countries, getCountryDetails } from '../../api/countries'
+import { getCountryDetails } from '../../api/countries'
 
 describe('api-countries', () => {
   test('countries', async () => {
