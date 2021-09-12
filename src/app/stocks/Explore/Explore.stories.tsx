@@ -3,7 +3,7 @@ import Explore from '.'
 import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
-  title: 'Features/Explore',
+  title: 'Features/Slides/Explore',
   component: Explore,
   decorators: [withAppBody, withProvider]
 }

@@ -3,7 +3,7 @@ import { QueryBuilder } from '.'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/QueryBuilder',
+  title: 'Features/Stats/QueryBuilder',
   component: QueryBuilder,
   decorators: [withAppBody, withProvider]
 }

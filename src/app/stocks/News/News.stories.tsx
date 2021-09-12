@@ -3,7 +3,7 @@ import { withAppBody, withProvider } from '../../../../.storybook/utils/provider
 import News from '.'
 
 export default {
-  title: 'Features/News',
+  title: 'Features/Stats/News',
   component: News,
   decorators: [withAppBody, withProvider]
 }

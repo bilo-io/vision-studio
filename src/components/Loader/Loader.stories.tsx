@@ -4,7 +4,7 @@ import { Loader, LoaderType } from '.'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Loader',
+  title: 'App/Loader',
   component: Loader,
   decorators: [withAppBody, withProvider]
 }

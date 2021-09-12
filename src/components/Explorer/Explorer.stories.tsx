@@ -3,7 +3,7 @@ import Explorer from '.'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Explorer',
+  title: 'Core/Vision/Explorer',
   component: Explorer,
   decorators: [withAppBody, withProvider]
 }

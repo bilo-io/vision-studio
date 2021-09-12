@@ -4,7 +4,7 @@ import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 import { noop } from '../../utils/misc'
 
 export default {
-  title: 'Core/Async',
+  title: 'Core/Vision/Async',
   component: Async,
   decorators: [withAppBody, withProvider]
 }

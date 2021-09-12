@@ -3,7 +3,7 @@ import { ActionButtons } from 'components'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/ActionButton',
+  title: 'Core/Misc/ActionButton',
   component: ActionButtons,
   decorators: [withAppBody, withProvider]
 }

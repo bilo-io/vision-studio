@@ -3,7 +3,7 @@ import Products from '.'
 import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
-  title: 'Features/Products',
+  title: 'Features/Stocks/Products',
   component: Products,
   decorators: [withAppBody, withProvider]
 }

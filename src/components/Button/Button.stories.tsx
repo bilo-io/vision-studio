@@ -3,7 +3,7 @@ import Button from 'components/Button'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Button',
+  title: 'Core/Forms/Button',
   component: Button,
   decorators: [withAppBody, withProvider]
 }

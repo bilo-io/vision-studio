@@ -3,7 +3,7 @@ import { Progress, Circular } from 'components/Progress'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Progress',
+  title: 'Core/Misc/Progress',
   component: Progress,
   decorators: [withAppBody, withProvider]
 }

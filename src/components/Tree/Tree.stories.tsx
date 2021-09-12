@@ -3,7 +3,7 @@ import { Tree } from '.'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Tree',
+  title: 'Core/Vision/Tree',
   component: Tree,
   decorators: [withAppBody, withProvider]
 }

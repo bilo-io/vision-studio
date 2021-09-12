@@ -4,7 +4,7 @@ import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 import Button from 'components/Button'
 
 export default {
-  title: 'Core/Modal',
+  title: 'App/Modal',
   component: Modal,
   decorators: [withAppBody, withProvider]
 }

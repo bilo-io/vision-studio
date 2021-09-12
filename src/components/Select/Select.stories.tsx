@@ -3,7 +3,7 @@ import { Select } from 'components/Select'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Select',
+  title: 'Core/Forms/Select',
   component: Select,
   decorators: [withAppBody, withProvider]
 }

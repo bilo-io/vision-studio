@@ -3,7 +3,7 @@ import PriceChange from 'components/PriceChange'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/PriceChange',
+  title: 'Features/Stocks/PriceChange',
   component: PriceChange,
   decorators: [withAppBody, withProvider]
 }

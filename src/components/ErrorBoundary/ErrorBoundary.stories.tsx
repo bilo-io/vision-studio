@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'components'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/ErrorBoundary',
+  title: 'App/ErrorBoundary',
   component: ErrorBoundary,
   decorators: [withAppBody, withProvider]
 }

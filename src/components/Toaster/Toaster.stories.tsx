@@ -3,7 +3,7 @@ import { Toaster } from 'components'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Toaster',
+  title: 'App/Toaster',
   component: Toaster,
   decorators: [withAppBody, withProvider]
 }

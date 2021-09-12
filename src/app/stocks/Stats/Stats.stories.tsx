@@ -3,7 +3,7 @@ import Stats from '.'
 import { withAppBody, withMemoryRouter, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
-  title: 'Features/Stats',
+  title: 'Features/Stocks/Stats',
   component: Stats,
   decorators: [withAppBody, withProvider, withMemoryRouter]
 }

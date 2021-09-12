@@ -3,7 +3,7 @@ import { Tabs } from '.'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Tabs',
+  title: 'Core/Misc/Tabs',
   component: Tabs,
   decorators: [withAppBody, withProvider]
 }

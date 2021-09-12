@@ -3,7 +3,7 @@ import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 import MasterGrid from './master'
 
 export default {
-  title: 'Core/Grid',
+  title: 'Core/Vision/Grid',
   component: MasterGrid,
   decorators: [withAppBody, withProvider]
 }

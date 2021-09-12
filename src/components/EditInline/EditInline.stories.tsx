@@ -3,7 +3,7 @@ import { EditInline } from '.'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/EditInline',
+  title: 'Core/Forms/EditInline',
   component: EditInline,
   decorators: [withAppBody, withProvider]
 }

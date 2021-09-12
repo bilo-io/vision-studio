@@ -8,7 +8,7 @@ import { noop } from 'utils/misc'
 import { withProvider } from '../../../.storybook/utils/provider'
 
 export default {
-  title: 'Core/Cards',
+  title: 'Core/Vision/Cards',
   components: [AssetCard, CardStack],
   decorators: [withProvider]
 }
@@ -21,7 +21,6 @@ export function CardsStories () {
         isVerified: true,
         hasFunds: true,
         hasHoldings: false
-
       }} />
     </div>
   )
