@@ -8,14 +8,14 @@ export const SearchResource = ({ onChange, forwardRef }) => <div style={{ positi
   </div>
   <div className='flex-row'>
     <input
-      ref={ forwardRef }
+      ref={forwardRef}
       type='text'
       id='search-resource'
       className='explorer-input'
-      autoFocus={ true }
+      autoFocus
       placeholder='search...'
       // value={value}
-      onChange={ e => onChange(e.target.value)}
+      onChange={e => onChange(e.target.value)}
     />
   </div>
 </div>
