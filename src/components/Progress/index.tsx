@@ -4,7 +4,11 @@ import Circular from './circular'
 
 export * from './circular'
 
-export const Progress = ({ ratio, color, items, ...rest }) => {
+export const Progress = ({
+  ratio, color, items, ...rest
+}: {
+  ratio: number, color: string, items: any[]
+}) => {
   // debugger
   const downloadRatio = items
     ? items.length === 0
@@ -24,7 +28,8 @@ export const Progress = ({ ratio, color, items, ...rest }) => {
   }
 
   return (
-    <div style={{ ...rest.style }}>
+    // @ts-ignore
+    <div style={{ ...rest?.style }}>
       <div style={backgroundBarStyle}>
         <div style={{ width: downloadRatio * 100 + '%', height: '100%', borderRadius: '0.25rem', backgroundColor: color }} />
       </div>
