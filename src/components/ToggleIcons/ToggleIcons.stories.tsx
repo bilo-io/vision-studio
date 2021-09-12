@@ -9,7 +9,8 @@ export default {
 export function ToggleIconsStories () {
   return (
     <div>
-      <ToggleIcons />
+      <h3>ToggleIcons stories</h3>
+      <ToggleIcons items={[]} onChange={(change: any) => { console.log({ change }) }} />
     </div>
   )
 }
