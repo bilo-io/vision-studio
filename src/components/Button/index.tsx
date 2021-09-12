@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button ({
+export function Button ({
   children,
   color,
   shape,

@@ -1,2 +1,2 @@
-export * from './layout'
-export * from './layout-preview'
+export * from './LayoutView'
+export * from './LayoutPreview'

@@ -1,7 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-export const LayoutPreview = ({ template, fill, strokeColor, width, height }) => {
+export const LayoutPreview = ({
+  template,
+  fill,
+  strokeColor,
+  width,
+  height
+}: {
+  template: any,
+  fill: string,
+  strokeColor: string,
+  width: string | number,
+  height: string | number
+}) => {
   const strokeWidth = 5
   const stroke = strokeColor || 'transparent'
   const defs = <defs>
@@ -31,7 +42,7 @@ export const LayoutPreview = ({ template, fill, strokeColor, width, height }) =>
   return <svg width={ width } height={ height } style={{ marginTop: '0.5rem', marginLeft: '0.5rem' }}>
     { defs }
     {
-      template.tiles.map((tile, i) => {
+      template.tiles.map((tile: any, i: number) => {
         const { layout } = tile
         const scaleFactor = 3
         const aspectRatio = 1.28
@@ -54,11 +65,4 @@ export const LayoutPreview = ({ template, fill, strokeColor, width, height }) =>
   </svg>
 }
 
-LayoutPreview.propTypes = {
-  template: PropTypes.element,
-  fill: PropTypes.string,
-  strokeColor: PropTypes.string,
-  width: PropTypes.oneOfTypes([PropTypes.number, PropTypes.string]),
-  height: PropTypes.oneOfTypes([PropTypes.number, PropTypes.string])
-}
 export default LayoutPreview
