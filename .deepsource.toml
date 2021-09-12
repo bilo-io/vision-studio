@@ -17,6 +17,8 @@ enabled = true
 
   [analyzers.meta]
   plugins = ["react"]
+  style_guide = "standard"
+  dialect = "typescript"
 
 [[transformers]]
 name = "standardjs"
