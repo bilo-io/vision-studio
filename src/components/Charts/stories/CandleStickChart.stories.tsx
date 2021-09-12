@@ -10,7 +10,10 @@ export default {
   subComponents: [
     CandleStickChart
   ],
-  decorators: [withAppBody, withProvider]
+  decorators: [withAppBody, withProvider],
+  parameters: {
+    chromatic: { delay: 500 }
+  }
 }
 
 export function CandleStick () {

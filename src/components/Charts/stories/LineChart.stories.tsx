@@ -10,7 +10,10 @@ export default {
   subComponents: [
     PieChart
   ],
-  decorators: [withAppBody, withProvider]
+  decorators: [withAppBody, withProvider],
+  parameters: {
+    chromatic: { delay: 500 }
+  }
 }
 
 export function Line () {
