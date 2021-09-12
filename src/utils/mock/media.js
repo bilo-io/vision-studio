@@ -13,11 +13,11 @@ export const images = [
 
 export const randomMedia = (type) => {
   switch (type) {
-  case 'img':
-  case 'image':
-    return images[Math.floor(Math.random() * images.length)]
-  default:
-    return null
+    case 'img':
+    case 'image':
+      return images[Math.floor(Math.random() * images.length)]
+    default:
+      return null
   }
 }
 
