@@ -1,7 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-export const LayoutPreview = ({ template, fill, strokeColor, width, height }) => {
+export const LayoutPreview = ({
+  template,
+  fill,
+  strokeColor,
+  width,
+  height
+}: {
+  template: any,
+  fill: string,
+  strokeColor: string,
+  width: string | number,
+  height: string | number
+}) => {
   const strokeWidth = 5
   const stroke = strokeColor || 'transparent'
   const defs = (
@@ -24,6 +35,7 @@ export const LayoutPreview = ({ template, fill, strokeColor, width, height }) =>
                     R G B A M --> B
                     R G B A M --> A
                 */}
+<<<<<<< HEAD:src/components/Layout/layout-preview.js
         <feOffset in='colorOut' result='offOut' dx='0' dy='1' />
         <feGaussianBlur in='offOut' result='blurOut' stdDeviation='5' />
         <feBlend in='SourceGraphic' in2='blurOut' mode='normal' />
@@ -35,6 +47,17 @@ export const LayoutPreview = ({ template, fill, strokeColor, width, height }) =>
       {defs}
       {
       template.tiles.map((tile, i) => {
+=======
+      <feOffset in='colorOut' result='offOut' dx='0' dy='1' />
+      <feGaussianBlur in='offOut' result='blurOut' stdDeviation='5' />
+      <feBlend in='SourceGraphic' in2='blurOut' mode='normal' />
+    </filter>
+  </defs>
+  return <svg width={ width } height={ height } style={{ marginTop: '0.5rem', marginLeft: '0.5rem' }}>
+    { defs }
+    {
+      template.tiles.map((tile: any, i: number) => {
+>>>>>>> master:src/components/Layout/LayoutPreview.tsx
         const { layout } = tile
         const scaleFactor = 3
         const aspectRatio = 1.28
@@ -61,11 +84,4 @@ export const LayoutPreview = ({ template, fill, strokeColor, width, height }) =>
   )
 }
 
-LayoutPreview.propTypes = {
-  template: PropTypes.element,
-  fill: PropTypes.string,
-  strokeColor: PropTypes.string,
-  width: PropTypes.oneOfTypes([PropTypes.number, PropTypes.string]),
-  height: PropTypes.oneOfTypes([PropTypes.number, PropTypes.string])
-}
 export default LayoutPreview

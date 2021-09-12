@@ -9,7 +9,7 @@ export const ChartsGrid = ({ items, data, isExportable, onLayoutChange } : any) 
       cols={12}
       rowHeight={64}
       width={1200}
-      verticalCompact={true}
+      verticalCompact
       preventCollision={false}
       onLayoutChange={onLayoutChange}
     >
