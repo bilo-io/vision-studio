@@ -1,0 +1,27 @@
+.instagram-post {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    .details {
+        padding: 4rem;
+        padding-top: 6rem;
+        background: rgba(black, 0.3);
+        color: white;
+        position: absolute;
+        padding: 1rem;
+        font-size: 1.3rem;
+        background: white;
+        color: black;
+        left: 60%;
+        height: calc(40% - 8rem);
+        height: calc(100% - 2rem);
+        overflow: hidden;
+    }
+
+    img {
+        object-fit: cover;
+        width: 60%!important;
+        height: auto!important;
+    }
+}

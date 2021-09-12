@@ -1,5 +1,5 @@
 import React from 'react'
-import ToggleIcons from '.'
+import { ToggleIcons } from 'components'
 
 export default {
   title: 'Core/ToggleIcons',

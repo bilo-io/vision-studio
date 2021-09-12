@@ -40,9 +40,11 @@ export const Progress = ({ ratio, color, items, ...rest }) => {
       <div>
         { item.name }
       </div>
-      {/* <div style={{ ...backgroundBarStyle, width: '90%', height: '4px' }}>
-                <div style={{ width: item.ratio * 100 + `%`, height: '100%', borderRadius: '2px', backgroundColor: color, opacity: 0.8 }} />
-            </div> */}
+      {/*
+      <div style={{ ...backgroundBarStyle, width: '90%', height: '4px' }}>
+          <div style={{ width: item.ratio * 100 + `%`, height: '100%', borderRadius: '2px', backgroundColor: color, opacity: 0.8 }} />
+      </div>
+      */}
     </div>)}
   </div>
 }
