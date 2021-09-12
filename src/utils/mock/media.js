@@ -1,4 +1,4 @@
-const images = [
+export const images = [
   'https://www.tutsps.com/wp-content/uploads/2016/06/effet-de-lumiere-expressive-final.jpg',
   'https://www.onlineprinters.ie/magazine/wp-content/uploads/2018/10/photoshop-blur.jpg',
   'https://emmanuelcorreia.com/wp-content/uploads/2018/05/Desint%C3%A9gration01.jpg',
@@ -11,7 +11,7 @@ const images = [
   'https://data.whicdn.com/images/170746319/original.jpg'
 ]
 
-const randomMedia = (type) => {
+export const randomMedia = (type) => {
   switch (type) {
   case 'img':
   case 'image':
