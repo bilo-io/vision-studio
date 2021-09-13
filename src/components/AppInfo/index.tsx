@@ -4,7 +4,7 @@ import { useHistory } from 'react-router'
 import { RootState } from 'store'
 import pkg from '../../../package.json'
 
-const AppInfo = ({ setAuthenticated }: { setAuthenticated: Function }) => {
+export const AppInfo = ({ isVisible, setAuthenticated }: { isVisible?:boolean, setAuthenticated: Function }) => {
   const history = useHistory()
   const { isAuthenticated } = useSelector((state: RootState) => state.auth)
 
@@ -43,7 +43,18 @@ const AppInfo = ({ setAuthenticated }: { setAuthenticated: Function }) => {
   // #endregion
 
   return (
-    <div id="app-info" />
+    <div id="app-info">
+      {isVisible && (
+        <div>
+          <div>App: {pkg.name}</div>
+          <br/>
+          <div style={{ color: '#00adee' }}>- version: {pkg.version}</div>
+          <br/>
+          <div style={{ color: isAuthenticated ? '#0f0' : '#f00' }}>- isAuthenticated: {isAuthenticated ? 'YES' : 'NO'}</div>
+          <br/>
+        </div>
+      )}
+    </div>
   )
 }
 

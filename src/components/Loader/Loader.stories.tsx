@@ -6,7 +6,10 @@ import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 export default {
   title: 'App/Loader',
   component: Loader,
-  decorators: [withAppBody, withProvider]
+  decorators: [withAppBody, withProvider],
+  parameters: {
+    chromatic: { delay: 200 }
+  }
 }
 
 export function LoaderStories () {

@@ -7,9 +7,10 @@
 @import './styles/Accordion.scss';
 @import './styles/AppMenu.scss';
 @import './styles/Async.scss';
-@import './styles/Explorer.scss';
 @import './styles/Cards.scss';
 @import './styles/Charts.scss';
+@import './styles/Explorer.scss';
+@import './styles/FAB.scss';
 @import './styles/Loader.scss';
 @import './styles/Navbar.scss';
 @import './styles/Page.scss';
@@ -101,5 +102,151 @@ $fade-duration: .3s;
     color: #eee;
     border-left: 1px solid rgba(grey, 0.4);
     transition: all $fade-duration ease-in-out;
+  }
+}
+
+.version-banner {
+  position: relative;
+  margin: 0.3rem;
+  margin-top: 1rem;
+  top: 0.5rem;
+  border-radius: 0.8rem;
+  color: white;
+
+  padding: {
+    left: 0.3rem;
+    right: 0.3rem;
+  }
+
+  &.pre-alpha {
+    background-color: red;
+  }
+
+  &.alpha {
+    background-color: darkorange;
+  }
+
+  &.beta {
+    background-color: darkcyan;
+  }
+
+  &.discovery {
+    background-color: black;
+  }
+}
+
+.divider {
+  position: relative;
+  background: rgba(grey, 0.3);
+
+  &.vertical {
+    width: 1px;
+    height: 100%;
+  }
+
+  &.horizontal {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+.help-gif {
+  @extend .card-1;
+  // width: 80%;
+  max-width: 40rem;
+  margin-top: 2rem;
+  height: auto;
+  margin: auto;
+}
+
+.edit-inline {
+  @extend .flex-row;
+
+  .title {
+    outline: none;
+    margin-right: 1em;
+
+    &:focus {
+      color: $col-active;
+      border-bottom: 1px solid $col-active;
+    }
+  }
+
+  .icon {
+    opacity: 0;
+    font-size: 0.75rem;
+    line-height: 3rem;
+    margin-right: 0.5px;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $col-active;
+
+    .icon {
+      transition: all 0.5s ease-in-out;
+      opacity: 1;
+    }
+  }
+}
+
+.action-button {
+  margin-right: 0.25em;
+  width: 2.2em !important;
+  height: 2.2em !important;
+  font-size: 0.9em !important;
+  border-radius: 1.1em !important;
+  border-color: transparent !important;
+
+  .icon {
+    margin: auto;
+    font-size: 0.9em;
+    line-height: 2.2em;
+  }
+}
+
+#guide {
+  @extend .flex-col;
+  @extend .auto-scroll-y;
+  flex-grow: 3;
+  max-width: 40.5rem;
+  padding: 1rem;
+  margin: auto;
+
+  img {
+    margin-bottom: 2rem;
+  }
+}
+
+$doc-index-width: 12rem;
+
+.doc-index {
+  @extend .flex-col;
+  @extend .padded;
+  @extend .auto-scroll-y;
+  max-width: $doc-index-width;
+  flex-grow: 1;
+  margin-top: 1rem;
+
+  .doc-index-item {
+    $doc-index-font-size: 0.8em;
+    color: $col-active;
+    min-width: 6rem;
+    max-width: $doc-index-width;
+    height: 1em;
+    line-height: 1em;
+    overflow: hidden;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 8px;
+    font-size: $doc-index-font-size;
+    cursor: pointer;
+
+    span {
+      &:hover {
+        border-bottom: 1px solid $col-active;
+      }
+    }
   }
 }
