@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Button, Modal } from 'components'
-import { WidgetYoutube } from 'widgets'
+import { Modal } from 'components'
+// import { WidgetYoutube } from 'widgets'
 import config from './_config'
 
 export class VideoModal extends Component {
@@ -56,7 +56,7 @@ export class VideoModal extends Component {
         // submitText
       } = this.props
 
-      const { url } = this.state
+      // const { url } = this.state
 
       return <Modal
         isOpen={ isOpen }
