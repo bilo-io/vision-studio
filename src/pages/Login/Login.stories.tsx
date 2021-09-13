@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from '.'
+import Login from './Login'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 export default {
   title: 'Features/Vision/Auth',

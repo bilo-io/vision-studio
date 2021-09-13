@@ -1,7 +1,7 @@
 import React from 'react'
 import FAIcon from 'react-fontawesome'
 import { useHistory } from 'react-router'
-import pkg from '../../../package.json'
+import pkg from '../../../../package.json'
 import hydraLogo from 'assets/vision-logo.png'
 
 function AppMenu (

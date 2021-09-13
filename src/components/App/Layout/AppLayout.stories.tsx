@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Layout } from './LayoutView'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
-import { Input } from 'components/Input'
-import { Button } from 'components/Button'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
+import { Input } from 'components/Core/Input'
+import { Button } from 'components/Core/Button'
 import { SearchResource } from 'components/SearchResource'
 
 export default {
-  title: 'App/AppLayout',
+  title: 'App/Layout',
   component: Layout,
   decorators: [withAppBody, withProvider]
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import { RootState } from 'store'
-import pkg from '../../../package.json'
+import pkg from '../../../../package.json'
 
 export const AppInfo = ({ isVisible, setAuthenticated }: { isVisible?:boolean, setAuthenticated: Function }) => {
   const history = useHistory()

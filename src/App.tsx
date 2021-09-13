@@ -4,10 +4,10 @@ import { Provider } from 'react-redux'
 
 import './App.scss'
 import Error from './pages/Error'
-import NavbarContainer from 'components/Navbar/container'
-import AppMenu from 'components/AppMenu'
+import NavbarContainer from 'components/App/Navbar/container'
+import AppMenu from 'components/App/AppMenu'
 // #region Routers
-import Login from './pages/Login'
+import Login from './pages/Login/Login'
 import StocksRouter from 'app/stocks'
 import SlidesRouter from 'app/slides'
 import SessionsRouter from 'app/sessions'
@@ -16,7 +16,7 @@ import Profile from 'pages/Profile'
 // #endregion
 
 import { store } from './store'
-import AppInfo from 'components/AppInfo'
+import AppInfo from 'components/App/AppInfo'
 // import logo from './assets/vision-logo.svg'
 
 const App = () => {

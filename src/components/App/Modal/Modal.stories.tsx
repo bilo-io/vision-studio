@@ -1,7 +1,7 @@
 import React from 'react'
-import { Modal } from 'components/Modal'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
-import Button from 'components/Button'
+import { Modal } from 'components/App/Modal'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
+import Button from 'components/Core/Button'
 
 export default {
   title: 'App/Modal',

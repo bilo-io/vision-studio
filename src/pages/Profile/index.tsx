@@ -4,7 +4,7 @@ import { collection, getDocs } from 'firebase/firestore'
 // source
 import { db } from 'utils/firebase'
 import Accordion from 'components/Accordion'
-import Async from 'components/Async'
+import Async from 'components/App/Async'
 
 function Profile () {
   const [loading, setLoading] = useState<boolean>(true)

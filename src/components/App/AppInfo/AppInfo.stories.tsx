@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppInfo } from '.'
-import { withAppBody, withMemoryRouter, withProvider } from '../../../.storybook/utils/provider'
+import { withAppBody, withMemoryRouter, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
   title: 'App/AppInfo',

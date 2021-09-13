@@ -1,4 +1,4 @@
-import Async from 'components/Async'
+import Async from 'components/App/Async'
 import React, { useState, useEffect } from 'react'
 import Accordion from 'components/Accordion'
 

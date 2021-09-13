@@ -7,7 +7,7 @@ import LineChart from 'components/Charts/LineChart'
 import { fetchChartData, fetchCoins } from 'services/coingecko'
 // import { currency, language } from 'utils/locale'
 import { coins, getCodeForId, getIdForCode } from 'utils/crypto'
-import Async from 'components/Async'
+import Async from 'components/App/Async'
 import { withCommas } from 'utils/format-number'
 import PriceChange from 'components/PriceChange'
 

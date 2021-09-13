@@ -1,7 +1,7 @@
 import React from 'react'
 import AppMenu from '.'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
-import { noop } from '../../utils/misc'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
+import { noop } from '../../../utils/misc'
 
 export default {
   title: 'App/AppMenu',

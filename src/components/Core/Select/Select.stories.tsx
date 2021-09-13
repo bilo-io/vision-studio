@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Select } from 'components/Select'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
+import { Select } from 'components/Core/Select'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Forms/Select',
@@ -24,7 +24,7 @@ export function SelectStories () {
     }
   ]
 
-  const [value, setValue] = useState<Option>(null)
+  const [value, setValue] = useState<Option>(options[0])
   return (
     <div>
       <Select

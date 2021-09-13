@@ -1,10 +1,10 @@
 import React from 'react'
 import Async from '.'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
-import { noop } from '../../utils/misc'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
+import { noop } from '../../../utils/misc'
 
 export default {
-  title: 'Core/Vision/Async',
+  title: 'App/Async',
   component: Async,
   decorators: [withAppBody, withProvider]
 }

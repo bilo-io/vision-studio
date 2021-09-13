@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from 'components/Button'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
+import Button from 'components/Core/Button'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Forms/Button',

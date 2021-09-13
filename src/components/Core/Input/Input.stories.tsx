@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Input } from 'components/Input'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
+import { Input } from 'components/Core/Input'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
   title: 'Core/Forms/Input',

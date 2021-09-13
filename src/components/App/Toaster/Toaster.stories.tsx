@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Button } from 'components/Button'
-import { Toaster } from 'components/Toaster'
-import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
+import { Button } from 'components/Core/Button'
+import { Toaster } from 'components/App/Toaster'
+import { withAppBody, withProvider } from '../../../../.storybook/utils/provider'
 
 export default {
   title: 'App/Toaster',
