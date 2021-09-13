@@ -13,16 +13,16 @@ export const SearchResource = ({ onChange, forwardRef }) => (
         fontSize: '0.8rem'
       }}
     >
-      <FAIcon name="search" />
+      <FAIcon name='search' />
     </div>
-    <div className="flex-row">
+    <div className='flex-row'>
       <input
         ref={forwardRef}
-        type="text"
-        id="search-resource"
-        className="explorer-input full-width"
+        type='text'
+        id='search-resource'
+        className='explorer-input full-width'
         autoFocus
-        placeholder="search..."
+        placeholder='search...'
         style={{ textIndent: '2.3rem' }}
         // value={value}
         onChange={(e) => onChange(e.target.value)}
