@@ -5,7 +5,10 @@ import { withAppBody, withMemoryRouter, withProvider } from '../../../../.storyb
 export default {
   title: 'Features/Stocks/Stats',
   component: Stats,
-  decorators: [withAppBody, withProvider, withMemoryRouter]
+  decorators: [withAppBody, withProvider, withMemoryRouter],
+  parameters: {
+    chromatic: { delay: 500 }
+  }
 }
 
 export const StatsStories = () => {

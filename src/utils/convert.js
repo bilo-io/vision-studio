@@ -1,4 +1,4 @@
-const csvToJson = (csvString, delimiter = ',') => {
+export const csvToJson = (csvString, delimiter = ',') => {
   if (!csvString) {
     return {
       error: 'csvToJson(csvString, delimiter = \',\') => arg \'csvString\' is undefined or null'

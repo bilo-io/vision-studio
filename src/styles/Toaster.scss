@@ -1,0 +1,57 @@
+.vision-toaster {
+    $toast-height: 2rem;
+    @extend .flex-col;
+    position: absolute;
+    top: 0;
+    left: $navbar-size;
+    width: max-content;
+    min-height: 0rem;
+    margin: auto;
+
+    .toast {
+        @extend .colors;
+        @extend .flex-row;
+        @extend .space-between;
+
+        position: relative;
+        width: max-content;
+        min-width: 30%;
+        max-width: calc(100vw - 18rem);
+        min-height: $toast-height;
+        line-height: $toast-height;
+        margin: auto;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        text-align: center;
+        border-radius: calc(#{$toast-height} / 2);
+        cursor: pointer;
+        color: white !important;
+        overflow: hidden;
+
+        padding: {
+            left: 0.8rem;
+            right: 0.8rem;
+        }
+
+        &:hover {
+            color: initial;
+        }
+
+        opacity: 1;
+        transition: all 1s ease-in-out;
+        height: auto;
+
+        &.deleting {
+            opacity: 0;
+            width: 2.5rem;
+            height: 1rem;
+            min-width: 0;
+            min-height: 0;
+            line-height: 2.5;
+            margin-top: -1rem;
+            font-size: 0.5rem;
+            color: transparent;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}

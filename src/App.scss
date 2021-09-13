@@ -7,6 +7,7 @@
 @import './styles/Accordion.scss';
 @import './styles/AppMenu.scss';
 @import './styles/Async.scss';
+@import './styles/Explorer.scss';
 @import './styles/Cards.scss';
 @import './styles/Charts.scss';
 @import './styles/Loader.scss';
@@ -16,6 +17,7 @@
 @import './styles/Modal.scss';
 // @import './styles/Spinner.scss';
 @import './styles/Tabs.scss';
+@import './styles/Toaster.scss';
 
 .App {
   text-align: center;
@@ -65,5 +67,39 @@ body {
 
   100% {
     transform: translateY(0);
+  }
+}
+
+.layout {
+  @extend .flex-row;
+  position: relative;
+  height: 100%;
+}
+
+$fade-duration: .3s;
+
+.layout-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #eeeeee;
+  transition: all $fade-duration ease-in-out;
+
+  &.padded {
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+  }
+
+  &.light {
+    background-color: #eeeeee;
+  }
+
+  &.dark {
+    background-color: #1D1D1D;
+    color: #eee;
+    border-left: 1px solid rgba(grey, 0.4);
+    transition: all $fade-duration ease-in-out;
   }
 }

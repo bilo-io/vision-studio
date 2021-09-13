@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import FAIcon from 'react-fontawesome'
 import Highlight from 'react-highlight-words'
-import { SearchResource } from 'components'
+import { SearchResource } from 'components/SearchResource'
 
 export class Explorer extends Component {
   static propTypes = {

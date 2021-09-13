@@ -1,5 +1,5 @@
 import React from 'react'
-import Explorer from '.'
+import { Explorer } from './index'
 import { withAppBody, withProvider } from '../../../.storybook/utils/provider'
 
 export default {
@@ -9,9 +9,33 @@ export default {
 }
 
 export function ExplorerStories () {
+  const resources = [
+    {
+      id: 0,
+      name: 'First in the tree',
+      resources: [
+        {
+          name: 'Dude', id: 2
+        }
+      ]
+    },
+    {
+      id: 1, name: 'Second in the tree'
+    }
+  ]
   return (
     <div>
-      ExplorerStories
+      <Explorer
+        resources={resources}
+        // collections={resources}
+        showPath
+        rootPath={'schedules/'}
+        name={'Schedules'}
+        resourceIcon='pencil'
+        onClickItem={(item: any) => {
+          alert('clicked item' + JSON.stringify(item, undefined, 2))
+        }}
+      />
     </div>
   )
 }
