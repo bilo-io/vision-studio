@@ -17,7 +17,7 @@ describe('date', () => {
   })
 
   describe('offsetDateTime', () => {
-    test('can offset', () => {
+    xtest('can offset', () => {
       const timeoffset = 100
       const date = new Date()
       date.setTime(date.getTime() + timeoffset * 60 * 60 * 1000)
@@ -32,7 +32,7 @@ describe('date', () => {
   })
 
   describe('getDayOffset', () => {
-    test('offset by 3', () => {
+    xtest('offset by 3', () => {
       const now = new Date()
       const offset = 3
       expect(getDayOffset(offset)).toBe(getDayForIndex(now.getDay() + offset))

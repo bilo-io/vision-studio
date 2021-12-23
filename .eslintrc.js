@@ -27,13 +27,16 @@ module.exports = {
     {
       files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
       rules: {
-        'no-console': 'off'
+        'no-console': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'off'
       }
     },
     {
       files: ['**/*.stories.*'],
       rules: {
         'import/no-anonymous-default-export': 'off'
+
       }
     }
   ]
