@@ -4,22 +4,23 @@ import { Navbar } from '.'
 
 const NavbarContainer = ({ onToggle }: { onToggle: Function }) => {
   const history = useHistory()
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(true)
 
-  useEffect(() => {
-    history.listen(() => {
-      setVisible(!history.location.pathname?.includes('/auth'))
-    })
-  }, [])
+  // useEffect(() => {
+  //   history.listen(() => {
+  //     setVisible(!history.location.pathname?.includes('/auth'))
+  //   })
+  // }, [])
 
-  return visible
-    ? (
-      <>
-        <Navbar type='desktop' onToggle={onToggle} />
-        <Navbar type='mobile' onToggle={onToggle} />
-      </>
-    )
-    : null
+  // return visible
+  //   ? (
+  return (<>
+    <Navbar type='desktop' onToggle={onToggle} />
+    <Navbar type='mobile' onToggle={onToggle} />
+  </>
+  )
+  // )
+  // : null
 }
 
 export default NavbarContainer
