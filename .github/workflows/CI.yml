@@ -36,8 +36,8 @@ jobs:
       uses: cypress-io/github-action@v2.9.7
 
       # CI - eslint
-    - name: ESLint Plus
-      uses: bradennapier/eslint-plus-action@v3
+    # - name: ESLint Plus
+    #   uses: bradennapier/eslint-plus-action@v3
 
 
   visual-tests:
