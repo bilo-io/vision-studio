@@ -7,12 +7,12 @@ import Error from './pages/Error'
 import NavbarContainer from 'components/App/Navbar/container'
 import AppMenu from 'components/App/AppMenu'
 // #region Routers
-import Login from './pages/Login/Login'
+// import Login from './pages/Login/Login'
 import StocksRouter from 'app/stocks'
 import SlidesRouter from 'app/slides'
 import SessionsRouter from 'app/sessions'
 import StartupsRouter from 'app/startups'
-import Profile from 'pages/Profile'
+// import Profile from 'pages/Profile'
 // #endregion
 
 import { store } from './store'
@@ -22,7 +22,7 @@ import AppInfo from 'components/App/AppInfo'
 const App = () => {
   // #region STATE
   const [isAppMenuOpen, setAppMenuOpen] = useState<boolean>(false)
-  const [isAuthenticated, setAuthenticated] = useState<boolean>(false)
+  // const [isAuthenticated, setAuthenticated] = useState<boolean>(false)
   // #endregion
 
   // #region FUNCTIONS
@@ -36,7 +36,7 @@ const App = () => {
       <Router>
         <div className="app-body flex-row">
 
-          <AppInfo setAuthenticated={setAuthenticated} />
+          <AppInfo setAuthenticated={() => { }} />
           <NavbarContainer onToggle={toggleAppMenu} />
 
           <AppMenu isOpen={isAppMenuOpen} isDark onToggle={toggleAppMenu} />
@@ -49,19 +49,13 @@ const App = () => {
                 render={() => <Redirect to={'/stocks/stats'} />}
               />
 
-              {
-                isAuthenticated && <>
-                  <Route path="/app/profile" render={() => <Profile />} />
-                  {/* Apps */}
-                  <Route path="/stocks" render={() => <StocksRouter />} />
-                  <Route path="/startups" render={() => <StartupsRouter />} />
-                  <Route path="/sessions" render={() => <SessionsRouter />} />
-                </>
-              }
+              <Route path="/stocks" render={() => <StocksRouter />} />
+              <Route path="/startups" render={() => <StartupsRouter />} />
+              <Route path="/sessions" render={() => <SessionsRouter />} />
               <Route path="/slides" render={() => <SlidesRouter />} />
 
               {/* AUTH */}
-              <Route path="/auth/login" render={() => <Login />} />
+              {/* <Route path="/auth/login" render={() => <Login />} /> */}
               <Route path="*" component={Error} />
             </Switch>
           </div>

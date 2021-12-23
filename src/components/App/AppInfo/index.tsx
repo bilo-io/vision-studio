@@ -25,9 +25,9 @@ export const AppInfo = ({ isVisible, setAuthenticated }: { isVisible?:boolean, s
     console.log(`%c- authenticated: ${isAuthenticated}`, `color: ${isAuthenticated ? '#22FF99' : '#FF5533'} `)
     setAuthenticated(isAuthenticated)
 
-    if (!isAuthenticated) {
-      history.push('/auth/login')
-    }
+    // if (!isAuthenticated) {
+    //   history.push('/auth/login')
+    // }
 
     // NOTE: check for double log-out issues
   }, [isAuthenticated])
