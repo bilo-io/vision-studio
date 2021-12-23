@@ -1,7 +1,7 @@
 import { getCountryDetails } from '../../api/countries'
 
 describe('api-countries', () => {
-  test('countries', async () => {
+  xtest('countries', async () => {
     const details = await getCountryDetails(['de;usa;gb'])
 
     // debugger
