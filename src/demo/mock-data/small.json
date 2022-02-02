@@ -1,0 +1,146 @@
+[
+    {
+      "id": "Kaymbo",
+      "sales_weekly": 526,
+      "sales_monthly": 2010,
+      "branches": 9,
+      "net_worth": "$4.01",
+      "followers": 446,
+      "years_in_business": 6
+    },
+    {
+      "id": "Gabspot",
+      "sales_weekly": 26,
+      "sales_monthly": 1809,
+      "branches": 15,
+      "net_worth": "$4.05",
+      "followers": 4464,
+      "years_in_business": 7
+    },
+    {
+      "id": "Mycat",
+      "sales_weekly": 661,
+      "sales_monthly": 837,
+      "branches": 20,
+      "net_worth": "$2.03",
+      "followers": 351,
+      "years_in_business": 2
+    },
+    {
+      "id": "Dazzlesphere",
+      "sales_weekly": 306,
+      "sales_monthly": 2538,
+      "branches": 4,
+      "net_worth": "$7.73",
+      "followers": 2039,
+      "years_in_business": 1
+    },
+    {
+      "id": "Thoughtstorm",
+      "sales_weekly": 687,
+      "sales_monthly": 3894,
+      "branches": 4,
+      "net_worth": "$7.46",
+      "followers": 913,
+      "years_in_business": 4
+    },
+    {
+      "id": "Jabbersphere",
+      "sales_weekly": 1126,
+      "sales_monthly": 4334,
+      "branches": 24,
+      "net_worth": "$5.69",
+      "followers": 1866,
+      "years_in_business": 2
+    },
+    {
+      "id": "Plambee",
+      "sales_weekly": 980,
+      "sales_monthly": 4780,
+      "branches": 8,
+      "net_worth": "$7.33",
+      "followers": 91,
+      "years_in_business": 2
+    },
+    {
+      "id": "Edgetag",
+      "sales_weekly": 830,
+      "sales_monthly": 1168,
+      "branches": 19,
+      "net_worth": "$8.07",
+      "followers": 3697,
+      "years_in_business": 2
+    },
+    {
+      "id": "Zoomlounge",
+      "sales_weekly": 1129,
+      "sales_monthly": 1582,
+      "branches": 18,
+      "net_worth": "$1.56",
+      "followers": 4634,
+      "years_in_business": 6
+    },
+    {
+      "id": "Innotype",
+      "sales_weekly": 1087,
+      "sales_monthly": 2087,
+      "branches": 2,
+      "net_worth": "$0.19",
+      "followers": 1963,
+      "years_in_business": 6
+    },
+    {
+      "id": "Quire",
+      "sales_weekly": 528,
+      "sales_monthly": 3224,
+      "branches": 3,
+      "net_worth": "$3.07",
+      "followers": 2072,
+      "years_in_business": 4
+    },
+    {
+      "id": "Edgeify",
+      "sales_weekly": 103,
+      "sales_monthly": 4835,
+      "branches": 20,
+      "net_worth": "$6.16",
+      "followers": 171,
+      "years_in_business": 5
+    },
+    {
+      "id": "Wordify",
+      "sales_weekly": 1178,
+      "sales_monthly": 922,
+      "branches": 6,
+      "net_worth": "$5.56",
+      "followers": 4402,
+      "years_in_business": 7
+    },
+    {
+      "id": "Nlounge",
+      "sales_weekly": 668,
+      "sales_monthly": 3468,
+      "branches": 26,
+      "net_worth": "$3.05",
+      "followers": 3422,
+      "years_in_business": 3
+    },
+    {
+      "id": "Jaxnation",
+      "sales_weekly": 100,
+      "sales_monthly": 752,
+      "branches": 22,
+      "net_worth": "$4.38",
+      "followers": 702,
+      "years_in_business": 3
+    },
+    {
+      "id": "Voonyx",
+      "sales_weekly": 1093,
+      "sales_monthly": 4447,
+      "branches": 20,
+      "net_worth": "$0.38",
+      "followers": 535,
+      "years_in_business": 5
+    }
+  ]

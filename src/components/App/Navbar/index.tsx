@@ -5,6 +5,7 @@ import appLogo from 'assets/vision-logo.png'
 import { useHistory } from 'react-router'
 import useWindowSize from 'hooks/use-window-size'
 
+import { createNav as createSchoolsNav } from 'app/schools'
 import { createNav as createStocksNav } from 'app/stocks'
 import { createNav as createSlidesNav } from 'app/slides'
 import { createNav as createStartupsNav } from 'app/startups'
@@ -24,6 +25,7 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
   const [itemsMobile, setItemsMobile] = useState<any[]>([])
   const [itemsDesktop, setItemsDesktop] = useState<any[]>([])
 
+  const schoolsNav = createSchoolsNav?.({ goTo, onToggle })
   const stocksNav = createStocksNav?.({ goTo, onToggle })
   const slidesNav = createSlidesNav?.({ goTo, onToggle })
   const sessionsNav = createSessionsNav?.({ goTo, onToggle })
@@ -36,6 +38,10 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
     setActivePath(path)
 
     switch (appName) {
+    case 'schools':
+      setItemsMobile(schoolsNav?.mobile)
+      setItemsDesktop(schoolsNav?.all)
+      break
     case 'stocks':
       setItemsMobile(stocksNav?.mobile)
       setItemsDesktop(stocksNav?.all)
@@ -78,7 +84,7 @@ export const Navbar = ({ onToggle, type }: { onToggle: Function, type?: string }
     return (
       <div
         key={i}
-        onClick={() => item.onClick()}
+        onClick={() => item?.onClick?.()}
         className={ item.main ? 'main-tab' : 'normal-tab'}
         // className={ item.main ? 'normal-tab' : 'normal-tab'}
       >

@@ -54,16 +54,20 @@ function AppMenu (
 
         {[
           {
+            name: 'Schools',
+            path: '/schools/'
+          },
+          {
+            name: 'Stocks',
+            path: '/stocks'
+          },
+          {
             name: 'Slides',
             path: '/slides/slideshows'
           },
           {
             name: 'Sessions',
             path: '/sessions/new'
-          },
-          {
-            name: 'Stocks',
-            path: '/stocks'
           },
           {
             name: 'Startups',
