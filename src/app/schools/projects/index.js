@@ -6,6 +6,12 @@ export class Projects extends Component {
     state = {
     }
 
+    setChartType = e => {
+      this.setState({
+        chartType: e.target.value
+      })
+    }
+
     componentDidMount () {
     }
 
@@ -14,9 +20,27 @@ export class Projects extends Component {
 
     render () {
       return <div className='page'>
-        <div className='header'>
-          <div>Projects</div>
-        </div>
+        <Layout
+          rightDiv={ <div>
+            <h1>Projects</h1>
+          </div> }
+          leftDiv={
+            <Tabs
+              defaultTab='selection'
+              keys={['selection']}
+              selection={
+                <div>
+                  <div className='page-header padded'>
+                    <FAIcon className='icon' name={ 'film' } />
+                    <br />
+                    <div className='title'>{ 'Projects' }</div>
+                  </div>
+                  <div className='divider horizontal'/>
+                </div>
+              }
+            />
+          }
+        />
       </div>
     }
 }

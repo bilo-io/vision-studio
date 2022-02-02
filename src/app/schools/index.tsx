@@ -30,7 +30,7 @@ export const SchoolsRouter = () => {
       <Route exact path={`${scopeRoot}/courses/edit/:id`} render={ () => <CourseEditor /> } />
       <Route exact path={`${scopeRoot}/courses/:id`} render={ () => <CoursePreview /> } />
       <Route exact path={`${scopeRoot}/courses/:id/view`} render={ () => <CourseViewer /> } />
-      <Route exact path={`${scopeRoot}/tests`} render={ () => <Tests /> } />
+      <Route exact path={`${scopeRoot}/testing`} render={ () => <Tests /> } />
       <Route exact path={`${scopeRoot}/profile`} render={ () => <Profile /> } />
     </>
   )
@@ -82,12 +82,13 @@ export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Functi
       name: 'Dashboard',
       path: `${scopeRoot}`,
       icon: 'solar-panel',
-      onClick: () => goTo(`${scopeRoot}`)
+      onClick: () => goTo(`${scopeRoot}/dashboard`)
     },
     {
       name: 'Courses',
       path: `${scopeRoot}/courses`,
       icon: 'graduation-cap',
+      onClick: () => goTo(`${scopeRoot}/courses`),
       children: [
         {
           name: 'Add Course',
@@ -107,6 +108,7 @@ export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Functi
       name: 'Testing',
       path: `${scopeRoot}/testing`,
       icon: 'university',
+      onClick: () => goTo(`${scopeRoot}/testing`),
       children: [
         {
           name: 'Quizzes',
@@ -132,6 +134,7 @@ export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Functi
       name: 'Projects',
       path: `${scopeRoot}/projects`,
       icon: 'folder',
+      onClick: () => goTo(`${scopeRoot}/projects`),
       children: [
         {
           name: 'In Progress',
@@ -157,6 +160,7 @@ export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Functi
       name: 'Progress',
       path: `${scopeRoot}/profile`,
       icon: 'user-graduate',
+      onClick: () => goTo(`${scopeRoot}/profile`),
       children: [
         {
           name: 'Overview',

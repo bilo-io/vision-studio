@@ -26,14 +26,14 @@ export class Tests extends Component {
           </div> }
           leftDiv={
             <Tabs
-              defaultTab='config'
+              defaultTab='selection'
               keys={['selection']}
-              slides={
+              selection={
                 <div>
                   <div className='page-header padded'>
                     <FAIcon className='icon' name={ 'film' } />
                     <br />
-                    <div className='title'>{ 'Stats Dashboard' }</div>
+                    <div className='title'>{ 'Testing' }</div>
                   </div>
                   <div className='divider horizontal'/>
                 </div>

@@ -27,9 +27,9 @@ export class SchoolsDashboard extends Component {
           </div> }
           leftDiv={
             <Tabs
-              defaultTab='config'
-              keys={['slides']}
-              slides={
+              defaultTab='selection'
+              keys={['selection']}
+              selection={
                 <div>
                   <div className='page-header padded'>
                     <FAIcon className='icon' name={ 'film' } />
