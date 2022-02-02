@@ -4,8 +4,10 @@ import { Provider } from 'react-redux'
 
 import './App.scss'
 import Error from './pages/Error'
-import NavbarContainer from 'components/App/Navbar/container'
+import AppInfo from 'components/App/AppInfo'
 import AppMenu from 'components/App/AppMenu'
+import { Navbar } from 'components'
+import { NavbarContainer } from 'components/App/Navbar/container'
 // #region Routers
 // import Login from './pages/Login/Login'
 import StocksRouter from 'app/stocks'
@@ -16,7 +18,6 @@ import StartupsRouter from 'app/startups'
 // #endregion
 
 import { store } from './store'
-import AppInfo from 'components/App/AppInfo'
 // import logo from './assets/vision-logo.svg'
 
 const App = () => {
@@ -37,18 +38,23 @@ const App = () => {
         <div className="app-body flex-row">
 
           <AppInfo setAuthenticated={() => { }} />
-          <NavbarContainer onToggle={toggleAppMenu} />
+          {/* <NavbarContainer onToggle={toggleAppMenu} /> */}
 
-          <AppMenu isOpen={isAppMenuOpen} isDark onToggle={toggleAppMenu} />
+          <Navbar type='desktop' onToggle={toggleAppMenu} />
+          <Navbar type='mobile' onToggle={toggleAppMenu} />
+
+          <AppMenu isDark isOpen={isAppMenuOpen} onToggle={toggleAppMenu} />
 
           <div className="page">
             <Switch>
+              {/* DEFAULT ROUTE */}
               <Route
                 exact
                 path={'/'}
                 render={() => <Redirect to={'/stocks/stats'} />}
               />
 
+              {/* APPS */}
               <Route path="/stocks" render={() => <StocksRouter />} />
               <Route path="/startups" render={() => <StartupsRouter />} />
               <Route path="/sessions" render={() => <SessionsRouter />} />
@@ -56,6 +62,8 @@ const App = () => {
 
               {/* AUTH */}
               {/* <Route path="/auth/login" render={() => <Login />} /> */}
+
+              {/* MISC */}
               <Route path="*" component={Error} />
             </Switch>
           </div>

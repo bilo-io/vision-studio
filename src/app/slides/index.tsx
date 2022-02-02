@@ -29,10 +29,10 @@ export default SlidesRouter
 export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Function }) => ({
   mobile: [
     {
-      name: 'Slides',
-      path: `${scopeRoot}/slides`,
+      name: 'Slideshows',
+      path: `${scopeRoot}/slideshows`,
       icon: 'layer-group',
-      onClick: () => goTo(`${scopeRoot}/slides`)
+      onClick: () => goTo(`${scopeRoot}/slideshows`)
     },
     {
       name: 'Schedules',
@@ -69,10 +69,10 @@ export const createNav = ({ onToggle, goTo }: { onToggle: Function, goTo: Functi
       onClick: () => onToggle()
     },
     {
-      name: 'Slides',
-      path: `${scopeRoot}/slides`,
+      name: 'Slideshows',
+      path: `${scopeRoot}/slideshows`,
       icon: 'layer-group',
-      onClick: () => onToggle()
+      onClick: () => goTo(`${scopeRoot}/slideshows`)
     },
     {
       name: 'Schedules',

@@ -13,7 +13,7 @@ export class Explorer extends Component {
     collections: PropTypes.array,
     isLoading: PropTypes.bool,
     onClickItem: PropTypes.func,
-    resourceIcon: PropTypes.oneOfTypes([PropTypes.string, PropTypes.number])
+    resourceIcon: PropTypes.string // oneOfTypes([PropTypes.string, PropTypes.number])
   };
 
   static defaultProps = {

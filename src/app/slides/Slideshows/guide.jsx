@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import helpCreate from 'img/help/slideshows_create.gif'
-import helpEdit from 'img/help/slides_edit.gif'
+import helpCreate from 'assets/img/slides/help/slideshows_create.gif'
+import helpEdit from 'assets/img/slides/help/slides_edit.gif'
 import { DocIndex } from 'components'
 
 export const Guide = (props) => <div className='padded flex-row' style={{ position: 'relative', height: 'calc(100vh - 6rem)' }}>

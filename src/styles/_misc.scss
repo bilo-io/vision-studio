@@ -7,31 +7,31 @@
 
 $fade-duration: 0.3s;
 
-.layout-panel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #eee;
-  transition: all $fade-duration ease-in-out;
+// .layout-panel {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+//   background-color: #eee;
+//   transition: all $fade-duration ease-in-out;
 
-  &.padded {
-    padding: 1rem;
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
-  }
+//   &.padded {
+//     padding: 1rem;
+//     width: calc(100% - 2rem);
+//     height: calc(100% - 2rem);
+//   }
 
-  &.light {
-    background-color: #eee;
-  }
+//   &.light {
+//     background-color: #eee;
+//   }
 
-  &.dark {
-    background-color: #1d1d1d;
-    color: #eee;
-    border-left: 1px solid rgba(grey, 0.4);
-    transition: all $fade-duration ease-in-out;
-  }
-}
+//   &.dark {
+//     background-color: #1d1d1d;
+//     color: #eee;
+//     border-left: 1px solid rgba(grey, 0.4);
+//     transition: all $fade-duration ease-in-out;
+//   }
+// }
 
 .padded {
   padding: 1rem;

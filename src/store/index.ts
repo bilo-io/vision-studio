@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
+import app from './slices/app/app-slice'
+import apps from './slices/apps'
 import auth from './slices/auth/auth-slice'
 
 export const store = configureStore({
   reducer: {
+    app,
+    apps,
     auth
   }
 })
