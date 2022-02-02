@@ -1,7 +1,7 @@
 import api from 'utils/api'
 // FIREBASE
 // import config from 'apps/schools/firebase.config'
-// import FirebaseDevKit from 'util/firebase/devkit'
+// import FirebaseDevKit from 'utils/firebase/devkit'
 // const firebase = FirebaseDevKit(config)
 // MISC
 const appName = 'slides'

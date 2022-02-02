@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import firebaseConfig from './firebase.config'
+import firebaseConfig from '../firebase.config'
 
 import { initializeApp } from 'firebase/app'
 // AUTH

@@ -14,6 +14,7 @@ import StocksRouter from 'app/stocks'
 import SlidesRouter from 'app/slides'
 import SessionsRouter from 'app/sessions'
 import StartupsRouter from 'app/startups'
+import SchoolsRouter from 'app/schools'
 // import Profile from 'pages/Profile'
 // #endregion
 
@@ -56,9 +57,10 @@ const App = () => {
 
               {/* APPS */}
               <Route path="/stocks" render={() => <StocksRouter />} />
-              <Route path="/startups" render={() => <StartupsRouter />} />
-              <Route path="/sessions" render={() => <SessionsRouter />} />
+              <Route path="/schools" render={() => <SchoolsRouter />} />
               <Route path="/slides" render={() => <SlidesRouter />} />
+              <Route path="/sessions" render={() => <SessionsRouter />} />
+              <Route path="/startups" render={() => <StartupsRouter />} />
 
               {/* AUTH */}
               {/* <Route path="/auth/login" render={() => <Login />} /> */}
