@@ -55,24 +55,23 @@ export class SlideshowService {
   // #endregion
 
   // #region CRUD
-  // TODO: deprecate static functions
-  static fetchSlideshows = async () => {
+  static GET_ALL = async () => {
     return await api.GETResource({ appName, resource })
   }
 
-  static findSlideshow = async ({ id, query }: any) => {
+  static GET = async ({ id, query }: any) => {
     return await api.GETResource({ appName, resource, id, query })
   }
 
-  static createSlideshow = async (data: any) => {
+  static POST = async (data: any) => {
     return await api.POSTResource({ appName, resource, data })
   }
 
-  static updateSlideshow = async (id: string | number, data: any) => {
+  static PATCH = async (id: string | number, data: any) => {
     return await api.PATCHResource({ appName, resource, id, data })
   }
 
-  static deleteSlideshow = async (id: string | number) => {
+  static DELETE = async (id: string | number) => {
     return await api.DELETEResource({ appName, resource, id })
   }
   // #endregion

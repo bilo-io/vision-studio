@@ -122,7 +122,7 @@ export const Schedules = (props: any) => {
     //     name: 'Another',
     //     description: 'Testing from Postman Client in VSCode'
     // })
-    ScheduleService.fetchSchedules()
+    ScheduleService.GET_ALL()
       .then((data: any) => {
         setSchedules(data)
         setIsLoading(false)
@@ -252,7 +252,8 @@ export const Schedules = (props: any) => {
   // #region RENDER
   return <div className='page'>
     <Layout
-      isRightDark={schedule === undefined}
+      // isRightDark={schedule === undefined}
+      isRightDark
       leftDiv={
         <div>
           <div className='page-header padded flex-row space-between'>

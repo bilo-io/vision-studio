@@ -98,7 +98,7 @@ $fade-duration: .3s;
   }
 
   &.dark {
-    background-color: #1D1D1D;
+    background-image: linear-gradient(to bottom, $col-bg-gradient-start, $col-bg-gradient-end);
     color: #eee;
     border-left: 1px solid rgba(grey, 0.4);
     transition: all $fade-duration ease-in-out;

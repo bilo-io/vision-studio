@@ -56,19 +56,23 @@ export class ScreenService {
 
     // #region CRUD
     // TODO: deprecate static functions
-    static findScreens = async ({ id, query }: any) => {
+    static GET_ALL = async () => {
+      return await api.GETResource({ appName, resource })
+    }
+
+    static GET = async ({ id, query }: any) => {
       return await api.GETResource({ appName, resource, id, query })
     }
 
-    static createScreen = async (data: any) => {
+    static POST = async (data: any) => {
       return await api.POSTResource({ appName, resource, data })
     }
 
-    static updateScreen = async (id: string | number, data: any) => {
+    static PATCH = async (id: string | number, data: any) => {
       return await api.PATCHResource({ appName, resource, id, data })
     }
 
-    static deleteScreen = async (id: string | number) => {
+    static DELETE = async (id: string | number) => {
       return await api.DELETEResource({ appName, resource, id })
     }
     // #endregion

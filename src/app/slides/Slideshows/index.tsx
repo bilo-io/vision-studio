@@ -111,7 +111,7 @@ export const Slideshows = (props: any) => {
   // RESOURCE - CRUD
   const fetchResource = () => {
     setIsLoading(true)
-    SlideshowService.fetchSlideshows()
+    SlideshowService.GET_ALL()
       .then((data: any) => {
         setSlideshows(data)
         setIsLoading(false)
