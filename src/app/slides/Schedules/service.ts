@@ -7,7 +7,7 @@ import api from 'utils/api'
 const appName = 'slides'
 const resource = 'schedules'
 
-export class Scheduleservice {
+export class ScheduleService {
   constructor () {
     console.log(`${this.constructor.name} INIT`)
   }
@@ -54,24 +54,28 @@ export class Scheduleservice {
   // }
   // #endregion
 
-    // #region CRUD
-    // TODO: deprecate static functions
-    static findSchedules = async ({ id, query }: any) => {
-      return await api.GETResource({ appName, resource, id, query })
-    }
+  // #region CRUD
+  // TODO: deprecate static functions
+  static fetchSchedules = async () => {
+    return await api.GETResource({ appName, resource })
+  }
 
-    static createScreen = async (data: any) => {
-      return await api.POSTResource({ appName, resource, data })
-    }
+  static findSchedule = async ({ id, query }: any) => {
+    return await api.GETResource({ appName, resource, id, query })
+  }
 
-    static updateScreen = async (id: string | number, data: any) => {
-      return await api.PATCHResource({ appName, resource, id, data })
-    }
+  static createSchedule = async (data: any) => {
+    return await api.POSTResource({ appName, resource, data })
+  }
 
-    static deleteScreen = async (id: string | number) => {
-      return await api.DELETEResource({ appName, resource, id })
-    }
-    // #endregion
+  static updateSchedule = async (id: string | number, data: any) => {
+    return await api.PATCHResource({ appName, resource, id, data })
+  }
+
+  static deleteSchedule = async (id: string | number) => {
+    return await api.DELETEResource({ appName, resource, id })
+  }
+  // #endregion
 }
 
-export default Scheduleservice
+export default ScheduleService
