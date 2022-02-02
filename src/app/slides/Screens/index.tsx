@@ -39,9 +39,9 @@ export default Screens
 // } from 'data/redux/session/actions'
 // // import { ScreenMap } from './map'
 // // TODO: put get-started content into 'config.js'
-// import helpCreate from 'img/help/screens_create.gif'
-// import helpClient from 'img/help/screens_client.png'
-// import macMonitor from 'img/mac_monitor.png'
+// import helpCreate from 'assets/img/slides/help/screens_create.gif'
+// import helpClient from 'assets/img/slides/help/screens_client.png'
+// import macMonitor from 'assets/img/slides/mac_monitor.png'
 // import options from './config'
 // import ScreenService from './service'
 // const service = new ScreenService()
