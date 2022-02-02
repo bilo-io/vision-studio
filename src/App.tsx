@@ -39,20 +39,22 @@ const App = () => {
 
           <AppInfo setAuthenticated={() => { }} />
           {/* <NavbarContainer onToggle={toggleAppMenu} /> */}
-          {/* <Navbar onToggle={toggleAppMenu} /> */}
+
           <Navbar type='desktop' onToggle={toggleAppMenu} />
           <Navbar type='mobile' onToggle={toggleAppMenu} />
 
-          <AppMenu isOpen={isAppMenuOpen} isDark onToggle={toggleAppMenu} />
+          <AppMenu isDark isOpen={isAppMenuOpen} onToggle={toggleAppMenu} />
 
           <div className="page">
             <Switch>
+              {/* DEFAULT ROUTE */}
               <Route
                 exact
                 path={'/'}
                 render={() => <Redirect to={'/stocks/stats'} />}
               />
 
+              {/* APPS */}
               <Route path="/stocks" render={() => <StocksRouter />} />
               <Route path="/startups" render={() => <StartupsRouter />} />
               <Route path="/sessions" render={() => <SessionsRouter />} />
@@ -60,6 +62,8 @@ const App = () => {
 
               {/* AUTH */}
               {/* <Route path="/auth/login" render={() => <Login />} /> */}
+
+              {/* MISC */}
               <Route path="*" component={Error} />
             </Switch>
           </div>
