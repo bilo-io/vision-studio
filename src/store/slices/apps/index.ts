@@ -7,6 +7,6 @@ import { combineReducers } from '@reduxjs/toolkit'
 import slides from './slides/'
 
 // ETC.
-export default combineReducers([
+export default combineReducers({
   slides
-])
+})
