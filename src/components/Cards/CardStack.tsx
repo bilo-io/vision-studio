@@ -19,8 +19,9 @@ type CardStackProps = {
   isSeparate: boolean,
   isOpenDefault?: boolean,
   duration: any,
-  color?: string;
-  backgroundColor?: string
+  color?: string,
+  backgroundColor?: string,
+  style?: any
 
 }
 export const CardStack = ({
@@ -36,7 +37,8 @@ export const CardStack = ({
   isOpenDefault,
   duration,
   color,
-  backgroundColor
+  backgroundColor,
+  style
 }: CardStackProps) => {
   const [isOpen, setIsOpen] = useState(isOpenDefault)
   const [isLoading, setLoading] = useState(false)
@@ -74,7 +76,16 @@ export const CardStack = ({
   }
 
   const content = <Fragment>
-    <div className="flex-col card-stack" style={{ position: 'relative', cursor: 'pointer', width, height, margin }}>
+    <div
+      className="flex-col card-stack"
+      style={{
+        position: 'relative',
+        cursor: 'pointer',
+        width,
+        height,
+        margin,
+        ...style
+      }}>
       {
         isOpen
           ? null
@@ -86,7 +97,6 @@ export const CardStack = ({
                 height: `calc(2*${stackHeight})`,
                 color,
                 backgroundColor
-
               }} />
             <div className='stack-1'
               style={{

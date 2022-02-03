@@ -28,9 +28,11 @@ export const CourseCard = ({ course, onClick }: any) => (
     height={'18rem'}
     margin='0 0.75rem 0.75rem 0'
     items={ course.lessons }
+    backgroundColor={'#88BBFF1D'}
+    color={'#FFFFFF'}
     // isSeparate={ collection.items.length > 5}
     renderItem={(item, i) => <>
-      <div style={{ position: 'relative', backgroundColor: 'white' }} onClick={() => onClick(item)}>
+      <div style={{ position: 'relative' }} onClick={() => onClick(item)}>
         <img src={item.url} style={{ width: '100%', height: '6rem', position: 'absolute' }}/>
         <div style={{ paddingTop: '6rem', height: '11rem' }}>
           <div style={{ padding: '0.25rem' }}><strong>{ item.name }</strong></div>

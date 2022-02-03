@@ -31,8 +31,11 @@
 $stack-shadow: 0 -2px 10px 1px rgba(50, 50, 50, 0.5);
 
 .card-stack {
+  // background-color: #88BBFF1D;
+
   .parent {
     box-shadow: $stack-shadow;
+    background-color: #88BBFFAA;
   }
 
   @mixin stacker($padding) {
@@ -49,6 +52,8 @@ $stack-shadow: 0 -2px 10px 1px rgba(50, 50, 50, 0.5);
   }
 
   .stack {
+    background-color: #88BBFF1D;
+
     &-1 {
       @include stacker(0.5rem);
     }
@@ -73,5 +78,6 @@ $stack-shadow: 0 -2px 10px 1px rgba(50, 50, 50, 0.5);
 .card-stack-child {
   @extend .card;
   @extend .card-1;
+  background-color: #88BBFF1D;
   // box-shadow: $stack-shadow;
 }
