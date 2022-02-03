@@ -5,7 +5,7 @@ module.exports = [
     tags: [],
     duration: 30,
     difficulty: 'easy',
-    thumbnail: 'https://wpepitome.com/wp-content/uploads/2019/07/HTML5-.jpg',
+    thumbnail: 'https://thumbs.dreamstime.com/z/evolution-human-worker-gamer-concept-design-illustration-vector-silhouette-apes-evolution-human-work-play-gaming-156694285.jpg',
     description: 'Understanding programming, the first step to take for any programming path or career.',
     lessons: [
       {
@@ -108,7 +108,7 @@ module.exports = [
     tags: ['web', 'programming', 'design'],
     duration: 20,
     difficulty: 'easy',
-    thumbnail: 'https://blog.codemy.net/content/images/2019/01/front-end.jpg',
+    thumbnail: 'https://www.lewismedia.com/wp-content/uploads/2021/04/front-end-dev-languages.png',
     description: 'What it is and why it is there.'
   },
   {
@@ -117,7 +117,7 @@ module.exports = [
     tags: ['web', 'programming', 'architecture'],
     duration: 20,
     difficulty: 'easy',
-    thumbnail: 'https://www.technolabs.biz/wp-content/uploads/2020/04/frame.png',
+    thumbnail: 'https://frontendmasters.com/guides/front-end-handbook/2016/images/spectrum.png',
     description: 'A review of the types of tools every frontend engineer should have.'
   },
   {
@@ -126,7 +126,7 @@ module.exports = [
     tags: ['web', 'programming', 'devops', 'architecture'],
     duration: 20,
     difficulty: 'easy',
-    thumbnail: 'https://img-a.udemycdn.com/course/750x422/2488654_e156_3.jpg',
+    thumbnail: 'https://miro.medium.com/max/1400/1*Wcz8bAOjRdV6D0wTJQSBWg.jpeg',
     description: 'A deeper look into the life and challenges of a frontend engineer'
   },
   {
@@ -162,7 +162,7 @@ module.exports = [
     tags: ['web', 'programming'],
     duration: 20,
     difficulty: 'easy',
-    thumbnail: 'https://join4task.com/wp-content/uploads/2019/06/website-development-doylestown.gif',
+    thumbnail: 'https://www.guru99.com/images/2-2017/092917_0812_DevOpsTrain1.png',
     description: 'What is it, and why is it there?'
   },
   {
@@ -201,7 +201,7 @@ module.exports = [
     tags: ['science', 'astronomy'],
     duration: 30,
     difficulty: 'easy',
-    thumbnail: 'https://thenationpress.net/en/imgs/2020/04/1588105017blobid0.jpg',
+    thumbnail: 'https://cdn1.vectorstock.com/i/1000x1000/92/55/solar-system-flat-vector-9929255.jpg',
     description: 'A voyage into our solar system, looking at the past and potential futures'
   },
   {
@@ -254,7 +254,7 @@ module.exports = [
     tags: ['science', 'mathematics'],
     duration: 30,
     difficulty: 'easy',
-    thumbnail: 'https://lh3.googleusercontent.com/proxy/ErRLIMZozXc9-HF-SI6YY2xf1Y7n6tShP0PAVukxSbipWCpVMm0dcwyyTkiSo-13nMyMfMMWyDc1GGLvfjQYDfxN5AH5-X9GTT4_fYqnzEoEglQhs5Eu'
+    thumbnail: 'https://admissions.msu.edu/-/media/assets/admissions/images/academics/majors/computational-mathematics.jpg'
   },
   // #endregion
 
